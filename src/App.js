@@ -12,9 +12,9 @@ import { CreateWeddingHall } from './components/weddingHalls/weddingHall-add.com
 
 import { CreateRoom } from './components/room/room-add.component';
 
-import { ViewJetwingBlue } from './components/hotels/jetwingBlue-view.component';
-import { ViewJetwingSea } from './components/hotels/jetwingSea-view.component';
-import { ViewJetwingColomboSeven } from './components/hotels/jetwingColomboSeven-view.component';
+import { ViewJetwingBlue } from './components/admin.hotels/jetwingBlue-view.component';
+import { ViewJetwingSea } from './components/admin.hotels/jetwingSea-view.component';
+import { ViewJetwingColomboSeven } from './components/admin.hotels/jetwingColomboSeven-view.component';
 
 function App() {
   return (
