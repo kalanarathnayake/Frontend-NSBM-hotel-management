@@ -23,6 +23,8 @@ function App() {
       <Router>
         <Routes>
           {/* <Route exact path="/" element={Navbar} /> */}
+          <Route exact path="/" element={<Home />} />
+
           <Route exact path="/createEvent" element={<CreateEvent />} />
           <Route exact path="/event" element={<ViewEvent />} />
 
@@ -36,7 +38,7 @@ function App() {
           {/* <Route exact path="/" element={<Home />} /> */}
         </Routes>
       </Router>
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 
