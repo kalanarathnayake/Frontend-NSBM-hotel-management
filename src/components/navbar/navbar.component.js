@@ -9,12 +9,13 @@ class navbar extends Component {
         </div>
 
         <div>
-          <a href="/employee" className="m-2 text-black no-underline duration-300 hover:text-orange-800 hover:font-normal">Employees</a>
-          <a href="/feedback" className="m-2 text-black no-underline duration-300 hover:text-orange-800 hover:font-normal">Feedback</a>
-          <a href="/schedule" className="m-2 text-black no-underline duration-300 hover:text-orange-800 hover:font-normal">My Schedule</a>
-          <a href="/allSchedule" className="m-2 text-black no-underline duration-300 hover:text-orange-800 hover:font-normal">Schedules</a>
-          <a href="/creatSchedule" className="m-2 text-black no-underline duration-300 hover:text-orange-800 hover:font-normal">Add Schedule</a>
-          <a href="/scheduleRequestLsit" className="m-2 text-black no-underline duration-300 hover:text-orange-800 hover:font-normal">Schedule Requests</a>
+          {/* <a href="/createEvent" className="m-2 text-black no-underline duration-300 hover:text-orange-800 hover:font-normal">Create Event</a>
+          <a href="/event" className="m-2 text-black no-underline duration-300 hover:text-orange-800 hover:font-normal">Events</a>
+          <a href="/createWedding" className="m-2 text-black no-underline duration-300 hover:text-orange-800 hover:font-normal">Create Wedding</a> */}
+          <a href="/jetwingBlue" className="m-2 text-black no-underline duration-300 hover:text-orange-800 hover:font-normal">Jetwing Blue</a>
+          <a href="/jetwingSea" className="m-2 text-black no-underline duration-300 hover:text-orange-800 hover:font-normal">Jetwing Sea</a>
+          <a href="/jetwingSeven" className="m-2 text-black no-underline duration-300 hover:text-orange-800 hover:font-normal">Jetwing Colombo Seven</a>
+          {/* <a href="/scheduleRequestLsit" className="m-2 text-black no-underline duration-300 hover:text-orange-800 hover:font-normal">Schedule Requests</a> */}
         </div>
 
         <div className="grid grid-cols-2 gap-1">
