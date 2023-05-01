@@ -13,7 +13,7 @@ class home extends Component {
           </div>
         </section>
 
-        <div class="container mx-auto px-5 py-2 lg:px-32 lg:pt-12 mb-5 grid grid-cols-3 content-center">
+        <div class=" container mx-auto px-5 py-2 lg:px-32 lg:pt-12 mb-5 grid grid-cols-3 content-center">
           <div className="shadow-xl card w-96 bg-base-100">
             <figure><img src="https://wallpapershome.com/images/pages/pic_h/16232.jpg" alt="Shoes" /></figure>
             <div className="card-body">
