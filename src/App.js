@@ -16,13 +16,16 @@ import { ViewJetwingBlue } from './components/admin.hotels/jetwingBlue-view.comp
 import { ViewJetwingSea } from './components/admin.hotels/jetwingSea-view.component';
 import { ViewJetwingColomboSeven } from './components/admin.hotels/jetwingColomboSeven-view.component';
 
+import { UserRegistration } from './components/user/user-registration.component';
+import { UserLogin } from './components/user/user-login.component';
+
 function App() {
   return (
     <div>
       <Navbar />
       <Router>
         <Routes>
-          {/* <Route exact path="/" element={Navbar} /> */}
+          <Route exact path="/nav" element={Navbar} />
           <Route exact path="/" element={<Home />} />
 
           <Route exact path="/createEvent" element={<CreateEvent />} />
@@ -35,6 +38,10 @@ function App() {
           <Route exact path="/jetwingBlue" element={<ViewJetwingBlue />} />
           <Route exact path="/jetwingSea" element={<ViewJetwingSea />} />
           <Route exact path="/jetwingSeven" element={<ViewJetwingColomboSeven />} />
+
+
+          <Route exact path="/signUp" element={<UserRegistration />} />
+          <Route exact path="/signIn" element={<UserLogin />} />
           {/* <Route exact path="/" element={<Home />} /> */}
         </Routes>
       </Router>

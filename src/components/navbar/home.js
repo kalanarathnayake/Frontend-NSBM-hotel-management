@@ -13,35 +13,35 @@ class home extends Component {
           </div>
         </section>
 
-        <div class=" container mx-auto px-5 py-2 lg:px-32 lg:pt-12 mb-5 grid grid-cols-3 content-center">
+        <div class=" container mx-auto px-5 py-2 lg:px-32 lg:pt-12 mb-5 grid grid-cols-3 content-center" >
           <div className="shadow-xl card w-96 bg-base-100">
             <figure><img src="https://wallpapershome.com/images/pages/pic_h/16232.jpg" alt="Shoes" /></figure>
             <div className="card-body">
-              <h2 className="justify-center card-title">Shoes!</h2>
-              <p>If a dog chews shoes whose shoes does he choose?</p>
-              <div className="justify-center card-actions">
+              <h2 className="justify-center card-title">Jetwing Sea</h2>
+              <p>Born out of the historic splendour of Jetwing Seashells from 1978, our home has since grown into a symbol of modern elegance among Sri Lankan beach resorts. The enchantment of this nostalgic coastline has stayed true to our legendary family values.</p>
+              {/* <div className="justify-center card-actions">
                 <button className="btn btn-primary">Buy Now</button>
-              </div>
+              </div> */}
             </div>
           </div>
           <div className="shadow-xl card w-96 bg-base-100">
             <figure><img src="https://wallpapershome.com/images/pages/pic_h/6498.jpg" alt="Shoes" /></figure>
             <div className="card-body">
-              <h2 className="justify-center card-title">Shoes!</h2>
-              <p>If a dog chews shoes whose shoes does he choose?</p>
-              <div className="justify-center card-actions">
+              <h2 className="justify-center card-title">Jetwing Blue</h2>
+              <p>It all began here – at our original home of Sri Lankan hospitality. The home in which we welcomed the world as part of our family, and treated the world as one of our own</p>
+              {/* <div className="justify-center card-actions">
                 <button className="btn btn-primary">Buy Now</button>
-              </div>
+              </div> */}
             </div>
           </div>
           <div className="shadow-xl card w-96 bg-base-100">
             <figure><img src="https://wallpapershome.com/images/pages/pic_h/336.jpg" alt="Shoes" /></figure>
             <div className="card-body">
-              <h2 className="justify-center card-title">Shoes!</h2>
-              <p>If a dog chews shoes whose shoes does he choose?</p>
-              <div className="justify-center card-actions">
+              <h2 className="justify-center card-title">Jetwing Colombo Seven</h2>
+              <p>Built upon the land where our founder once resided, this exotic metropolis we call home is where our legendary hospitality shines the brightest – a privilege we extend to the world, as we take you in with open arms.</p>
+              {/* <div className="justify-center card-actions">
                 <button className="btn btn-primary ">Buy Now</button>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
