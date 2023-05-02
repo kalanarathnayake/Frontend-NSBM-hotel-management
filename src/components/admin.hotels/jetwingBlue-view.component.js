@@ -26,12 +26,12 @@ export class ViewJetwingBlue extends Component {
         this.state = {
             event: [],
             wedding: [],
-            room:[],
+            room: [],
             search: "Jetwing Blue",
             show: false,
             display: false,
-            view:false,
-            pop:false
+            view: false,
+            pop: false
         };
     }
 
@@ -237,71 +237,53 @@ export class ViewJetwingBlue extends Component {
 
         })
     }
-    
+
 
     searchEventList() {
         return this.state.event.map((currentevent) => {
             if (
-                this.state.search ==
-                currentevent.hotelName
+                this.state.search === currentevent.hotelName
 
             ) {
                 return (
                     <tr className='bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600'>
                         {/* <td className='px-6 py-4'>{currentdelivery._id}</td>
                         <td className='px-6 py-4'>{currentdelivery.orderId}</td> */}
-                        <td className='px-6 py-4'>{currentevent.hallName}</td>
-                        <td className='px-6 py-4'>{currentevent.description}</td>
-                        <tr>
-                            <td className='px-6 py-4'>{currentevent.style1}</td>
-                            <td className='px-6 py-4'>{currentevent.capacity1}</td>
-                        </tr>
-                        <tr>
-                            <td className='px-6 py-4'>{currentevent.style2}</td>
-                            <td className='px-6 py-4'>{currentevent.capacity2}</td>
-                        </tr>
-                        <tr>
-                            <td className='px-6 py-4'>{currentevent.style3}</td>
-                            <td className='px-6 py-4'>{currentevent.capacity3}</td>
-                        </tr>
-                        <tr>
-                            <td className='px-6 py-4'>{currentevent.style4}</td>
-                            <td className='px-6 py-4'>{currentevent.capacity4}</td>
-                        </tr>
+                        <td className='px-6 '>{currentevent.hallName}</td>
+                        <td className='max-w-xl px-6 text-justify'>{currentevent.description}</td>
+                        <td class=" pt-3">
+                            <p class="">
+                                <div class="flex p-2"><span class="mx-1">{currentevent.style1}</span> <span class="">{currentevent.capacity1}</span> </div>
+                                <div class="flex p-2"><span class="mx-1">{currentevent.style2}</span> <span class="">{currentevent.capacity2}</span> </div>
+                                <div class="flex p-2"><span class="mx-1">{currentevent.style3}</span> <span class="">{currentevent.capacity3}</span> </div>
+                                <div class="flex p-2"><span class="mx-1">{currentevent.style4}</span> <span class="">{currentevent.capacity4}</span> </div>
+                            </p>
+                        </td>
 
                         <td className='px-6 py-4'>
                             <div class="">
-                                <button className='inline-flex items-center px-4 py-2 mr-1 text-sm font-medium text-white bg-indigo-500 rounded-md hover:bg-blue-200' onClick={() => { this.gotoView(currentevent._id) }}>
-                                    <div class=" grid grid-cols-2 gap-1">
-                                        <div class="">
-                                            <svg class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                <path stroke-linecap="round" stroke-linejoin="round " stroke-width="2" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L6.832 19.82a4.5 4.5 0 01-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 011.13-1.897L16.863 4.487zm0 0L19.5 7.125"></path>
-                                            </svg>
-                                        </div>
-                                        <div class="">
-                                            Update
-                                        </div>
-                                    </div></button>
-                            </div></td>
+                                <button className='items-center p-2 text-sm font-medium text-white duration-500 bg-green-600 rounded-full hover:bg-pink-200' onClick={() => { this.gotoView(currentevent._id) }}>
+                                    <div class="">
+                                        <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path d="M12 15a3 3 0 100-6 3 3 0 000 6z" />
+                                            <path fillRule="evenodd" d="M1.323 11.447C2.811 6.976 7.028 3.75 12.001 3.75c4.97 0 9.185 3.223 10.675 7.69.12.362.12.752 0 1.113-1.487 4.471-5.705 7.697-10.677 7.697-4.97 0-9.186-3.223-10.675-7.69a1.762 1.762 0 010-1.113zM17.25 12a5.25 5.25 0 11-10.5 0 5.25 5.25 0 0110.5 0z" clipRule="evenodd" />
+                                        </svg>
+                                    </div>
+                                </button>
+                            </div>
+                        </td>
 
                         <td className='px-6 py-4'>
                             <div class="">
-                                <button className='inline-flex items-center px-4 py-2 mr-1 text-sm font-medium text-white bg-red-500 rounded-md hover:bg-red-200' onClick={() => { this.deleteEvent(currentevent._id) }}>
-                                    <div class=" grid grid-cols-2 gap-1">
-                                        <div class="">
-                                            <svg class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
-                                            </svg>
-                                        </div>
-                                        <div class="">
-                                            Delete
-                                        </div>
-                                    </div></button>
-                            </div></td>
-
-
-
-
+                                <button className='items-center p-2 text-sm font-medium text-white duration-500 bg-red-600 rounded-full hover:bg-pink-200' onClick={() => { this.deleteEvent(currentevent._id) }}>
+                                    <div class="">
+                                        <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                                        </svg>
+                                    </div>
+                                </button>
+                            </div>
+                        </td>
                     </tr>
                 );
             }
@@ -311,58 +293,42 @@ export class ViewJetwingBlue extends Component {
     searchWeddingHallList() {
         return this.state.wedding.map((currentWedding) => {
             if (
-                this.state.search ==
-                currentWedding.hotelName
-
+                this.state.search === currentWedding.hotelName
             ) {
                 return (
                     <tr className='bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600'>
-                        {/* <td className='px-6 py-4'>{currentdelivery._id}</td>
-                        <td className='px-6 py-4'>{currentdelivery.orderId}</td> */}
                         <td className='px-6 py-4'>{currentWedding.hallName}</td>
-                        <td className='px-6 py-4'>{currentWedding.description}</td>
-                        <td className='px-6 py-4'>{currentWedding.capacity}</td>
-                        <td className='px-6 py-4'>{currentWedding.length}</td>
-                        <td className='px-6 py-4'>{currentWedding.width}</td>
-                        <td className='px-6 py-4'>{currentWedding.price}</td>
-                        {/* <td className='px-6 py-4'>
-                            <span
-                                class="text-base inline-block whitespace-nowrap rounded-full bg-green-400 p-1 hover:bg-green-500 hover:drop-shadow-md hover:text-white  px-2 pt-[0.35em] pb-[0.25em] text-center align-baseline text-[0.75em] font-bold leading-none text-primary-700">
-                                {currentdelivery.orderStatus}
-                            </span>
-                        </td> */}
-
-
+                        <td className='max-w-xl px-6 text-justify'>{currentWedding.description}</td>
+                        <td class=" pt-3">
+                            <p class="">
+                                <div class="flex p-2"><span class="mx-1">Capacity</span> <span class="">{currentWedding.capacity}</span> </div>
+                                <div class="flex p-2"><span class="mx-1">Length</span> <span class="">{currentWedding.length}</span> </div>
+                                <div class="flex p-2"><span class="mx-1">Width</span> <span class="">{currentWedding.width}</span> </div>
+                                <div class="flex p-2"><span class="mx-1">Price</span> <span class="">{currentWedding.price}</span> </div>
+                            </p>
+                        </td>
                         <td className='px-6 py-4'>
-                            <div class="">
-                                <button className='inline-flex items-center px-4 py-2 mr-1 text-sm font-medium text-white bg-indigo-500 rounded-md hover:bg-blue-200' onClick={() => { this.gotoWeddingHall(currentWedding._id) }}>
-                                    <div class=" grid grid-cols-2 gap-1">
-                                        <div class="">
-                                            <svg class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                <path stroke-linecap="round" stroke-linejoin="round " stroke-width="2" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L6.832 19.82a4.5 4.5 0 01-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 011.13-1.897L16.863 4.487zm0 0L19.5 7.125"></path>
-                                            </svg>
-                                        </div>
-                                        <div class="">
-                                            Update
-                                        </div>
-                                    </div></button>
-                            </div></td>
-
+                            <div class="px-6 py-4">
+                                <button className='items-center p-2 text-sm font-medium text-white duration-500 bg-green-600 rounded-full hover:bg-pink-200' onClick={() => { this.gotoWeddingHall(currentWedding._id) }}>
+                                    <div class="">
+                                        <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path d="M12 15a3 3 0 100-6 3 3 0 000 6z" />
+                                            <path fillRule="evenodd" d="M1.323 11.447C2.811 6.976 7.028 3.75 12.001 3.75c4.97 0 9.185 3.223 10.675 7.69.12.362.12.752 0 1.113-1.487 4.471-5.705 7.697-10.677 7.697-4.97 0-9.186-3.223-10.675-7.69a1.762 1.762 0 010-1.113zM17.25 12a5.25 5.25 0 11-10.5 0 5.25 5.25 0 0110.5 0z" clipRule="evenodd" />
+                                        </svg>
+                                    </div>
+                                </button>
+                            </div>
+                        </td>
                         <td className='px-6 py-4'>
-                            <div class="">
-                                <button className='inline-flex items-center px-4 py-2 mr-1 text-sm font-medium text-white bg-red-500 rounded-md hover:bg-red-200' onClick={() => { this.deleteWedding(currentWedding._id) }}>
-                                    <div class=" grid grid-cols-2 gap-1">
-                                        <div class="">
-                                            <svg class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
-                                            </svg>
-                                        </div>
-                                        <div class="">
-                                            Delete
-                                        </div>
-                                    </div></button>
+                            <div class="px-6 py-4">
+                                <button className='items-center p-2 text-sm font-medium text-white duration-500 bg-red-600 rounded-full hover:bg-pink-200' onClick={() => { this.deleteWedding(currentWedding._id) }}>
+                                    <div class="">
+                                        <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                                        </svg>
+                                    </div>
+                                </button>
                             </div></td>
-
                     </tr>
                 );
             }
@@ -372,73 +338,53 @@ export class ViewJetwingBlue extends Component {
     searchRoomList() {
         return this.state.room.map((currentRoom) => {
             if (
-                this.state.search ==
-                currentRoom.hotelName
-
+                this.state.search === currentRoom.hotelName
             ) {
                 return (
                     <tr className='bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600'>
-                        {/* <td className='px-6 py-4'>{currentdelivery._id}</td>
-                        <td className='px-6 py-4'>{currentdelivery.orderId}</td> */}
-                       
                         <td className='px-6 py-4'>{currentRoom.roomName}</td>
-                        <td className='px-6 py-4'>{currentRoom.description}</td>
-                       
-                        <td className='px-6 py-4'>{currentRoom.size}</td>
-                        <td className='px-6 py-4'>{currentRoom.price}</td>
-                       
-                        {/* <td className='px-6 py-4'>
-                            <span
-                                class="text-base inline-block whitespace-nowrap rounded-full bg-green-400 p-1 hover:bg-green-500 hover:drop-shadow-md hover:text-white  px-2 pt-[0.35em] pb-[0.25em] text-center align-baseline text-[0.75em] font-bold leading-none text-primary-700">
-                                {currentdelivery.orderStatus}
-                            </span>
-                        </td> */}
+                        <td className='max-w-xl px-6 text-justify'>{currentRoom.description}</td>
+                        <td class=" pt-3">
+                            <p class="">
+                                <div class="flex p-2"><span class="mx-1">Capacity</span> <span class="">{currentRoom.size}</span> </div>
+                                <div class="flex p-2"><span class="mx-1">Price</span> <span class="">{currentRoom.price}</span> </div>
+                            </p>
+                        </td>
                         <td className='px-6 py-4'>
                             <div class="">
-                                <button className='inline-flex items-center px-4 py-2 mr-1 text-sm font-medium text-white bg-indigo-500 rounded-md hover:bg-blue-200' onClick={() => { this.gotoRoomDetails(currentRoom._id) }}>
-                                    <div class=" grid grid-cols-2 gap-1">
-                                        <div class="">
-                                            <svg class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                <path stroke-linecap="round" stroke-linejoin="round " stroke-width="2" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L6.832 19.82a4.5 4.5 0 01-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 011.13-1.897L16.863 4.487zm0 0L19.5 7.125"></path>
-                                            </svg>
-                                        </div>
-                                        <div class="">
-                                            View
-                                        </div>
-                                    </div></button>
-                            </div></td>
-
+                                <button className='items-center p-2 text-sm font-medium text-white duration-500 bg-green-600 rounded-full hover:bg-pink-200' onClick={() => { this.gotoRoomDetails(currentRoom._id) }}>
+                                    <div class="">
+                                        <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path d="M12 15a3 3 0 100-6 3 3 0 000 6z" />
+                                            <path fillRule="evenodd" d="M1.323 11.447C2.811 6.976 7.028 3.75 12.001 3.75c4.97 0 9.185 3.223 10.675 7.69.12.362.12.752 0 1.113-1.487 4.471-5.705 7.697-10.677 7.697-4.97 0-9.186-3.223-10.675-7.69a1.762 1.762 0 010-1.113zM17.25 12a5.25 5.25 0 11-10.5 0 5.25 5.25 0 0110.5 0z" clipRule="evenodd" />
+                                        </svg>
+                                    </div>
+                                </button>
+                            </div>
+                        </td>
+                        <td className='px-6 py-4'>
+                            <div class="px-6 py-4">
+                                <button className='items-center p-2 text-sm font-medium text-white duration-500 bg-blue-600 rounded-full hover:bg-pink-200' onClick={() => { this.gotoRoomUpdate(currentRoom._id) }}>
+                                    <div class="">
+                                        <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round " stroke-width="2" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L6.832 19.82a4.5 4.5 0 01-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 011.13-1.897L16.863 4.487zm0 0L19.5 7.125"></path>
+                                        </svg>
+                                    </div>
+                                </button>
+                            </div>
+                        </td>
 
                         <td className='px-6 py-4'>
-                            <div class="">
-                                <button className='inline-flex items-center px-4 py-2 mr-1 text-sm font-medium text-white bg-indigo-500 rounded-md hover:bg-blue-200' onClick={() => { this.gotoRoomUpdate(currentRoom._id) }}>
-                                    <div class=" grid grid-cols-2 gap-1">
-                                        <div class="">
-                                            <svg class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                <path stroke-linecap="round" stroke-linejoin="round " stroke-width="2" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L6.832 19.82a4.5 4.5 0 01-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 011.13-1.897L16.863 4.487zm0 0L19.5 7.125"></path>
-                                            </svg>
-                                        </div>
-                                        <div class="">
-                                            Update
-                                        </div>
-                                    </div></button>
-                            </div></td>
-
-                        <td className='px-6 py-4'>
-                            <div class="">
-                                <button className='inline-flex items-center px-4 py-2 mr-1 text-sm font-medium text-white bg-red-500 rounded-md hover:bg-red-200' onClick={() => { this.deleteRoom(currentRoom._id) }}>
-                                    <div class=" grid grid-cols-2 gap-1">
-                                        <div class="">
-                                            <svg class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
-                                            </svg>
-                                        </div>
-                                        <div class="">
-                                            Delete
-                                        </div>
-                                    </div></button>
-                            </div></td>
-
+                            <div class="px-6 py-4">
+                                <button className='items-center p-2 text-sm font-medium text-white duration-500 bg-red-600 rounded-full hover:bg-pink-200' onClick={() => { this.deleteRoom(currentRoom._id) }}>
+                                    <div class="">
+                                        <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                                        </svg>
+                                    </div>
+                                </button>
+                            </div>
+                        </td>
                     </tr>
                 );
             }
@@ -450,6 +396,168 @@ export class ViewJetwingBlue extends Component {
     render() {
         return (
             <div>
+
+                <div class="">
+                    <section class="">
+                        <div class="text-center bg-white text-gray-800 py-20 px-6">
+                            <h1 class="text-5xl md:text-6xl xl:text-7xl font-bold tracking-tight uppercase mb-8 drop-shadow-md ">HOTELS IN SRI LANKA<br />
+                                <span class="text-blue-950 font-serif font-light  ">JETWING HOTELS </span>
+                                {/* <span class="text-orange-500 animate-pulse "> PizzaMania </span> */}
+                            </h1>
+                        </div>
+                    </section>
+
+                    <div class="container mx-auto px-5 py-2 lg:px-32 lg:pt-12 mb-5 grid grid-cols-3 content-center">
+                        <div className="shadow-xl card w-96 bg-base-100">
+                            <figure><img src="https://wallpapershome.com/images/pages/pic_h/16232.jpg" alt="Shoes" /></figure>
+                            <div className="card-body">
+                                <h2 className="justify-center card-title">Shoes!</h2>
+                                <p>If a dog chews shoes whose shoes does he choose?</p>
+                                <div className="justify-center card-actions">
+                                    <button className="btn btn-primary">Buy Now</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="shadow-xl card w-96 bg-base-100">
+                            <figure><img src="https://wallpapershome.com/images/pages/pic_h/6498.jpg" alt="Shoes" /></figure>
+                            <div className="card-body">
+                                <h2 className="justify-center card-title">Shoes!</h2>
+                                <p>If a dog chews shoes whose shoes does he choose?</p>
+                                <div className="justify-center card-actions">
+                                    <button className="btn btn-primary">Buy Now</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="shadow-xl card w-96 bg-base-100">
+                            <figure><img src="https://wallpapershome.com/images/pages/pic_h/336.jpg" alt="Shoes" /></figure>
+                            <div className="card-body">
+                                <h2 className="justify-center card-title">Shoes!</h2>
+                                <p>If a dog chews shoes whose shoes does he choose?</p>
+                                <div className="justify-center card-actions">
+                                    <button className="btn btn-primary ">Buy Now</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {/* events and meetings */}
+                    <section class="">
+                        <div class="text-center bg-white text-gray-800 px-6">
+                            <h1 class="text-5xl text-blue-950 md:text-6xl xl:text-3xl font-bold tracking-tight uppercase drop-shadow-md ">Events and Meetings<br />
+                            </h1>
+                        </div>
+                    </section>
+
+                    <div class="container mx-auto px-5 py-2 lg:px-32 lg:pt-12 " >
+                        <div class="p-10">
+                            <div class="py-2 flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow  md:max-w-7xl  hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
+                                <table>
+                                    {this.searchEventList()}
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Wedding Halls*/}
+                    <section class="">
+                        <div class="text-center bg-white text-gray-800 px-6">
+                            <h1 class="text-5xl md:text-6xl xl:text-3xl font-bold tracking-tight uppercase drop-shadow-md text-blue-950 ">Wedding Halls<br />
+                            </h1>
+                        </div>
+                    </section>
+
+                    <div class="container mx-auto px-5 py-2 lg:px-32 lg:pt-12 " >
+                        <div class="p-10">
+                            <div class="py-2 flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow  md:max-w-7xl  hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
+                                <table>
+                                    {this.searchWeddingHallList()}
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    {/* Accomodations*/}
+                    <section class="">
+                        <div class="text-center bg-white text-gray-800 px-6">
+                            <h1 class="text-5xl md:text-6xl xl:text-3xl font-bold tracking-tight uppercase drop-shadow-md text-blue-950 ">Accomodations<br />
+                            </h1>
+                        </div>
+                    </section>
+
+                    <div class="container mx-auto px-5 py-2 lg:px-32 lg:pt-12 " >
+                        <div class="p-10">
+                            <div class="py-2 flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow  md:max-w-7xl  hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
+                                <table>
+                                    {this.searchRoomList()}
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    {/*  */}
+                    <div class="mb-24 container mx-auto px-5 py-2 lg:px-32 lg:pt-12">
+                        <div class="-m-1 flex flex-wrap md:-m-2">
+                            <div class="flex w-1/3 flex-wrap">
+                                <div class="w-full p-1 md:p-2">
+                                    <img
+                                        alt="gallery"
+                                        class="block h-full w-full rounded-lg object-cover object-center"
+                                        src="https://www.jetwinghotels.com/wp-content/uploads/2019/06/colombo-hotel-category-744x653.jpg"
+                                    />
+                                </div>
+                            </div>
+                            <div class="flex w-1/3 flex-wrap">
+                                <div class="w-full p-1 md:p-2">
+                                    <img
+                                        alt="gallery"
+                                        class="block h-full w-full rounded-lg object-cover object-center"
+                                        src="https://www.jetwinghotels.com/wp-content/uploads/2018/07/mermaid-hotel-kalutara.jpg"
+                                    />
+                                </div>
+                            </div>
+                            <div class="flex w-1/3 flex-wrap">
+                                <div class="w-full p-1 md:p-2">
+                                    <img
+                                        alt="gallery"
+                                        class="block h-full w-full rounded-lg object-cover object-center"
+                                        src="https://www.jetwinghotels.com/wp-content/uploads/2017/10/Colombo-7-categorythumbnail.jpg" />
+                                </div>
+                            </div>
+                            <div class="flex w-1/3 flex-wrap">
+                                <div class="w-full p-1 md:p-2">
+                                    <img
+                                        alt="gallery"
+                                        class="block h-full w-full rounded-lg object-cover object-center"
+                                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQceBMogAcpWxMh3HK4QGYZrGPKlIwN-Tximyd0rj8c-4sDIWZ7EGdrKe_G6jaFPIE_iSs&usqp=CAU"
+                                    />
+                                </div>
+                            </div>
+                            <div class="flex w-1/3 flex-wrap">
+                                <div class="w-full p-1 md:p-2">
+                                    <img
+                                        alt="gallery"
+                                        class="block h-full w-full rounded-lg object-cover object-center"
+                                        src="https://www.jetwinghotels.com/wp-content/uploads/2019/06/bentota-hotels-category-744x653-1.jpg" />
+                                </div>
+                            </div>
+                            <div class="flex w-1/3 flex-wrap">
+                                <div class="w-full p-1 md:p-2">
+                                    <img
+                                        alt="gallery"
+                                        class="block h-full w-full rounded-lg object-cover object-center"
+                                        src="https://www.jetwinghotels.com/jetwinglake/wp-content/uploads/sites/8/2017/11/lake-Gallery2.jpg" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                {/* end of experiment code */}
+                <hr />
+                <hr />
+                <hr />
+                <hr />
+                {/* end of experiment code */}
+
                 <div className="flex flex-col px-5 pt-2">
                     <div className="overflow-x-auto sm:-mx-6 lg:-mx-8">
                         <div className="inline-block min-w-full py-2 sm:px-6 lg:px-8">
@@ -480,8 +588,7 @@ export class ViewJetwingBlue extends Component {
                                             <th className="p-2 border-black tbhead ">Order Id</th> */}
                                                 <th className="p-2 tbhead">Hall Name</th>
                                                 <th className="p-2 tbhead">Description</th>
-                                                <th className="p-2 tbhead">Style1</th>
-                                                <th className="p-2 tbhead">Capacity1</th>
+                                                <th className="p-2 tbhead">Details</th>
                                                 <th className="p-2 tbhead">Update</th>
                                                 <th className="p-2 tbhead">Delete</th>
 
@@ -557,10 +664,11 @@ export class ViewJetwingBlue extends Component {
                             <th className="p-2 border-black tbhead ">Order Id</th> */}
                                                 <th className="p-2 tbhead">Hall Name</th>
                                                 <th className="p-2 tbhead">Description</th>
-                                                <th className="p-2 tbhead">Capacity</th>
+                                                <th className="p-2 tbhead">Details</th>
+                                                {/* <th className="p-2 tbhead">Capacity</th>
                                                 <th className="p-2 tbhead">Length</th>
                                                 <th className="p-2 tbhead">Width</th>
-                                                <th className="p-2 tbhead">Price</th>
+                                                <th className="p-2 tbhead">Price</th> */}
                                                 <th className="p-2 tbhead">Update</th>
                                                 <th className="p-2 tbhead">Delete</th>
 
@@ -593,9 +701,9 @@ export class ViewJetwingBlue extends Component {
                             </div>
                         </div>
                     </div>
-                    </div>
-                    <div className="flex flex-col px-5 pt-2">
-                    <div className="overflow-x-auto sm:-mx-6 lg:-mx-8">
+                </div>
+                <div className="flex flex-col px-5 pt-2 ">
+                    <div className="mb-20 overflow-x-auto sm:-mx-6 lg:-mx-8">
                         <div className="inline-block min-w-full py-2 sm:px-6 lg:px-8">
                             <div className='items-center overflow-hidden'>
                                 <div class="grid grid-cols-1 gap-4 content-start">
@@ -622,11 +730,12 @@ export class ViewJetwingBlue extends Component {
                                             <tr>
                                                 {/* <th className="p-2 border-black tbhead ">Delivery Id</th>
                                             <th className="p-2 border-black tbhead ">Order Id</th> */}
-                                               
+
                                                 <th className="p-2 tbhead">Room Name</th>
                                                 <th className="p-2 tbhead">Description</th>
-                                                <th className="p-2 tbhead">Size</th>
-                                                <th className="p-2 tbhead">Price</th>
+                                                <th className="p-2 tbhead">Details</th>
+                                                {/* <th className="p-2 tbhead">Size</th>
+                                                <th className="p-2 tbhead">Price</th> */}
                                                 <th className="p-2 tbhead">View</th>
                                                 <th className="p-2 tbhead">Update</th>
                                                 <th className="p-2 tbhead">Delete</th>
@@ -678,10 +787,10 @@ export class ViewJetwingBlue extends Component {
                         </div>
                     </div>
                 </div>
-               
+
             </div>
 
-            
+
         )
     }
 }

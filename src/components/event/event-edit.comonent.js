@@ -199,7 +199,7 @@ export default class EditEvent extends Component {
                         <div className='items-center overflow-hidden'>
                             <div class="grid grid-cols-1 gap-4 content-start pt-5 px-20">
 
-                                <form className='px-12 py-12 border-2 rounded-lg shadow-md bg-gray-50' onSubmit={this.onSubmit}>
+                                <form className='px-12 py-12 border-2' onSubmit={this.onSubmit}>
 
                                     <div class="">
                                         {/* <p className='text-4xl font-semibold text-black uppercase'>
