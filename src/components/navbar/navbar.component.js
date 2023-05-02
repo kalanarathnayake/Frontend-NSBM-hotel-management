@@ -80,6 +80,8 @@ class navbar extends Component {
           <span class="">| </span>
           <a href="/jetwingSeven" className="m-2 text-black no-underline duration-300 hover:text-orange-800 hover:font-normal">Jetwing Colombo Seven</a>
           <span class="">| </span>
+          <a href="/cushome" className="m-2 text-black no-underline duration-300 hover:text-orange-800 hover:font-normal">customer home</a>
+          <span class="">| </span>
         </div>
         {/* <div className="grid grid-cols-2 gap-1"> */}
           <div class="flex flex-col sm:flex-row sm:text-left sm:justify-between">

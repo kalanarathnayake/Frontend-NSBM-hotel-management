@@ -3,7 +3,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Navbar from "./components/navbar/navbar.component";
 import Footer from "./components/navbar/footer.component";
+
 import Home from "./components/navbar/home";
+import CustomerHome from "./components/customer.hotels/customerHome";
 
 import { CreateEvent } from './components/event/event-add.component';
 import { ViewEvent } from './components/event/event-view.component';
@@ -30,6 +32,8 @@ function App() {
 
           <Route exact path="/createEvent" element={<CreateEvent />} />
           <Route exact path="/event" element={<ViewEvent />} />
+          
+          <Route exact path="/cushome" element={<CustomerHome />} />
 
           <Route exact path="/createWedding" element={<CreateWeddingHall />} />
 
