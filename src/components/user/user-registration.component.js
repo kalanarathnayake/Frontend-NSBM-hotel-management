@@ -173,13 +173,9 @@ export class UserRegistration extends Component {
                         </div>
                     </div>
                 </div> */}
-
-
                 {/* latest styles */}
-
-
                 <div class="gradient-form h-full bg-neutral-50 dark:bg-neutral-700">
-                    <div class="container h-full p-10">
+                    <div class="mb-20 container h-full p-10">
                         <div
                             class="g-6 flex h-full flex-wrap items-center justify-center text-neutral-800 dark:text-neutral-200">
                             <div class="w-full">
@@ -272,7 +268,7 @@ export class UserRegistration extends Component {
                                         <div
                                             class="flex items-center rounded-b-lg lg:w-6/12 lg:rounded-r-lg lg:rounded-bl-none from-indigo-900 from-10% via-sky-600 via-30% to-pink-700 to-90%"
                                             style={{ background: "linear-gradient(to right, #9008C5, #dd3675,  #57C3F5)" }}
-                                            >
+                                        >
                                             <div class="px-4 py-6 text-white md:mx-6 md:p-12">
                                                 <h4 class="mb-6 text-xl font-semibold">
                                                     We are more than just a Hotel
