@@ -10,9 +10,7 @@ function footer() {
                             alt="gallery"
                             class="block object-cover object-center w-24 h-14"
                             src="https://www.transcielos.com/wp-content/uploads/2018/08/Jetwing-travels.png" />
-                        {/* <a href="/" class="pl-2 leading-6 text-orange-600 no-underline font-bold text-lg font-serif animate-pulse hover:text-orange-800">
-                            Jettwing Hotels
-                        </a> */}
+
                     </div>
                     <div class=" py-2 flex mt-3">
                         <a href="/" class="leading-6 font-mono text-blue-900 no-underline font-thin  hover:text-blue-800">

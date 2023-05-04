@@ -21,6 +21,7 @@ export class CreateRoom extends Component {
         this.onChangeFeature8 = this.onChangeFeature8.bind(this);
         this.onChangeFeature9 = this.onChangeFeature9.bind(this);
         this.onChangeFeature10 = this.onChangeFeature10.bind(this);
+        this.onChangePrice = this.onChangePrice.bind(this);
        
         this.onSubmit = this.onSubmit.bind(this);
 
@@ -41,6 +42,7 @@ export class CreateRoom extends Component {
             feature8:'',
             feature9: '',
             feature10:'',
+            price:''
         }
     }
 
@@ -139,6 +141,12 @@ export class CreateRoom extends Component {
             feature10: e.target.value
         });
     }
+
+    onChangePrice(e) {
+        this.setState({
+            price: e.target.value
+        });
+    }
     onSubmit(e) {
         e.preventDefault();
 
@@ -159,6 +167,7 @@ export class CreateRoom extends Component {
             feature8: this.state.feature8,
             feature9: this.state.feature9,
             feature10: this.state.feature10,
+            price:this.state.price
 
         }
 
@@ -226,6 +235,7 @@ export class CreateRoom extends Component {
             feature8:'',
             feature9: '',
             feature10:'',
+            price:''
         })
     }
 
@@ -244,6 +254,7 @@ export class CreateRoom extends Component {
                                             Add Room Details
                                         </p>
 
+                                        <div className="grid grid-cols-2 gap-4 form-group">
                                         <div className="form-group">
                                             <label className='block mb-2 text-lg font-medium text-gray-900 dark:text-white'>Hotel Name</label>
                                             <select type="text"
@@ -273,6 +284,7 @@ export class CreateRoom extends Component {
                                                 />
                                                 
                                                 <p/>{/* <p className="block text-lg font-medium text-red-900 dark:text-white">{this.state.emailError}</p> */}
+                                            </div>
                                             </div>
                                             <div className="form-group">
                                                 <label className='block mb-2 text-lg font-medium text-gray-900 dark:text-white'>Description</label>
@@ -335,12 +347,26 @@ export class CreateRoom extends Component {
                                             <label className='block mb-2 text-lg font-medium text-gray-900 dark:text-white'>
                                                 Feature 1
                                             </label>
-                                            <input type="text"
+                                            <select type="text"
                                        
                                                 className="form-control"
                                                 value={this.state.feature1}
                                                 onChange={this.onChangeFeature1}
-                                            />
+                                            >
+                                                <option>Select From Here</option>
+                                                <option>Central Air Conditioning with Individual Temperature Controls</option>
+                                                <option>Telephone with I.D.D. Facilities</option>
+                                                <option>Electric Power (220V-240V)</option>
+                                                <option>Mini Bar</option>
+                                                <option>Free Wi-Fi</option>
+                                                <option>Hot and Cold Water</option>
+                                                <option>Electronic Safe</option>
+                                                <option>Magnifying Shaving Mirror</option>
+                                                <option>Tea/Coffee Making Facility</option>
+                                                <option>Iron and Ironing Board</option>
+
+
+                                            </select>
                                                  
                                                  
                                             {/* <p className="block text-lg font-medium text-red-900 dark:text-white">{this.state.addressError}</p> */}
@@ -352,12 +378,26 @@ export class CreateRoom extends Component {
                                             <label className='block mb-2 text-lg font-medium text-gray-900 dark:text-white'>
                                                 Feature 2
                                             </label>
-                                            <input type="text"
+                                            <select type="text"
                                        
                                                 className="form-control"
                                                 value={this.state.feature2}
                                                 onChange={this.onChangeFeature2}
-                                            />
+                                            >
+                                                <option>Select From Here</option>
+                                                <option>Central Air Conditioning with Individual Temperature Controls</option>
+                                                <option>Telephone with I.D.D. Facilities</option>
+                                                <option>Electric Power (220V-240V)</option>
+                                                <option>Mini Bar</option>
+                                                <option>Free Wi-Fi</option>
+                                                <option>Hot and Cold Water</option>
+                                                <option>Electronic Safe</option>
+                                                <option>Magnifying Shaving Mirror</option>
+                                                <option>Tea/Coffee Making Facility</option>
+                                                <option>Iron and Ironing Board</option>
+
+
+                                            </select>
                                                  
                                                  
                                             {/* <p className="block text-lg font-medium text-red-900 dark:text-white">{this.state.addressError}</p> */}
@@ -369,12 +409,26 @@ export class CreateRoom extends Component {
                                             <label className='block mb-2 text-lg font-medium text-gray-900 dark:text-white'>
                                                 Feature 3
                                             </label>
-                                            <input type="text"
+                                            <select type="text"
                                        
-                                                className="form-control"
-                                                value={this.state.feature3}
-                                                onChange={this.onChangeFeature3}
-                                            />
+                                       className="form-control"
+                                       value={this.state.feature3}
+                                       onChange={this.onChangeFeature3}
+                                   >
+                                       <option>Select From Here</option>
+                                       <option>Central Air Conditioning with Individual Temperature Controls</option>
+                                       <option>Telephone with I.D.D. Facilities</option>
+                                       <option>Electric Power (220V-240V)</option>
+                                       <option>Mini Bar</option>
+                                       <option>Free Wi-Fi</option>
+                                       <option>Hot and Cold Water</option>
+                                       <option>Electronic Safe</option>
+                                       <option>Magnifying Shaving Mirror</option>
+                                       <option>Tea/Coffee Making Facility</option>
+                                       <option>Iron and Ironing Board</option>
+
+
+                                   </select>
                                                  
                                                  
                                             {/* <p className="block text-lg font-medium text-red-900 dark:text-white">{this.state.addressError}</p> */}
@@ -386,12 +440,26 @@ export class CreateRoom extends Component {
                                             <label className='block mb-2 text-lg font-medium text-gray-900 dark:text-white'>
                                                 Feature 4
                                             </label>
-                                            <input type="text"
+                                            <select type="text"
                                        
-                                                className="form-control"
-                                                value={this.state.feature4}
-                                                onChange={this.onChangeFeature4}
-                                            />
+                                       className="form-control"
+                                       value={this.state.feature4}
+                                       onChange={this.onChangeFeature4}
+                                   >
+                                       <option>Select From Here</option>
+                                       <option>Central Air Conditioning with Individual Temperature Controls</option>
+                                       <option>Telephone with I.D.D. Facilities</option>
+                                       <option>Electric Power (220V-240V)</option>
+                                       <option>Mini Bar</option>
+                                       <option>Free Wi-Fi</option>
+                                       <option>Hot and Cold Water</option>
+                                       <option>Electronic Safe</option>
+                                       <option>Magnifying Shaving Mirror</option>
+                                       <option>Tea/Coffee Making Facility</option>
+                                       <option>Iron and Ironing Board</option>
+
+
+                                   </select>
                                                  
                                                  
                                             {/* <p className="block text-lg font-medium text-red-900 dark:text-white">{this.state.addressError}</p> */}
@@ -403,12 +471,26 @@ export class CreateRoom extends Component {
                                             <label className='block mb-2 text-lg font-medium text-gray-900 dark:text-white'>
                                                 Feature 5
                                             </label>
-                                            <input type="text"
+                                            <select type="text"
                                        
                                                 className="form-control"
                                                 value={this.state.feature5}
                                                 onChange={this.onChangeFeature5}
-                                            />
+                                            >
+                                                <option>Select From Here</option>
+                                                <option>Central Air Conditioning with Individual Temperature Controls</option>
+                                                <option>Telephone with I.D.D. Facilities</option>
+                                                <option>Electric Power (220V-240V)</option>
+                                                <option>Mini Bar</option>
+                                                <option>Free Wi-Fi</option>
+                                                <option>Hot and Cold Water</option>
+                                                <option>Electronic Safe</option>
+                                                <option>Magnifying Shaving Mirror</option>
+                                                <option>Tea/Coffee Making Facility</option>
+                                                <option>Iron and Ironing Board</option>
+
+
+                                            </select>
                                                  
                                                  
                                             {/* <p className="block text-lg font-medium text-red-900 dark:text-white">{this.state.addressError}</p> */}
@@ -420,12 +502,26 @@ export class CreateRoom extends Component {
                                             <label className='block mb-2 text-lg font-medium text-gray-900 dark:text-white'>
                                                 Feature 6
                                             </label>
-                                            <input type="text"
+                                            <select type="text"
                                        
-                                                className="form-control"
-                                                value={this.state.feature6}
-                                                onChange={this.onChangeFeature6}
-                                            />
+                                       className="form-control"
+                                       value={this.state.feature6}
+                                       onChange={this.onChangeFeature6}
+                                   >
+                                       <option>Select From Here</option>
+                                       <option>Central Air Conditioning with Individual Temperature Controls</option>
+                                       <option>Telephone with I.D.D. Facilities</option>
+                                       <option>Electric Power (220V-240V)</option>
+                                       <option>Mini Bar</option>
+                                       <option>Free Wi-Fi</option>
+                                       <option>Hot and Cold Water</option>
+                                       <option>Electronic Safe</option>
+                                       <option>Magnifying Shaving Mirror</option>
+                                       <option>Tea/Coffee Making Facility</option>
+                                       <option>Iron and Ironing Board</option>
+
+
+                                   </select>
                                                  
                                                  
                                             {/* <p className="block text-lg font-medium text-red-900 dark:text-white">{this.state.addressError}</p> */}
@@ -437,12 +533,26 @@ export class CreateRoom extends Component {
                                             <label className='block mb-2 text-lg font-medium text-gray-900 dark:text-white'>
                                                 Feature 7
                                             </label>
-                                            <input type="text"
+                                            <select type="text"
                                        
-                                                className="form-control"
-                                                value={this.state.feature7}
-                                                onChange={this.onChangeFeature7}
-                                            />
+                                       className="form-control"
+                                       value={this.state.feature7}
+                                       onChange={this.onChangeFeature7}
+                                   >
+                                       <option>Select From Here</option>
+                                       <option>Central Air Conditioning with Individual Temperature Controls</option>
+                                       <option>Telephone with I.D.D. Facilities</option>
+                                       <option>Electric Power (220V-240V)</option>
+                                       <option>Mini Bar</option>
+                                       <option>Free Wi-Fi</option>
+                                       <option>Hot and Cold Water</option>
+                                       <option>Electronic Safe</option>
+                                       <option>Magnifying Shaving Mirror</option>
+                                       <option>Tea/Coffee Making Facility</option>
+                                       <option>Iron and Ironing Board</option>
+
+
+                                   </select>
                                                  
                                                  
                                             {/* <p className="block text-lg font-medium text-red-900 dark:text-white">{this.state.addressError}</p> */}
@@ -454,12 +564,26 @@ export class CreateRoom extends Component {
                                             <label className='block mb-2 text-lg font-medium text-gray-900 dark:text-white'>
                                                 Feature 8
                                             </label>
-                                            <input type="text"
+                                            <select type="text"
                                        
                                                 className="form-control"
                                                 value={this.state.feature8}
                                                 onChange={this.onChangeFeature8}
-                                            />
+                                            >
+                                                <option>Select From Here</option>
+                                                <option>Central Air Conditioning with Individual Temperature Controls</option>
+                                                <option>Telephone with I.D.D. Facilities</option>
+                                                <option>Electric Power (220V-240V)</option>
+                                                <option>Mini Bar</option>
+                                                <option>Free Wi-Fi</option>
+                                                <option>Hot and Cold Water</option>
+                                                <option>Electronic Safe</option>
+                                                <option>Magnifying Shaving Mirror</option>
+                                                <option>Tea/Coffee Making Facility</option>
+                                                <option>Iron and Ironing Board</option>
+
+
+                                            </select>
                                                  
                                                  
                                             {/* <p className="block text-lg font-medium text-red-900 dark:text-white">{this.state.addressError}</p> */}
@@ -471,12 +595,26 @@ export class CreateRoom extends Component {
                                             <label className='block mb-2 text-lg font-medium text-gray-900 dark:text-white'>
                                                 Feature 9
                                             </label>
-                                            <input type="text"
+                                            <select type="text"
                                        
                                                 className="form-control"
                                                 value={this.state.feature9}
                                                 onChange={this.onChangeFeature9}
-                                            />
+                                            >
+                                                <option>Select From Here</option>
+                                                <option>Central Air Conditioning with Individual Temperature Controls</option>
+                                                <option>Telephone with I.D.D. Facilities</option>
+                                                <option>Electric Power (220V-240V)</option>
+                                                <option>Mini Bar</option>
+                                                <option>Free Wi-Fi</option>
+                                                <option>Hot and Cold Water</option>
+                                                <option>Electronic Safe</option>
+                                                <option>Magnifying Shaving Mirror</option>
+                                                <option>Tea/Coffee Making Facility</option>
+                                                <option>Iron and Ironing Board</option>
+
+
+                                            </select>
                                                  
                                                  
                                             {/* <p className="block text-lg font-medium text-red-900 dark:text-white">{this.state.addressError}</p> */}
@@ -488,11 +626,43 @@ export class CreateRoom extends Component {
                                             <label className='block mb-2 text-lg font-medium text-gray-900 dark:text-white'>
                                                 Feature 10
                                             </label>
-                                            <input type="text"
+                                            <select type="text"
                                        
                                                 className="form-control"
                                                 value={this.state.feature10}
                                                 onChange={this.onChangeFeature10}
+                                            >
+                                                <option>Select From Here</option>
+                                                <option>Central Air Conditioning with Individual Temperature Controls</option>
+                                                <option>Telephone with I.D.D. Facilities</option>
+                                                <option>Electric Power (220V-240V)</option>
+                                                <option>Mini Bar</option>
+                                                <option>Free Wi-Fi</option>
+                                                <option>Hot and Cold Water</option>
+                                                <option>Electronic Safe</option>
+                                                <option>Magnifying Shaving Mirror</option>
+                                                <option>Tea/Coffee Making Facility</option>
+                                                <option>Iron and Ironing Board</option>
+
+
+                                            </select>
+                                                 
+                                                 
+                                            {/* <p className="block text-lg font-medium text-red-900 dark:text-white">{this.state.addressError}</p> */}
+                                        </div>
+                                    
+                                        
+                                        <p/>
+
+                                        <div className="form-group">
+                                            <label className='block mb-2 text-lg font-medium text-gray-900 dark:text-white'>
+                                                Price
+                                            </label>
+                                            <input type="text"
+                                       
+                                                className="form-control"
+                                                value={this.state.price}
+                                                onChange={this.onChangePrice}
                                             />
                                                  
                                                  

@@ -27,11 +27,11 @@ class AuthenticationService {
         return id;
     }
 
-    // loggedUserName(){
-    //     let name = sessionStorage.getItem('authenticatedUserName');
-    //     if (name === null) return '';
-    //     return name;
-    // }
+    loggedUserName(){
+        let name = sessionStorage.getItem('authenticatedUserName');
+        if (name === null) return '';
+        return name;
+    }
 
     loggedUserRole() {
         let role = sessionStorage.getItem('authenticatedUserRole');

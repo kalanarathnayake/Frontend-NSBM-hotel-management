@@ -61,7 +61,7 @@ export class UserRegistration extends Component {
                 .then(res => {
                     console.log(res);
                     if (res.status === 200) {
-                        this.clearData();
+                        
                         Swal.fire({
                             icon: 'success',
                             title: 'Successful',
@@ -97,82 +97,6 @@ export class UserRegistration extends Component {
         return (
             <div class="">
 
-                {/* <div className="flex flex-col px-5 pt-2 ">
-                    <div className="overflow-x-auto sm:-mx-6 lg:-mx-8">
-                        <div className="inline-block min-w-full py-2 sm:px-6 lg:px-8">
-                            <div className='items-center overflow-hidden'>
-                                <div class="grid grid-cols-1 gap-4 content-start pt-5 px-20">
-
-                                    <form className='px-12 py-12 border-2 rounded-lg shadow-md bg-gray-50' onSubmit={this.onSubmit}>
-
-                                        <div class="">
-                                            <p className='text-4xl font-semibold text-black uppercase'>
-                                                Sign Up
-                                            </p>
-
-                                            <div className="form-group">
-                                                <label className='block mb-2 text-lg font-medium text-gray-900 dark:text-white'>NIC </label>
-                                                <input type="text"
-                                                    required
-                                                    className="form-control "
-                                                    value={this.state.NIC}
-                                                    onChange={this.onChangeNIC}
-                                                /><p className="block text-lg font-medium text-red-900 dark:text-white">{this.state.nicError}</p>
-                                            </div>
-
-                                            <div className="form-group">
-                                                <label className='block mb-2 text-lg font-medium text-gray-900 dark:text-white'>User Role </label>
-                                                <select type="text"
-                                                    required
-                                                    className="form-control"
-                                                    value={this.state.userRole}
-                                                    onChange={this.onChangeuserRole}
-                                                >
-                                                    <option>Select From Here</option>
-                                                    <option>Customer</option>
-                                                    <option>Admin</option>
-
-                                                </select>
-
-
-                                                <p />
-                                            </div>
-
-                                            <div className="grid grid-cols-2 gap-4 form-group">
-                                                <div className="form-group">
-                                                    <label className='block mb-2 text-lg font-medium text-gray-900 dark:text-white'>Password </label>
-                                                    <input type="password"
-                                                        required
-                                                        className="form-control"
-                                                        value={this.state.password}
-                                                        onChange={this.onChangepassword}
-                                                    /><p />
-                                                </div>
-
-
-                                                <div className="form-group">
-                                                    <label className='block mb-2 text-lg font-medium text-gray-900 dark:text-white'>Confirm Password </label>
-                                                    <input type="password"
-                                                        required
-                                                        className="form-control"
-                                                        value={this.state.cpassword}
-                                                        onChange={this.onChangecpassword}
-                                                    /><p className="block text-lg font-medium text-red-900 dark:text-white">{this.state.passwordError}</p>
-                                                </div>
-                                            </div>
-
-                                            <div className="text-center align-middle form-group">
-                                                <input className='text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800' type="submit" value="Sign Up" />
-                                            </div>
-                                        </div>
-
-                                    </form>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div> */}
                 {/* latest styles */}
                 <div class="gradient-form h-full bg-neutral-50 dark:bg-neutral-700">
                     <div class="mb-20 container h-full p-10">
@@ -204,7 +128,7 @@ export class UserRegistration extends Component {
                                                             <label className='block mb-2 text-lg font-medium text-gray-900 dark:text-white'>NIC </label>
                                                             <input type="text"
                                                                 required
-                                                                className="form-control peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0 "
+                                                                className="form-control peer block min-h-[auto] w-full rounded border-1 bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0 border-solid"
                                                                 value={this.state.NIC}
                                                                 onChange={this.onChangeNIC}
                                                             /><p className="block text-lg font-medium text-red-900 dark:text-white">{this.state.nicError}</p>
@@ -214,7 +138,7 @@ export class UserRegistration extends Component {
                                                             <label className='block mb-2 text-lg font-medium text-gray-900 dark:text-white'>User Role </label>
                                                             <select type="text"
                                                                 required
-                                                                className="form-control peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
+                                                                className="form-control peer block min-h-[auto] w-full rounded border-1 bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
                                                                 value={this.state.userRole}
                                                                 onChange={this.onChangeuserRole}
                                                             >
@@ -233,7 +157,7 @@ export class UserRegistration extends Component {
                                                                 <label className='block mb-2 text-lg font-medium text-gray-900 dark:text-white'>Password </label>
                                                                 <input type="password"
                                                                     required
-                                                                    className="form-control peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
+                                                                    className="form-control peer block min-h-[auto] w-full rounded border-1 bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
                                                                     value={this.state.password}
                                                                     onChange={this.onChangepassword}
                                                                 /><p />
@@ -244,7 +168,7 @@ export class UserRegistration extends Component {
                                                                 <label className='block mb-2 text-lg font-medium text-gray-900 dark:text-white'>Confirm Password </label>
                                                                 <input type="password"
                                                                     required
-                                                                    className="form-control peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
+                                                                    className="form-control peer block min-h-[auto] w-full rounded border-1 bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
                                                                     value={this.state.cpassword}
                                                                     onChange={this.onChangecpassword}
                                                                 /><p className="block text-lg font-medium text-red-900 dark:text-white">{this.state.passwordError}</p>

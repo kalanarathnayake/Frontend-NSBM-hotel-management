@@ -190,18 +190,24 @@ export class CreateEvent extends Component {
                                 <form className='px-12 py-12 border-2 rounded-lg shadow-md bg-gray-50' onSubmit={this.onSubmit}>
 
                                     <div class="">
-                                        <p className='text-4xl font-semibold text-black uppercase'>
+                                        <p className='text-4xl font-semibold text-black uppercase pb-3'>
                                             Add Event
                                         </p>
 
+                                        <div className="grid grid-cols-2 gap-4 form-group">
                                         <div className="form-group">
                                             <label className='block mb-2 text-lg font-medium text-gray-900 dark:text-white'>Hotel Name</label>
-                                            <input type="text"
+                                            <select type="text"
                                                 required
                                                 className="form-control "
                                                 value={this.state.hotelName}
                                                 onChange={this.onChangeHotelName}
-                                            />
+                                            >
+                                                 <option>Select From Here</option>
+                                                <option>Jetwing Sea</option>
+                                                <option>Jetwing Blue</option>
+                                                <option>Jetwing Colombo Seven</option>
+                                            </select>
                                             <p/>
                                             {/* <p className="block text-lg font-medium text-red-900 dark:text-white">{this.state.fullNameError}</p> */}
                                         </div>
@@ -217,6 +223,7 @@ export class CreateEvent extends Component {
                                                 />
                                                 
                                                 <p/>{/* <p className="block text-lg font-medium text-red-900 dark:text-white">{this.state.emailError}</p> */}
+                                            </div>
                                             </div>
                                             <div className="form-group">
                                                 <label className='block mb-2 text-lg font-medium text-gray-900 dark:text-white'>Description</label>

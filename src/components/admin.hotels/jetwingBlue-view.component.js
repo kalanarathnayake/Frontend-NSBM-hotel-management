@@ -2,10 +2,8 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import Swal from "sweetalert2";
-// import jsPDF from 'jspdf';
 import 'jspdf-autotable';
 import { Modal } from "react-bootstrap";
-// import { ViewDeliveryDetails } from './deliveryDetails-view.component';
 import EditEvent from '../event/event-edit.comonent';
 import { EditWeddingHall } from '../weddingHalls/weddingHall-edit.component';
 import EditRoom from '../room/room-edit.component';
@@ -142,7 +140,6 @@ export class ViewJetwingBlue extends Component {
     deleteEvent(id) {
         axios.delete('http://localhost:5000/event/' + id).then(response => {
             console.log(response.status)
-            // this.refreshTable();
 
             if (response.status == 200) {
                 Swal.fire({
@@ -175,7 +172,6 @@ export class ViewJetwingBlue extends Component {
     deleteWedding(id) {
         axios.delete('http://localhost:5000/weddingHall/' + id).then(response => {
             console.log(response.status)
-            // this.refreshTable();
 
             if (response.status == 200) {
                 Swal.fire({
@@ -208,7 +204,6 @@ export class ViewJetwingBlue extends Component {
     deleteRoom(id) {
         axios.delete('http://localhost:5000/room/' + id).then(response => {
             console.log(response.status)
-            // this.refreshTable();
 
             if (response.status == 200) {
                 Swal.fire({
@@ -247,8 +242,7 @@ export class ViewJetwingBlue extends Component {
             ) {
                 return (
                     <tr className='bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600'>
-                        {/* <td className='px-6 py-4'>{currentdelivery._id}</td>
-                        <td className='px-6 py-4'>{currentdelivery.orderId}</td> */}
+
                         <td className='px-6 '>{currentevent.hallName}</td>
                         <td className='max-w-xl px-6 text-justify'>{currentevent.description}</td>
                         <td class=" pt-3">
@@ -262,11 +256,10 @@ export class ViewJetwingBlue extends Component {
 
                         <td className='px-6 py-4'>
                             <div class="">
-                                <button className='items-center p-2 text-sm font-medium text-white duration-500 bg-green-600 rounded-full hover:bg-pink-200' onClick={() => { this.gotoView(currentevent._id) }}>
+                                <button className='items-center p-2 text-sm font-medium text-white duration-500 bg-blue-600 rounded-full hover:bg-pink-200' onClick={() => { this.gotoView(currentevent._id) }}>
                                     <div class="">
                                         <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                            <path d="M12 15a3 3 0 100-6 3 3 0 000 6z" />
-                                            <path fillRule="evenodd" d="M1.323 11.447C2.811 6.976 7.028 3.75 12.001 3.75c4.97 0 9.185 3.223 10.675 7.69.12.362.12.752 0 1.113-1.487 4.471-5.705 7.697-10.677 7.697-4.97 0-9.186-3.223-10.675-7.69a1.762 1.762 0 010-1.113zM17.25 12a5.25 5.25 0 11-10.5 0 5.25 5.25 0 0110.5 0z" clipRule="evenodd" />
+                                            <path stroke-linecap="round" stroke-linejoin="round " stroke-width="2" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L6.832 19.82a4.5 4.5 0 01-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 011.13-1.897L16.863 4.487zm0 0L19.5 7.125"></path>
                                         </svg>
                                     </div>
                                 </button>
@@ -309,11 +302,10 @@ export class ViewJetwingBlue extends Component {
                         </td>
                         <td className='px-6 py-4'>
                             <div class="px-6 py-4">
-                                <button className='items-center p-2 text-sm font-medium text-white duration-500 bg-green-600 rounded-full hover:bg-pink-200' onClick={() => { this.gotoWeddingHall(currentWedding._id) }}>
+                                <button className='items-center p-2 text-sm font-medium text-white duration-500 bg-blue-600 rounded-full hover:bg-pink-200' onClick={() => { this.gotoWeddingHall(currentWedding._id) }}>
                                     <div class="">
                                         <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                            <path d="M12 15a3 3 0 100-6 3 3 0 000 6z" />
-                                            <path fillRule="evenodd" d="M1.323 11.447C2.811 6.976 7.028 3.75 12.001 3.75c4.97 0 9.185 3.223 10.675 7.69.12.362.12.752 0 1.113-1.487 4.471-5.705 7.697-10.677 7.697-4.97 0-9.186-3.223-10.675-7.69a1.762 1.762 0 010-1.113zM17.25 12a5.25 5.25 0 11-10.5 0 5.25 5.25 0 0110.5 0z" clipRule="evenodd" />
+                                            <path stroke-linecap="round" stroke-linejoin="round " stroke-width="2" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L6.832 19.82a4.5 4.5 0 01-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 011.13-1.897L16.863 4.487zm0 0L19.5 7.125"></path>
                                         </svg>
                                     </div>
                                 </button>
@@ -346,7 +338,7 @@ export class ViewJetwingBlue extends Component {
                         <td className='max-w-xl px-6 text-justify'>{currentRoom.description}</td>
                         <td class=" pt-3">
                             <p class="">
-                                <div class="flex p-2"><span class="mx-1">Capacity</span> <span class="">{currentRoom.size}</span> </div>
+                                <div class="flex p-2"><span class="mx-1">Size</span> <span class="">{currentRoom.size}</span> </div>
                                 <div class="flex p-2"><span class="mx-1">Price</span> <span class="">{currentRoom.price}</span> </div>
                             </p>
                         </td>
@@ -399,45 +391,15 @@ export class ViewJetwingBlue extends Component {
 
                 <div class="">
                     <section class="">
-                        <div class="text-center bg-white text-gray-800 py-20 px-6">
-                            <h1 class="text-5xl md:text-6xl xl:text-7xl font-bold tracking-tight uppercase mb-8 drop-shadow-md ">HOTELS IN SRI LANKA<br />
-                                <span class="text-blue-950 font-serif font-light  ">JETWING HOTELS </span>
-                                {/* <span class="text-orange-500 animate-pulse "> PizzaMania </span> */}
+                        <div class="text-center bg-white text-gray-800 pt-10 px-6 pb-10">
+                            <h1 class="text-5xl md:text-4xl xl:text-5xl font-bold tracking-tight uppercase mb-8 drop-shadow-md ">
+                                <span class="text-blue-950 font-serif font-light  ">JETWING BLUE HOTEL</span>
                             </h1>
                         </div>
                     </section>
 
-                    <div class="container mx-auto px-5 py-2 lg:px-32 lg:pt-12 mb-5 grid grid-cols-3 content-center">
-                        <div className="shadow-xl card w-96 bg-base-100">
-                            <figure><img src="https://wallpapershome.com/images/pages/pic_h/16232.jpg" alt="Shoes" /></figure>
-                            <div className="card-body">
-                                <h2 className="justify-center card-title">Shoes!</h2>
-                                <p>If a dog chews shoes whose shoes does he choose?</p>
-                                <div className="justify-center card-actions">
-                                    <button className="btn btn-primary">Buy Now</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="shadow-xl card w-96 bg-base-100">
-                            <figure><img src="https://wallpapershome.com/images/pages/pic_h/6498.jpg" alt="Shoes" /></figure>
-                            <div className="card-body">
-                                <h2 className="justify-center card-title">Shoes!</h2>
-                                <p>If a dog chews shoes whose shoes does he choose?</p>
-                                <div className="justify-center card-actions">
-                                    <button className="btn btn-primary">Buy Now</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="shadow-xl card w-96 bg-base-100">
-                            <figure><img src="https://wallpapershome.com/images/pages/pic_h/336.jpg" alt="Shoes" /></figure>
-                            <div className="card-body">
-                                <h2 className="justify-center card-title">Shoes!</h2>
-                                <p>If a dog chews shoes whose shoes does he choose?</p>
-                                <div className="justify-center card-actions">
-                                    <button className="btn btn-primary ">Buy Now</button>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="w-100 pb-16">
+                        <img src="https://www.jetwinghotels.com/jetwingblue/wp-content/uploads/sites/26/2017/12/blue-gallery-desktop-large.jpg" alt="JetwingBlue" />
                     </div>
                     {/* events and meetings */}
                     <section class="">
@@ -449,10 +411,28 @@ export class ViewJetwingBlue extends Component {
 
                     <div class="container mx-auto px-5 py-2 lg:px-32 lg:pt-12 " >
                         <div class="p-10">
+
+                            <div class="flex justify-end sm:flex-row sm:text-left sm:justify-end gap-2">
+                                <button class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
+                                    <Link className='font-semibold text-white no-underline' to={"/createEvent"}>
+                                        Add Events
+                                    </Link></button>
+                            </div>
+
+
                             <div class="py-2 flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow  md:max-w-7xl  hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
+
                                 <table>
                                     {this.searchEventList()}
                                 </table>
+                            </div>
+                            <div class="">
+                                <Modal show={this.state.show} onHide={this.closeModalBoxForEvent} centered size={"xl"}>
+
+                                    <Modal.Body className='px-12 py-12 border-2 rounded-lg shadow-md bg-gray-50'>
+                                        <EditEvent evId={this.state.id} key={this.state.id} close={this.closeModalBoxForEvent} />
+                                    </Modal.Body>
+                                </Modal>
                             </div>
                         </div>
                     </div>
@@ -467,10 +447,24 @@ export class ViewJetwingBlue extends Component {
 
                     <div class="container mx-auto px-5 py-2 lg:px-32 lg:pt-12 " >
                         <div class="p-10">
+                            <div class="flex justify-end sm:flex-row sm:text-left sm:justify-end gap-2">
+                                <button class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
+                                    <Link className='font-semibold text-white no-underline' to={"/createWedding"}>
+                                        Add Wedding Hall
+                                    </Link></button>
+                            </div>
                             <div class="py-2 flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow  md:max-w-7xl  hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
                                 <table>
                                     {this.searchWeddingHallList()}
                                 </table>
+                            </div>
+                            <div class="">
+                                <Modal show={this.state.display} onHide={this.closeModalBoxForWedding} centered size={"xl"}>
+
+                                    <Modal.Body className='px-12 py-12 border-2 rounded-lg shadow-md bg-gray-50'>
+                                        <EditWeddingHall wedId={this.state.id} key={this.state.id} close={this.closeModalBoxForWedding} />
+                                    </Modal.Body>
+                                </Modal>
                             </div>
                         </div>
                     </div>
@@ -486,17 +480,43 @@ export class ViewJetwingBlue extends Component {
 
                     <div class="container mx-auto px-5 py-2 lg:px-32 lg:pt-12 " >
                         <div class="p-10">
+                            <div class="flex justify-end sm:flex-row sm:text-left sm:justify-end gap-2">
+                                <button class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
+                                    <Link className='font-semibold text-white no-underline' to={"/createRoom"}>
+                                        Add Accomodation
+                                    </Link></button>
+                            </div>
                             <div class="py-2 flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow  md:max-w-7xl  hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
                                 <table>
                                     {this.searchRoomList()}
                                 </table>
                             </div>
+                            <div class="">
+                                <Modal show={this.state.pop} onHide={this.closeModalBoxForRoomDetails} centered size={"xl"}>
+
+                                    <Modal.Body className='px-12 py-12 border-2 rounded-lg shadow-md bg-gray-50' closeButton>
+                                        <RoomDetails rmId={this.state.id} key={this.state.id} close={this.closeModalBoxForRoomDetails} />
+                                    </Modal.Body>
+                                </Modal>
+                            </div>
+                            <div class="">
+                                <Modal show={this.state.view} onHide={this.closeModalBoxForRoomUpdate} centered size={"xl"}>
+
+                                    <Modal.Body className='px-12 py-12 border-2 rounded-lg shadow-md bg-gray-50'>
+                                        <EditRoom rmId={this.state.id} key={this.state.id} close={this.closeModalBoxForRoomUpdate} />
+                                    </Modal.Body>
+                                </Modal>
+                            </div>
                         </div>
                     </div>
                     {/*  */}
+                    <div class="text-center bg-white text-gray-800 px-6 pt-6 pb-8">
+                        <h1 class="text-5xl md:text-6xl xl:text-3xl font-bold tracking-tight uppercase drop-shadow-md text-blue-950 ">Gallery<br />
+                        </h1>
+                    </div>
                     <div class="mb-24 container mx-auto px-5 py-2 lg:px-32 lg:pt-12">
                         <div class="-m-1 flex flex-wrap md:-m-2">
-                            <div class="flex w-1/3 flex-wrap">
+                            <div class="flex w-1/3 flex-wrap hover:animate-pulse">
                                 <div class="w-full p-1 md:p-2">
                                     <img
                                         alt="gallery"
@@ -505,7 +525,7 @@ export class ViewJetwingBlue extends Component {
                                     />
                                 </div>
                             </div>
-                            <div class="flex w-1/3 flex-wrap">
+                            <div class="flex w-1/3 flex-wrap hover:animate-pulse">
                                 <div class="w-full p-1 md:p-2">
                                     <img
                                         alt="gallery"
@@ -514,7 +534,7 @@ export class ViewJetwingBlue extends Component {
                                     />
                                 </div>
                             </div>
-                            <div class="flex w-1/3 flex-wrap">
+                            <div class="flex w-1/3 flex-wrap hover:animate-pulse">
                                 <div class="w-full p-1 md:p-2">
                                     <img
                                         alt="gallery"
@@ -522,7 +542,7 @@ export class ViewJetwingBlue extends Component {
                                         src="https://www.jetwinghotels.com/wp-content/uploads/2017/10/Colombo-7-categorythumbnail.jpg" />
                                 </div>
                             </div>
-                            <div class="flex w-1/3 flex-wrap">
+                            <div class="flex w-1/3 flex-wrap hover:animate-pulse">
                                 <div class="w-full p-1 md:p-2">
                                     <img
                                         alt="gallery"
@@ -531,7 +551,7 @@ export class ViewJetwingBlue extends Component {
                                     />
                                 </div>
                             </div>
-                            <div class="flex w-1/3 flex-wrap">
+                            <div class="flex w-1/3 flex-wrap hover:animate-pulse">
                                 <div class="w-full p-1 md:p-2">
                                     <img
                                         alt="gallery"
@@ -539,250 +559,13 @@ export class ViewJetwingBlue extends Component {
                                         src="https://www.jetwinghotels.com/wp-content/uploads/2019/06/bentota-hotels-category-744x653-1.jpg" />
                                 </div>
                             </div>
-                            <div class="flex w-1/3 flex-wrap">
+                            <div class="flex w-1/3 flex-wrap hover:animate-pulse">
                                 <div class="w-full p-1 md:p-2">
                                     <img
                                         alt="gallery"
                                         class="block h-full w-full rounded-lg object-cover object-center"
                                         src="https://www.jetwinghotels.com/jetwinglake/wp-content/uploads/sites/8/2017/11/lake-Gallery2.jpg" />
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                {/* end of experiment code */}
-                <hr />
-                <hr />
-                <hr />
-                <hr />
-                {/* end of experiment code */}
-
-                <div className="flex flex-col px-5 pt-2">
-                    <div className="overflow-x-auto sm:-mx-6 lg:-mx-8">
-                        <div className="inline-block min-w-full py-2 sm:px-6 lg:px-8">
-                            <div className='items-center overflow-hidden'>
-                                <div class="grid grid-cols-1 gap-4 content-start">
-                                    <table className=''>
-                                        <tr>
-                                            <th className='drop-shadow-md'>
-                                                <h3>Events and Meetings</h3>
-                                            </th>
-                                            <td className='flex justify-end gap-2'>
-                                                <div class="flex justify-end sm:flex-row sm:text-left sm:justify-end gap-2">
-                                                    <button class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
-                                                        <Link className='font-semibold text-white no-underline' to={"/createEvent"}>
-                                                            Add Event
-                                                        </Link></button>
-                                                </div>
-
-                                            </td>
-                                        </tr>
-                                    </table>
-                                </div>
-                                <div class="">
-                                    <table className='w-full text-sm text-left text-gray-500 dark:text-gray-400' >
-                                        <thead className='p-5 text-xs text-gray-700 uppercase border bg-gray-50 dark:bg-gray-700 dark:text-gray-400'>
-                                            <tr>
-                                                {/* <th className="p-2 border-black tbhead ">Delivery Id</th>
-                                            <th className="p-2 border-black tbhead ">Order Id</th> */}
-                                                <th className="p-2 tbhead">Hall Name</th>
-                                                <th className="p-2 tbhead">Description</th>
-                                                <th className="p-2 tbhead">Details</th>
-                                                <th className="p-2 tbhead">Update</th>
-                                                <th className="p-2 tbhead">Delete</th>
-
-                                            </tr>
-                                        </thead>
-                                        <tbody >
-                                            {/* {this.state.searchEvent == "" ? this.eventList() : this.searchEventList()} */}
-                                            {this.searchEventList()}
-
-                                        </tbody>
-                                    </table>
-                                </div>
-                                <div class="">
-                                    <Modal show={this.state.show} onHide={this.closeModalBoxForEvent} centered size={"xl"}>
-                                        <Modal.Header className='px-5 pt-4 border-2 shadow-md bg-gray-50' closeButton>
-                                            <div class="">
-                                                <Modal.Title className='items-center' >
-                                                    <p className='font-semibold text-black uppercase '>
-                                                        Update Event Details
-                                                    </p>
-                                                </Modal.Title>
-                                            </div>
-                                        </Modal.Header >
-                                        <Modal.Body className='px-12 py-12 border-2 rounded-lg shadow-md bg-gray-50'>
-                                            <EditEvent evId={this.state.id} key={this.state.id} close={this.closeModalBoxForEvent} />
-                                        </Modal.Body>
-                                    </Modal>
-                                </div>
-
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div className="flex flex-col px-5 pt-2">
-                    <div className="overflow-x-auto sm:-mx-6 lg:-mx-8">
-                        <div className="inline-block min-w-full py-2 sm:px-6 lg:px-8">
-                            <div className='items-center overflow-hidden'>
-                                <div class="grid grid-cols-1 gap-4 content-start">
-                                    <table className=''>
-                                        <tr>
-                                            <th className='drop-shadow-md'>
-                                                <h3>Wedding Halls</h3>
-                                            </th>
-                                            <td className='flex justify-end gap-2'>
-                                                <div class="flex justify-end sm:flex-row sm:text-left sm:justify-end gap-2">
-                                                    <button class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
-                                                        <Link className='font-semibold text-white no-underline' to={"/createWedding"}>
-                                                            Add Wedding Halls
-                                                        </Link></button>
-                                                </div>
-
-                                            </td>
-                                            {/* <td className='flex justify-end gap-2'>
-                            <div class="flex justify-end sm:flex-row sm:text-left sm:justify-end gap-2">
-                                <button class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800" >
-                                    
-                                        Download Report Here
-                                   
-                                </button>
-                            </div>
-                            
-                        </td> */}
-                                        </tr>
-                                    </table>
-                                </div>
-                                <div class="">
-                                    <table className='w-full text-sm text-left text-gray-500 dark:text-gray-400' >
-                                        <thead className='p-5 text-xs text-gray-700 uppercase border bg-gray-50 dark:bg-gray-700 dark:text-gray-400'>
-                                            <tr>
-                                                {/* <th className="p-2 border-black tbhead ">Delivery Id</th>
-                            <th className="p-2 border-black tbhead ">Order Id</th> */}
-                                                <th className="p-2 tbhead">Hall Name</th>
-                                                <th className="p-2 tbhead">Description</th>
-                                                <th className="p-2 tbhead">Details</th>
-                                                {/* <th className="p-2 tbhead">Capacity</th>
-                                                <th className="p-2 tbhead">Length</th>
-                                                <th className="p-2 tbhead">Width</th>
-                                                <th className="p-2 tbhead">Price</th> */}
-                                                <th className="p-2 tbhead">Update</th>
-                                                <th className="p-2 tbhead">Delete</th>
-
-                                            </tr>
-                                        </thead>
-                                        <tbody >
-                                            {/* {this.state.searchEvent == "" ? this.eventList() : this.searchEventList()} */}
-                                            {this.searchWeddingHallList()}
-
-                                        </tbody>
-                                    </table>
-                                </div>
-                                <div class="">
-                                    <Modal show={this.state.display} onHide={this.closeModalBoxForWedding} centered size={"xl"}>
-                                        <Modal.Header className='px-5 pt-4 border-2 shadow-md bg-gray-50' closeButton>
-                                            <div class="">
-                                                <Modal.Title className='items-center' >
-                                                    <p className='font-semibold text-black uppercase '>
-                                                        Update Wedding Hall Details
-                                                    </p>
-                                                </Modal.Title>
-                                            </div>
-                                        </Modal.Header >
-                                        <Modal.Body className='px-12 py-12 border-2 rounded-lg shadow-md bg-gray-50'>
-                                            <EditWeddingHall wedId={this.state.id} key={this.state.id} close={this.closeModalBoxForWedding} />
-                                        </Modal.Body>
-                                    </Modal>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div className="flex flex-col px-5 pt-2 ">
-                    <div className="mb-20 overflow-x-auto sm:-mx-6 lg:-mx-8">
-                        <div className="inline-block min-w-full py-2 sm:px-6 lg:px-8">
-                            <div className='items-center overflow-hidden'>
-                                <div class="grid grid-cols-1 gap-4 content-start">
-                                    <table className=''>
-                                        <tr>
-                                            <th className='drop-shadow-md'>
-                                                <h3>Accomodations</h3>
-                                            </th>
-                                            <td className='flex justify-end gap-2'>
-                                                <div class="flex justify-end sm:flex-row sm:text-left sm:justify-end gap-2">
-                                                    <button class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
-                                                        <Link className='font-semibold text-white no-underline' to={"/createRoom"}>
-                                                            Add Accomodation
-                                                        </Link></button>
-                                                </div>
-
-                                            </td>
-                                        </tr>
-                                    </table>
-                                </div>
-                                <div class="">
-                                    <table className='w-full text-sm text-left text-gray-500 dark:text-gray-400' >
-                                        <thead className='p-5 text-xs text-gray-700 uppercase border bg-gray-50 dark:bg-gray-700 dark:text-gray-400'>
-                                            <tr>
-                                                {/* <th className="p-2 border-black tbhead ">Delivery Id</th>
-                                            <th className="p-2 border-black tbhead ">Order Id</th> */}
-
-                                                <th className="p-2 tbhead">Room Name</th>
-                                                <th className="p-2 tbhead">Description</th>
-                                                <th className="p-2 tbhead">Details</th>
-                                                {/* <th className="p-2 tbhead">Size</th>
-                                                <th className="p-2 tbhead">Price</th> */}
-                                                <th className="p-2 tbhead">View</th>
-                                                <th className="p-2 tbhead">Update</th>
-                                                <th className="p-2 tbhead">Delete</th>
-
-                                            </tr>
-                                        </thead>
-                                        <tbody >
-                                            {/* {this.state.searchEvent == "" ? this.eventList() : this.searchEventList()} */}
-                                            {this.searchRoomList()}
-
-                                        </tbody>
-                                    </table>
-                                </div>
-                                <div class="">
-                                    <Modal show={this.state.pop} onHide={this.closeModalBoxForRoomDetails} centered size={"xl"}>
-                                        <Modal.Header className='px-5 pt-4 border-2 shadow-md bg-gray-50' closeButton>
-                                            <div class="">
-                                                <Modal.Title className='items-center' >
-                                                    <p className='font-semibold text-black uppercase '>
-                                                        Event Details
-                                                    </p>
-                                                </Modal.Title>
-                                            </div>
-                                        </Modal.Header >
-                                        <Modal.Body className='px-12 py-12 border-2 rounded-lg shadow-md bg-gray-50'>
-                                            <RoomDetails rmId={this.state.id} key={this.state.id} close={this.closeModalBoxForRoomDetails} />
-                                        </Modal.Body>
-                                    </Modal>
-                                </div>
-                                <div class="">
-                                    <Modal show={this.state.view} onHide={this.closeModalBoxForRoomUpdate} centered size={"xl"}>
-                                        <Modal.Header className='px-5 pt-4 border-2 shadow-md bg-gray-50' closeButton>
-                                            <div class="">
-                                                <Modal.Title className='items-center' >
-                                                    <p className='font-semibold text-black uppercase '>
-                                                        Update Accomodation Details
-                                                    </p>
-                                                </Modal.Title>
-                                            </div>
-                                        </Modal.Header >
-                                        <Modal.Body className='px-12 py-12 border-2 rounded-lg shadow-md bg-gray-50'>
-                                            <EditRoom rmId={this.state.id} key={this.state.id} close={this.closeModalBoxForRoomUpdate} />
-                                        </Modal.Body>
-                                    </Modal>
-                                </div>
-
-
                             </div>
                         </div>
                     </div>

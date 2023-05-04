@@ -7,6 +7,7 @@ export class CreateWeddingHall extends Component {
         super(props);
         this.onChangeHotelName = this.onChangeHotelName.bind(this);
         this.onChangeHallName = this.onChangeHallName.bind(this);
+        this.onChangeimgURL = this.onChangeimgURL.bind(this);
         this.onChangeDescription = this.onChangeDescription.bind(this);
         this.onChangeCapacity = this.onChangeCapacity.bind(this);
         this.onChangeLength = this.onChangeLength.bind(this);
@@ -19,6 +20,7 @@ export class CreateWeddingHall extends Component {
         this.state = {
             hotelName: '',
             hallName: '',
+            imageURL:'',
             description: '',
             capacity: '',
             length:'',
@@ -36,6 +38,12 @@ export class CreateWeddingHall extends Component {
     onChangeHallName(e) {
         this.setState({
             hallName: e.target.value
+        });
+    }
+
+    onChangeimgURL(e) {
+        this.setState({
+            imageURL: e.target.value
         });
     }
 
@@ -77,10 +85,11 @@ export class CreateWeddingHall extends Component {
         const weddinghalls = {
             hotelName: this.state.hotelName,
             hallName: this.state.hallName,
+            imageURL: this.state.imageURL,
             description: this.state.description,
             capacity: this.state.capacity,
             length: this.state.length,
-            with: this.state.width,
+            width: this.state.width,
             price: this.state.price,
           
 
@@ -136,6 +145,7 @@ export class CreateWeddingHall extends Component {
         this.setState({
             hotelName: '',
             hallName: '',
+            imageURL:'',
             description: '',
             capacity: '',
             length:'',
@@ -159,14 +169,20 @@ export class CreateWeddingHall extends Component {
                                             Add Wedding Hall
                                         </p>
 
+                                        <div className="grid grid-cols-2 gap-4 form-group">
                                         <div className="form-group">
                                             <label className='block mb-2 text-lg font-medium text-gray-900 dark:text-white'>Hotel Name</label>
-                                            <input type="text"
+                                            <select type="text"
                                                 required
                                                 className="form-control "
                                                 value={this.state.hotelName}
                                                 onChange={this.onChangeHotelName}
-                                            />
+                                            >
+                                                <option>Select From Here</option>
+                                                <option>Jetwing Blue</option>
+                                                <option>Jetwing Sea</option>
+                                                <option>Jetwing Colombo Seven</option>
+                                            </select>
                                             <p/>
                                             {/* <p className="block text-lg font-medium text-red-900 dark:text-white">{this.state.fullNameError}</p> */}
                                         </div>
@@ -183,6 +199,18 @@ export class CreateWeddingHall extends Component {
                                                 
                                                 <p/>{/* <p className="block text-lg font-medium text-red-900 dark:text-white">{this.state.emailError}</p> */}
                                             </div>
+                                            </div>
+                                            <div className="form-group">
+                                            <label className='block mb-2 text-lg font-medium text-gray-900 dark:text-white'>Image URL</label>
+                                            <input type="text"
+                                                required
+                                                className="form-control "
+                                                value={this.state.imageURL}
+                                                onChange={this.onChangeimgURL}
+                                            />
+                                            <p/>
+                                            {/* <p className="block text-lg font-medium text-red-900 dark:text-white">{this.state.fullNameError}</p> */}
+                                        </div>
                                             <div className="form-group">
                                                 <label className='block mb-2 text-lg font-medium text-gray-900 dark:text-white'>Description</label>
                                                 <textarea type="text"

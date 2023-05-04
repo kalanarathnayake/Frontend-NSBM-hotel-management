@@ -5,10 +5,11 @@ import Navbar from "./components/navbar/navbar.component";
 import Footer from "./components/navbar/footer.component";
 
 import Home from "./components/navbar/home";
-import CustomerHome from "./components/customer.hotels/customerHome";
+import CusJetwingBlueView from './components/customer.hotels/cus-jetwingBlue-view.component';
+import CusJetwingSeaView from './components/customer.hotels/cus-jetwingSea-view.component';
+import CusJetwingColView from './components/customer.hotels/cus-jetwinCol-view.component';
 
 import { CreateEvent } from './components/event/event-add.component';
-import { ViewEvent } from './components/event/event-view.component';
 
 import { CreateWeddingHall } from './components/weddingHalls/weddingHall-add.component';
 
@@ -20,6 +21,7 @@ import { ViewJetwingColomboSeven } from './components/admin.hotels/jetwingColomb
 
 import { UserRegistration } from './components/user/user-registration.component';
 import { UserLogin } from './components/user/user-login.component';
+import { MyBookingDetails } from './components/customer.hotels/mybookings.component';
 
 function App() {
   return (
@@ -31,9 +33,10 @@ function App() {
           <Route exact path="/" element={<Home />} />
 
           <Route exact path="/createEvent" element={<CreateEvent />} />
-          <Route exact path="/event" element={<ViewEvent />} />
           
-          <Route exact path="/cushome" element={<CustomerHome />} />
+          <Route exact path="/cusJetwingBlue" element={<CusJetwingBlueView />} />
+          <Route exact path="/cusJetwingSea" element={<CusJetwingSeaView />} />
+          <Route exact path="/cusJetwingCol" element={<CusJetwingColView />} />
 
           <Route exact path="/createWedding" element={<CreateWeddingHall />} />
 
@@ -46,6 +49,8 @@ function App() {
 
           <Route exact path="/signUp" element={<UserRegistration />} />
           <Route exact path="/signIn" element={<UserLogin />} />
+         
+          <Route exact path="/myBooking" element={<MyBookingDetails />} />
           {/* <Route exact path="/" element={<Home />} /> */}
         </Routes>
       </Router>

@@ -29,6 +29,7 @@ export default class RoomDetails extends Component {
             feature8:'',
             feature9: '',
             feature10:'',
+            price:''
             
         }
     }
@@ -53,6 +54,7 @@ export default class RoomDetails extends Component {
             feature8 : response.data.feature8,
             feature9 : response.data.feature9,
             feature10 : response.data.feature10,
+            price : response.data.price,
                 })
             })
             .catch(function(error) {
@@ -70,12 +72,18 @@ export default class RoomDetails extends Component {
                     <div className="inline-block min-w-full py-2 sm:px-6 lg:px-8">
                         <div className='items-center overflow-hidden'>
                             <div class="grid grid-cols-1 gap-4 content-start pt-5 px-20">
+                            <section class="">
+                        <div class="text-center text-gray-800 px-6">
+                            <h1 class="text-5xl md:text-6xl xl:text-3xl font-bold tracking-tight uppercase drop-shadow-md text-blue-950 ">Accomodations<br />
+                            </h1>
+                        </div>
+                    </section>
 
-                                <form className='px-12 py-12 border-2 rounded-lg shadow-md bg-gray-50' >
+                                <form  >
 
                                   
                                         
-
+                                <div className="grid grid-cols-2 gap-4 form-group">
                                         <div className="form-group">
                                             <label className='block mb-2 text-lg font-medium text-gray-900 dark:text-white'>Hotel Name</label>
                                             <input type="text"
@@ -101,6 +109,7 @@ export default class RoomDetails extends Component {
                                                 />
                                                 
                                                 <p/>{/* <p className="block text-lg font-medium text-red-900 dark:text-white">{this.state.emailError}</p> */}
+                                            </div>
                                             </div>
                                             <div className="form-group">
                                                 <label className='block mb-2 text-lg font-medium text-gray-900 dark:text-white'>Description</label>
@@ -330,6 +339,23 @@ export default class RoomDetails extends Component {
                                         
                                         <p/>
 
+                                        <div className="form-group">
+                                            <label className='block mb-2 text-lg font-medium text-gray-900 dark:text-white'>
+                                                Price
+                                            </label>
+                                            <input type="text"
+                                       
+                                                className="form-control"
+                                                value={this.state.price}
+                                                readOnly
+                                            />
+                                                 
+                                                 
+                                            {/* <p className="block text-lg font-medium text-red-900 dark:text-white">{this.state.addressError}</p> */}
+                                        </div>
+                                    
+                                        
+                                        <p/>
                                         
                                       
 

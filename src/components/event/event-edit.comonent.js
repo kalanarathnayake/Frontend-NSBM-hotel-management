@@ -1,12 +1,12 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import axios from 'axios';
 import Swal from "sweetalert2";
 
 
 export default class EditEvent extends Component {
 
-    
-    constructor(props){
+
+    constructor(props) {
         super(props);
 
         this.onChangeHotelName = this.onChangeHotelName.bind(this);
@@ -23,112 +23,112 @@ export default class EditEvent extends Component {
         this.onSubmit = this.onSubmit.bind(this);
 
         this.state = {
-            id:props.evId,
+            id: props.evId,
             hotelName: '',
             hallName: '',
             description: '',
             style1: '',
-            capacity1:'',
+            capacity1: '',
             style2: '',
-            capacity2:'',
+            capacity2: '',
             style3: '',
-            capacity3:'',
+            capacity3: '',
             style4: '',
-            capacity4:''
-            
+            capacity4: ''
+
         }
     }
 
     componentDidMount() {
-        axios.get(`http://localhost:5000/event/`+ this.state.id)
-        .then(response => {
-            this.setState({
-            hotelName : response.data.hotelName,
-            hallName : response.data.hallName,
-            description : response.data.description,
-            style1 : response.data.style1,
-            capacity1 : response.data.capacity1,
-            style2 : response.data.style2,
-            capacity2 : response.data.capacity2,
-            style3 : response.data.style3,
-            capacity3 : response.data.capacity3,
-            style4 : response.data.style4,
-            capacity4 : response.data.capacity4,
+        axios.get(`http://localhost:5000/event/` + this.state.id)
+            .then(response => {
+                this.setState({
+                    hotelName: response.data.hotelName,
+                    hallName: response.data.hallName,
+                    description: response.data.description,
+                    style1: response.data.style1,
+                    capacity1: response.data.capacity1,
+                    style2: response.data.style2,
+                    capacity2: response.data.capacity2,
+                    style3: response.data.style3,
+                    capacity3: response.data.capacity3,
+                    style4: response.data.style4,
+                    capacity4: response.data.capacity4,
                 })
             })
-            .catch(function(error) {
+            .catch(function (error) {
                 console.log(error);
             })
 
-        }
+    }
 
-        onChangeHotelName(e) {
-            this.setState({
-                hotelName: e.target.value
-            });
-        }
-    
-        onChangeHallName(e) {
-            this.setState({
-                hallName: e.target.value
-            });
-        }
-    
-        onChangeDescription(e) {
-            this.setState({
-                description: e.target.value
-            });
-        }
-    
-        onChangeStyle1(e) {
-            this.setState({
-                style1: e.target.value
-            });
-        }
-    
-        onChangeCapacity1(e) {
-            this.setState({
-                capacity1: e.target.value
-            });
-        }
-    
-        onChangeStyle2(e) {
-            this.setState({
-                style2: e.target.value
-            });
-        }
-    
-        onChangeCapacity2(e) {
-            this.setState({
-                capacity2: e.target.value
-            });
-        }
-    
-        onChangeStyle3(e) {
-            this.setState({
-                style3: e.target.value
-            });
-        }
-    
-        onChangeCapacity3(e) {
-            this.setState({
-                capacity3: e.target.value
-            });
-        }
-    
-        onChangeStyle4(e) {
-            this.setState({
-                style4: e.target.value
-            });
-        }
-    
-        onChangeCapacity4(e) {
-            this.setState({
-                capacity4: e.target.value
-            });
-        }
+    onChangeHotelName(e) {
+        this.setState({
+            hotelName: e.target.value
+        });
+    }
 
-    onSubmit(e){
+    onChangeHallName(e) {
+        this.setState({
+            hallName: e.target.value
+        });
+    }
+
+    onChangeDescription(e) {
+        this.setState({
+            description: e.target.value
+        });
+    }
+
+    onChangeStyle1(e) {
+        this.setState({
+            style1: e.target.value
+        });
+    }
+
+    onChangeCapacity1(e) {
+        this.setState({
+            capacity1: e.target.value
+        });
+    }
+
+    onChangeStyle2(e) {
+        this.setState({
+            style2: e.target.value
+        });
+    }
+
+    onChangeCapacity2(e) {
+        this.setState({
+            capacity2: e.target.value
+        });
+    }
+
+    onChangeStyle3(e) {
+        this.setState({
+            style3: e.target.value
+        });
+    }
+
+    onChangeCapacity3(e) {
+        this.setState({
+            capacity3: e.target.value
+        });
+    }
+
+    onChangeStyle4(e) {
+        this.setState({
+            style4: e.target.value
+        });
+    }
+
+    onChangeCapacity4(e) {
+        this.setState({
+            capacity4: e.target.value
+        });
+    }
+
+    onSubmit(e) {
         e.preventDefault();
 
         const events = {
@@ -148,7 +148,7 @@ export default class EditEvent extends Component {
 
         console.log(events);
 
-       
+
 
         // if (this.state.fullName.length < 6) {
         //     this.setState({ fullNameError: "Your Name is too short" })
@@ -160,35 +160,35 @@ export default class EditEvent extends Component {
         //     this.setState({ addressError: "Your address is too short." })
         // }else {
         axios.put('http://localhost:5000/event/' + this.state.id, events)
-        .then(res => {
-            console.log(res);
+            .then(res => {
+                console.log(res);
 
-            if (res.status === 200) {
-               
-                this.props.close();
+                if (res.status === 200) {
 
-                Swal.fire({
-                    icon: 'success',
-                    title: 'Successful',
-                    text: 'Events has been updated!!',
-                    background: '#fff',
-                    confirmButtonColor: '#333533',
-                    iconColor: '#60e004'
-                })
+                    this.props.close();
 
-            } else {
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Error',
-                    text: 'There was an error updating!',
-                    background: '#fff',
-                    confirmButtonColor: '#333533',
-                    iconColor: '#e00404'
-                })
-            }
-        
-        })
-    // }
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Successful',
+                        text: 'Events has been updated!!',
+                        background: '#fff',
+                        confirmButtonColor: '#333533',
+                        iconColor: '#60e004'
+                    })
+
+                } else {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Error',
+                        text: 'There was an error updating!',
+                        background: '#fff',
+                        confirmButtonColor: '#333533',
+                        iconColor: '#e00404'
+                    })
+                }
+
+            })
+        // }
     }
 
     render() {
@@ -199,26 +199,39 @@ export default class EditEvent extends Component {
                         <div className='items-center overflow-hidden'>
                             <div class="grid grid-cols-1 gap-4 content-start pt-5 px-20">
 
-                                <form className='px-12 py-12 border-2' onSubmit={this.onSubmit}>
+                                <section class="">
+                                    <div class="text-center text-gray-800 px-6">
+                                        <h1 class="text-5xl md:text-6xl xl:text-3xl font-bold tracking-tight uppercase drop-shadow-md text-blue-950 ">Update Events<br />
+                                        </h1>
+                                    </div>
+                                </section>
+                                <form onSubmit={this.onSubmit}>
 
                                     <div class="">
                                         {/* <p className='text-4xl font-semibold text-black uppercase'>
                                             Add Event
                                         </p> */}
 
-                                        <div className="form-group">
-                                            <label className='block mb-2 text-lg font-medium text-gray-900 dark:text-white'>Hotel Name</label>
-                                            <input type="text"
-                                                required
-                                                className="form-control "
-                                                value={this.state.hotelName}
-                                                onChange={this.onChangeHotelName}
-                                            />
-                                            <p/>
-                                            {/* <p className="block text-lg font-medium text-red-900 dark:text-white">{this.state.fullNameError}</p> */}
-                                        </div>
+                                        <div className="grid grid-cols-2 gap-4 form-group">
+                                            <div className="form-group">
+                                                <label className='block mb-2 text-lg font-medium text-gray-900 dark:text-white'>Hotel Name</label>
+                                                <select type="text"
+                                                    required
+                                                    className="form-control "
+                                                    value={this.state.hotelName}
+                                                    onChange={this.onChangeHotelName}
+                                                >
+                                                    <option>Select From Here</option>
+                                                    <option>Jetwing Sea</option>
+                                                    <option>Jetwing Blue</option>
+                                                    <option>Jetwing Colombo Seven</option>
 
-                                      
+                                                </select>
+                                                <p />
+                                                {/* <p className="block text-lg font-medium text-red-900 dark:text-white">{this.state.fullNameError}</p> */}
+                                            </div>
+
+
                                             <div className="form-group">
                                                 <label className='block mb-2 text-lg font-medium text-gray-900 dark:text-white'>Hall Name</label>
                                                 <input type="text"
@@ -227,147 +240,148 @@ export default class EditEvent extends Component {
                                                     value={this.state.hallName}
                                                     onChange={this.onChangeHallName}
                                                 />
-                                                
-                                                <p/>{/* <p className="block text-lg font-medium text-red-900 dark:text-white">{this.state.emailError}</p> */}
+
+                                                <p />{/* <p className="block text-lg font-medium text-red-900 dark:text-white">{this.state.emailError}</p> */}
                                             </div>
+                                        </div>
+                                        <div className="form-group">
+                                            <label className='block mb-2 text-lg font-medium text-gray-900 dark:text-white'>Description</label>
+                                            <textarea type="text"
+                                                required
+                                                className="form-control"
+                                                value={this.state.description}
+                                                onChange={this.onChangeDescription}
+                                            />
+                                            <p />
+                                            {/* <p className="block text-lg font-medium text-red-900 dark:text-white">{this.state.contactError}</p> */}
+                                        </div>
+
+                                        <div className="grid grid-cols-2 gap-4 form-group">
                                             <div className="form-group">
-                                                <label className='block mb-2 text-lg font-medium text-gray-900 dark:text-white'>Description</label>
-                                                <textarea type="text"
+                                                <label className='block mb-2 text-lg font-medium text-gray-900 dark:text-white'>Style</label>
+                                                <select type="text"
                                                     required
                                                     className="form-control"
-                                                    value={this.state.description}
-                                                    onChange={this.onChangeDescription}
-                                                />
-                                                  <p/>
-                                                {/* <p className="block text-lg font-medium text-red-900 dark:text-white">{this.state.contactError}</p> */}
+                                                    value={this.state.style1}
+                                                    onChange={this.onChangeStyle1}
+                                                >
+                                                    <option>Select From Here</option>
+                                                    <option>Theater</option>
+                                                    <option>Workshop</option>
+                                                    <option>Classroom</option>
+                                                    <option>Boardroom</option>
+                                                    <option>FreeStyle</option>
+
+                                                </select>
+                                                {/* <p className="block text-lg font-medium text-red-900 dark:text-white">{this.state.addressError}</p> */}
                                             </div>
-                                       
-                                            <div className="grid grid-cols-2 gap-4 form-group">
-                                        <div className="form-group">
-                                            <label className='block mb-2 text-lg font-medium text-gray-900 dark:text-white'>Style</label>
-                                            <select type="text"
-                                                required
-                                                className="form-control"
-                                                value={this.state.style1}
-                                                onChange={this.onChangeStyle1}
-                                            >
-                                                 <option>Select From Here</option>  
-                                                <option>Theater</option>
-                                                <option>Workshop</option>
-                                                <option>Classroom</option>
-                                                <option>Boardroom</option>
-                                                <option>FreeStyle</option>
+                                            <div className="form-group">
+                                                <label className='block mb-2 text-lg font-medium text-gray-900 dark:text-white'>Capacity</label>
+                                                <input type="text"
+                                                    required
+                                                    className="form-control"
+                                                    value={this.state.capacity1}
+                                                    onChange={this.onChangeCapacity1}
+                                                />
+                                                {/* <p className="block text-lg font-medium text-red-900 dark:text-white">{this.state.addressError}</p> */}
+                                            </div>
 
-                                            </select>
-                                            {/* <p className="block text-lg font-medium text-red-900 dark:text-white">{this.state.addressError}</p> */}
                                         </div>
-                                        <div className="form-group">
-                                            <label className='block mb-2 text-lg font-medium text-gray-900 dark:text-white'>Capacity</label>
-                                            <input type="text"
-                                                required
-                                                className="form-control"
-                                                value={this.state.capacity1}
-                                                onChange={this.onChangeCapacity1}
-                                            />
-                                            {/* <p className="block text-lg font-medium text-red-900 dark:text-white">{this.state.addressError}</p> */}
-                                        </div>
-                                       
-                                        </div>
-                                        <p/>
-                                        
-                                        <div className="grid grid-cols-2 gap-4 form-group">
-                                        <div className="form-group">
-                                            <label className='block mb-2 text-lg font-medium text-gray-900 dark:text-white'>Style</label>
-                                            <select type="text"
-                                       
-                                                className="form-control"
-                                                value={this.state.style2}
-                                                onChange={this.onChangeStyle2}
-                                            >
-                                                 <option>Select From Here</option>  
-                                                <option>Theater</option>
-                                                <option>Workshop</option>
-                                                <option>Classroom</option>
-                                                <option>Boardroom</option>
-                                                <option>FreeStyle</option>
-                                            </select>
-                                            {/* <p className="block text-lg font-medium text-red-900 dark:text-white">{this.state.addressError}</p> */}
-                                        </div>
-                                        <div className="form-group">
-                                            <label className='block mb-2 text-lg font-medium text-gray-900 dark:text-white'>Capacity</label>
-                                            <input type="text"
-                                           
-                                                className="form-control"
-                                                value={this.state.capacity2}
-                                                onChange={this.onChangeCapacity2}
-                                            />
-                                            {/* <p className="block text-lg font-medium text-red-900 dark:text-white">{this.state.addressError}</p> */}
-                                        </div>
-                                    
-                                        </div>
-                                        <p/>
+                                        <p />
 
                                         <div className="grid grid-cols-2 gap-4 form-group">
-                                        <div className="form-group">
-                                            <label className='block mb-2 text-lg font-medium text-gray-900 dark:text-white'>Style</label>
-                                            <select type="text"
-                                            
-                                                className="form-control"
-                                                value={this.state.style3}
-                                                onChange={this.onChangeStyle3}
-                                            >
-                                                 <option>Select From Here</option>  
-                                                <option>Theater</option>
-                                            <option>Workshop</option>
-                                            <option>Classroom</option>
-                                            <option>Boardroom</option>
-                                            <option>FreeStyle</option></select>
-                                            {/* <p className="block text-lg font-medium text-red-900 dark:text-white">{this.state.addressError}</p> */}
+                                            <div className="form-group">
+                                                <label className='block mb-2 text-lg font-medium text-gray-900 dark:text-white'>Style</label>
+                                                <select type="text"
+
+                                                    className="form-control"
+                                                    value={this.state.style2}
+                                                    onChange={this.onChangeStyle2}
+                                                >
+                                                    <option>Select From Here</option>
+                                                    <option>Theater</option>
+                                                    <option>Workshop</option>
+                                                    <option>Classroom</option>
+                                                    <option>Boardroom</option>
+                                                    <option>FreeStyle</option>
+                                                </select>
+                                                {/* <p className="block text-lg font-medium text-red-900 dark:text-white">{this.state.addressError}</p> */}
+                                            </div>
+                                            <div className="form-group">
+                                                <label className='block mb-2 text-lg font-medium text-gray-900 dark:text-white'>Capacity</label>
+                                                <input type="text"
+
+                                                    className="form-control"
+                                                    value={this.state.capacity2}
+                                                    onChange={this.onChangeCapacity2}
+                                                />
+                                                {/* <p className="block text-lg font-medium text-red-900 dark:text-white">{this.state.addressError}</p> */}
+                                            </div>
+
                                         </div>
-                                        <div className="form-group">
-                                            <label className='block mb-2 text-lg font-medium text-gray-900 dark:text-white'>Capacity</label>
-                                            <input type="text"
-                                                
-                                                className="form-control"
-                                                value={this.state.capacity3}
-                                                onChange={this.onChangeCapacity3}
-                                            />
-                                            {/* <p className="block text-lg font-medium text-red-900 dark:text-white">{this.state.addressError}</p> */}
-                                        </div>
-                                         
-                                        </div>
-                                        <p/>
+                                        <p />
 
                                         <div className="grid grid-cols-2 gap-4 form-group">
-                                        <div className="form-group">
-                                            <label className='block mb-2 text-lg font-medium text-gray-900 dark:text-white'>Style</label>
-                                            <select type="text"
-                                               
-                                                className="form-control"
-                                                value={this.state.style4}
-                                                onChange={this.onChangeStyle4}
-                                            >
+                                            <div className="form-group">
+                                                <label className='block mb-2 text-lg font-medium text-gray-900 dark:text-white'>Style</label>
+                                                <select type="text"
 
-                                            <option>Select From Here</option>    
-                                            <option>Theater</option>
-                                            <option>Workshop</option>
-                                            <option>Classroom</option>
-                                            <option>Boardroom</option>
-                                            <option>FreeStyle</option></select>
-                                            {/* <p className="block text-lg font-medium text-red-900 dark:text-white">{this.state.addressError}</p> */}
+                                                    className="form-control"
+                                                    value={this.state.style3}
+                                                    onChange={this.onChangeStyle3}
+                                                >
+                                                    <option>Select From Here</option>
+                                                    <option>Theater</option>
+                                                    <option>Workshop</option>
+                                                    <option>Classroom</option>
+                                                    <option>Boardroom</option>
+                                                    <option>FreeStyle</option></select>
+                                                {/* <p className="block text-lg font-medium text-red-900 dark:text-white">{this.state.addressError}</p> */}
+                                            </div>
+                                            <div className="form-group">
+                                                <label className='block mb-2 text-lg font-medium text-gray-900 dark:text-white'>Capacity</label>
+                                                <input type="text"
+
+                                                    className="form-control"
+                                                    value={this.state.capacity3}
+                                                    onChange={this.onChangeCapacity3}
+                                                />
+                                                {/* <p className="block text-lg font-medium text-red-900 dark:text-white">{this.state.addressError}</p> */}
+                                            </div>
+
                                         </div>
-                                        <div className="form-group">
-                                            <label className='block mb-2 text-lg font-medium text-gray-900 dark:text-white'>Capacity</label>
-                                            <input type="text"
-                                                
-                                                className="form-control"
-                                                value={this.state.capacity4}
-                                                onChange={this.onChangeCapacity4}
-                                            />
-                                            {/* <p className="block text-lg font-medium text-red-900 dark:text-white">{this.state.addressError}</p> */}
+                                        <p />
+
+                                        <div className="grid grid-cols-2 gap-4 form-group">
+                                            <div className="form-group">
+                                                <label className='block mb-2 text-lg font-medium text-gray-900 dark:text-white'>Style</label>
+                                                <select type="text"
+
+                                                    className="form-control"
+                                                    value={this.state.style4}
+                                                    onChange={this.onChangeStyle4}
+                                                >
+
+                                                    <option>Select From Here</option>
+                                                    <option>Theater</option>
+                                                    <option>Workshop</option>
+                                                    <option>Classroom</option>
+                                                    <option>Boardroom</option>
+                                                    <option>FreeStyle</option></select>
+                                                {/* <p className="block text-lg font-medium text-red-900 dark:text-white">{this.state.addressError}</p> */}
+                                            </div>
+                                            <div className="form-group">
+                                                <label className='block mb-2 text-lg font-medium text-gray-900 dark:text-white'>Capacity</label>
+                                                <input type="text"
+
+                                                    className="form-control"
+                                                    value={this.state.capacity4}
+                                                    onChange={this.onChangeCapacity4}
+                                                />
+                                                {/* <p className="block text-lg font-medium text-red-900 dark:text-white">{this.state.addressError}</p> */}
+                                            </div>
                                         </div>
-                                        </div>
-                                        <p/>
+                                        <p />
 
                                         <div className="text-center align-middle form-group">
                                             <input className='text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800' type="submit" value="Update Event" />
