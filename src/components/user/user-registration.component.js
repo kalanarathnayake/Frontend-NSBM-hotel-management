@@ -96,8 +96,6 @@ export class UserRegistration extends Component {
     render() {
         return (
             <div class="">
-
-                {/* latest styles */}
                 <div class="gradient-form h-full bg-neutral-50 dark:bg-neutral-700">
                     <div class="mb-20 container h-full p-10">
                         <div
@@ -118,9 +116,7 @@ export class UserRegistration extends Component {
                                                     </h4>
                                                 </div>
                                                 <form className='' onSubmit={this.onSubmit}>
-
                                                     <div class="">
-
                                                         <p className='text-base font-semibold text-black uppercase'>
                                                             Sign Up With Us
                                                         </p>
@@ -133,7 +129,6 @@ export class UserRegistration extends Component {
                                                                 onChange={this.onChangeNIC}
                                                             /><p className="block text-lg font-medium text-red-900 dark:text-white">{this.state.nicError}</p>
                                                         </div>
-
                                                         <div className="form-group">
                                                             <label className='block mb-2 text-lg font-medium text-gray-900 dark:text-white'>User Role </label>
                                                             <select type="text"
@@ -145,13 +140,9 @@ export class UserRegistration extends Component {
                                                                 <option>Select From Here</option>
                                                                 <option>Customer</option>
                                                                 <option>Admin</option>
-
                                                             </select>
-
-
                                                             <p />
                                                         </div>
-
                                                         <div className="grid grid-cols-2 gap-4 form-group">
                                                             <div className="form-group">
                                                                 <label className='block mb-2 text-lg font-medium text-gray-900 dark:text-white'>Password </label>
@@ -162,8 +153,6 @@ export class UserRegistration extends Component {
                                                                     onChange={this.onChangepassword}
                                                                 /><p />
                                                             </div>
-
-
                                                             <div className="form-group">
                                                                 <label className='block mb-2 text-lg font-medium text-gray-900 dark:text-white'>Confirm Password </label>
                                                                 <input type="password"
@@ -174,7 +163,6 @@ export class UserRegistration extends Component {
                                                                 /><p className="block text-lg font-medium text-red-900 dark:text-white">{this.state.passwordError}</p>
                                                             </div>
                                                         </div>
-
                                                         <div className="text-center align-middle form-group">
                                                             <input
                                                                 className='mb-3 inline-block w-full rounded px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_rgba(0,0,0,0.2)] transition duration-150 ease-in-out hover:shadow-[0_8px_9px_-4px_rgba(0,0,0,0.1),0_4px_18px_0_rgba(0,0,0,0.2)] focus:shadow-[0_8px_9px_-4px_rgba(0,0,0,0.1),0_4px_18px_0_rgba(0,0,0,0.2)] focus:outline-none focus:ring-0 active:shadow-[0_8px_9px_-4px_rgba(0,0,0,0.1),0_4px_18px_0_rgba(0,0,0,0.2)] '
@@ -184,11 +172,9 @@ export class UserRegistration extends Component {
                                                             />
                                                         </div>
                                                     </div>
-
                                                 </form>
                                             </div>
                                         </div>
-
                                         <div
                                             class="flex items-center rounded-b-lg lg:w-6/12 lg:rounded-r-lg lg:rounded-bl-none from-indigo-900 from-10% via-sky-600 via-30% to-pink-700 to-90%"
                                             style={{ background: "linear-gradient(to right, #9008C5, #dd3675,  #57C3F5)" }}
@@ -212,7 +198,6 @@ export class UserRegistration extends Component {
                         </div>
                     </div>
                 </div>
-
             </div>
         )
     }

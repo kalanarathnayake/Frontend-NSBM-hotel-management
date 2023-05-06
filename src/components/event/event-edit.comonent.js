@@ -2,13 +2,9 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import Swal from "sweetalert2";
 
-
 export default class EditEvent extends Component {
-
-
     constructor(props) {
         super(props);
-
         this.onChangeHotelName = this.onChangeHotelName.bind(this);
         this.onChangeHallName = this.onChangeHallName.bind(this);
         this.onChangeDescription = this.onChangeDescription.bind(this);
@@ -21,7 +17,6 @@ export default class EditEvent extends Component {
         this.onChangeStyle4 = this.onChangeStyle4.bind(this);
         this.onChangeCapacity4 = this.onChangeCapacity4.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
-
         this.state = {
             id: props.evId,
             hotelName: '',
@@ -35,7 +30,6 @@ export default class EditEvent extends Component {
             capacity3: '',
             style4: '',
             capacity4: ''
-
         }
     }
 
@@ -59,7 +53,6 @@ export default class EditEvent extends Component {
             .catch(function (error) {
                 console.log(error);
             })
-
     }
 
     onChangeHotelName(e) {
@@ -143,19 +136,13 @@ export default class EditEvent extends Component {
             capacity3: this.state.capacity3,
             style4: this.state.style4,
             capacity4: this.state.capacity4,
-
         }
-
         console.log(events);
-
         axios.put('http://localhost:5000/event/' + this.state.id, events)
             .then(res => {
                 console.log(res);
-
                 if (res.status === 200) {
-
                     this.props.close();
-
                     Swal.fire({
                         icon: 'success',
                         title: 'Successful',
@@ -164,7 +151,6 @@ export default class EditEvent extends Component {
                         confirmButtonColor: '#333533',
                         iconColor: '#60e004'
                     })
-
                 } else {
                     Swal.fire({
                         icon: 'error',
@@ -175,9 +161,7 @@ export default class EditEvent extends Component {
                         iconColor: '#e00404'
                     })
                 }
-
             })
-        // }
     }
 
     render() {
@@ -187,7 +171,6 @@ export default class EditEvent extends Component {
                     <div className="inline-block min-w-full py-2 sm:px-6 lg:px-8">
                         <div className='items-center overflow-hidden'>
                             <div class="grid grid-cols-1 gap-4 content-start pt-5 px-20">
-
                                 <section class="">
                                     <div class="text-center text-gray-800 px-6">
                                         <h1 class="text-5xl md:text-6xl xl:text-3xl font-bold tracking-tight uppercase drop-shadow-md text-blue-950 ">Update Events<br />
@@ -195,9 +178,7 @@ export default class EditEvent extends Component {
                                     </div>
                                 </section>
                                 <form onSubmit={this.onSubmit}>
-
                                     <div class="">
-
                                         <div className="grid grid-cols-2 gap-4 form-group">
                                             <div className="form-group">
                                                 <label className='block mb-2 text-lg font-medium text-gray-900 dark:text-white'>Hotel Name</label>
@@ -211,13 +192,9 @@ export default class EditEvent extends Component {
                                                     <option>Jetwing Sea</option>
                                                     <option>Jetwing Blue</option>
                                                     <option>Jetwing Colombo Seven</option>
-
                                                 </select>
                                                 <p />
-                                                {/* <p className="block text-lg font-medium text-red-900 dark:text-white">{this.state.fullNameError}</p> */}
                                             </div>
-
-
                                             <div className="form-group">
                                                 <label className='block mb-2 text-lg font-medium text-gray-900 dark:text-white'>Hall Name</label>
                                                 <input type="text"
@@ -226,9 +203,7 @@ export default class EditEvent extends Component {
                                                     value={this.state.hallName}
                                                     onChange={this.onChangeHallName}
                                                 />
-
                                                 <p />
-                                            
                                             </div>
                                         </div>
                                         <div className="form-group">
@@ -240,9 +215,7 @@ export default class EditEvent extends Component {
                                                 onChange={this.onChangeDescription}
                                             />
                                             <p />
-                                         
                                         </div>
-
                                         <div className="grid grid-cols-2 gap-4 form-group">
                                             <div className="form-group">
                                                 <label className='block mb-2 text-lg font-medium text-gray-900 dark:text-white'>Style</label>
@@ -258,9 +231,7 @@ export default class EditEvent extends Component {
                                                     <option>Classroom</option>
                                                     <option>Boardroom</option>
                                                     <option>FreeStyle</option>
-
                                                 </select>
-                                          
                                             </div>
                                             <div className="form-group">
                                                 <label className='block mb-2 text-lg font-medium text-gray-900 dark:text-white'>Capacity</label>
@@ -270,17 +241,13 @@ export default class EditEvent extends Component {
                                                     value={this.state.capacity1}
                                                     onChange={this.onChangeCapacity1}
                                                 />
-                                             
                                             </div>
-
                                         </div>
                                         <p />
-
                                         <div className="grid grid-cols-2 gap-4 form-group">
                                             <div className="form-group">
                                                 <label className='block mb-2 text-lg font-medium text-gray-900 dark:text-white'>Style</label>
                                                 <select type="text"
-
                                                     className="form-control"
                                                     value={this.state.style2}
                                                     onChange={this.onChangeStyle2}
@@ -292,27 +259,21 @@ export default class EditEvent extends Component {
                                                     <option>Boardroom</option>
                                                     <option>FreeStyle</option>
                                                 </select>
-                                              
                                             </div>
                                             <div className="form-group">
                                                 <label className='block mb-2 text-lg font-medium text-gray-900 dark:text-white'>Capacity</label>
                                                 <input type="text"
-
                                                     className="form-control"
                                                     value={this.state.capacity2}
                                                     onChange={this.onChangeCapacity2}
                                                 />
-                                              
                                             </div>
-
                                         </div>
                                         <p />
-
                                         <div className="grid grid-cols-2 gap-4 form-group">
                                             <div className="form-group">
                                                 <label className='block mb-2 text-lg font-medium text-gray-900 dark:text-white'>Style</label>
                                                 <select type="text"
-
                                                     className="form-control"
                                                     value={this.state.style3}
                                                     onChange={this.onChangeStyle3}
@@ -323,60 +284,47 @@ export default class EditEvent extends Component {
                                                     <option>Classroom</option>
                                                     <option>Boardroom</option>
                                                     <option>FreeStyle</option></select>
-                                               
                                             </div>
                                             <div className="form-group">
                                                 <label className='block mb-2 text-lg font-medium text-gray-900 dark:text-white'>Capacity</label>
                                                 <input type="text"
-
                                                     className="form-control"
                                                     value={this.state.capacity3}
                                                     onChange={this.onChangeCapacity3}
                                                 />
-                                             
                                             </div>
-
                                         </div>
                                         <p />
-
                                         <div className="grid grid-cols-2 gap-4 form-group">
                                             <div className="form-group">
                                                 <label className='block mb-2 text-lg font-medium text-gray-900 dark:text-white'>Style</label>
                                                 <select type="text"
-
                                                     className="form-control"
                                                     value={this.state.style4}
                                                     onChange={this.onChangeStyle4}
                                                 >
-
                                                     <option>Select From Here</option>
                                                     <option>Theater</option>
                                                     <option>Workshop</option>
                                                     <option>Classroom</option>
                                                     <option>Boardroom</option>
                                                     <option>FreeStyle</option></select>
-                                               
                                             </div>
                                             <div className="form-group">
                                                 <label className='block mb-2 text-lg font-medium text-gray-900 dark:text-white'>Capacity</label>
                                                 <input type="text"
-
                                                     className="form-control"
                                                     value={this.state.capacity4}
                                                     onChange={this.onChangeCapacity4}
                                                 />
-                                               
                                             </div>
                                         </div>
                                         <p />
-
                                         <div className="text-center align-middle form-group">
                                             <input className='text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800' type="submit" value="Update Event" />
                                         </div>
                                     </div>
-
                                 </form>
-
                             </div>
                         </div>
                     </div>

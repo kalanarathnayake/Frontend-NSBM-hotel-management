@@ -17,19 +17,18 @@ export class CreateEvent extends Component {
         this.onChangeStyle4 = this.onChangeStyle4.bind(this);
         this.onChangeCapacity4 = this.onChangeCapacity4.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
-
         this.state = {
             hotelName: '',
             hallName: '',
             description: '',
             style1: '',
-            capacity1:'',
+            capacity1: '',
             style2: '',
-            capacity2:'',
+            capacity2: '',
             style3: '',
-            capacity3:'',
+            capacity3: '',
             style4: '',
-            capacity4:'',
+            capacity4: '',
         }
     }
 
@@ -101,7 +100,6 @@ export class CreateEvent extends Component {
 
     onSubmit(e) {
         e.preventDefault();
-
         const events = {
             hotelName: this.state.hotelName,
             hallName: this.state.hallName,
@@ -114,42 +112,32 @@ export class CreateEvent extends Component {
             capacity3: this.state.capacity3,
             style4: this.state.style4,
             capacity4: this.state.capacity4,
-
         }
-
         console.log(events);
-
-
-            axios.post('http://localhost:5000/event/', events)
-
-                .then(res => {
-
-                    console.log(res);
-
-                    if (res.status === 200) {
-
-                        Swal.fire({
-                            icon: 'success',
-                            title: 'Successful',
-                            text: 'Event has been added!!',
-                            background: '#fff',
-                            confirmButtonColor: '#333533',
-                            iconColor: '#60e004'
-                        })
-                        this.clearData();
-
-                    } else {
-                        Swal.fire({
-                            icon: 'error',
-                            title: 'Error',
-                            text: 'Error in adding!',
-                            background: '#fff',
-                            confirmButtonColor: '#333533',
-                            iconColor: '#e00404'
-                        })
-                    }
-                })
-           
+        axios.post('http://localhost:5000/event/', events)
+            .then(res => {
+                console.log(res);
+                if (res.status === 200) {
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Successful',
+                        text: 'Event has been added!!',
+                        background: '#fff',
+                        confirmButtonColor: '#333533',
+                        iconColor: '#60e004'
+                    })
+                    this.clearData();
+                } else {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Error',
+                        text: 'Error in adding!',
+                        background: '#fff',
+                        confirmButtonColor: '#333533',
+                        iconColor: '#e00404'
+                    })
+                }
+            })
     }
 
     clearData = () => {
@@ -158,13 +146,13 @@ export class CreateEvent extends Component {
             hallName: '',
             description: '',
             style1: '',
-            capacity1:'',
+            capacity1: '',
             style2: '',
-            capacity2:'',
+            capacity2: '',
             style3: '',
-            capacity3:'',
+            capacity3: '',
             style4: '',
-            capacity4:''
+            capacity4: ''
         })
     }
 
@@ -175,33 +163,27 @@ export class CreateEvent extends Component {
                     <div className="inline-block min-w-full py-2 sm:px-6 lg:px-8">
                         <div className='items-center overflow-hidden'>
                             <div class="grid grid-cols-1 gap-4 content-start pt-5 px-20">
-
                                 <form className='px-12 py-12 border-2 rounded-lg shadow-md bg-gray-50' onSubmit={this.onSubmit}>
-
                                     <div class="">
-                                        <p className='text-4xl font-semibold text-black uppercase pb-3'>
+                                        <p className='pb-3 text-4xl font-semibold text-black uppercase'>
                                             Add Event
                                         </p>
-
                                         <div className="grid grid-cols-2 gap-4 form-group">
-                                        <div className="form-group">
-                                            <label className='block mb-2 text-lg font-medium text-gray-900 dark:text-white'>Hotel Name</label>
-                                            <select type="text"
-                                                required
-                                                className="form-control "
-                                                value={this.state.hotelName}
-                                                onChange={this.onChangeHotelName}
-                                            >
-                                                 <option>Select From Here</option>
-                                                <option>Jetwing Sea</option>
-                                                <option>Jetwing Blue</option>
-                                                <option>Jetwing Colombo Seven</option>
-                                            </select>
-                                            <p/>
-                                           
-                                        </div>
-
-                                      
+                                            <div className="form-group">
+                                                <label className='block mb-2 text-lg font-medium text-gray-900 dark:text-white'>Hotel Name</label>
+                                                <select type="text"
+                                                    required
+                                                    className="form-control "
+                                                    value={this.state.hotelName}
+                                                    onChange={this.onChangeHotelName}
+                                                >
+                                                    <option>Select From Here</option>
+                                                    <option>Jetwing Sea</option>
+                                                    <option>Jetwing Blue</option>
+                                                    <option>Jetwing Colombo Seven</option>
+                                                </select>
+                                                <p />
+                                            </div>
                                             <div className="form-group">
                                                 <label className='block mb-2 text-lg font-medium text-gray-900 dark:text-white'>Hall Name</label>
                                                 <input type="text"
@@ -210,157 +192,128 @@ export class CreateEvent extends Component {
                                                     value={this.state.hallName}
                                                     onChange={this.onChangeHallName}
                                                 />
-                                                
-                                                <p/>
-                                               
+                                                <p />
                                             </div>
-                                            </div>
+                                        </div>
+                                        <div className="form-group">
+                                            <label className='block mb-2 text-lg font-medium text-gray-900 dark:text-white'>Description</label>
+                                            <textarea type="text"
+                                                required
+                                                className="form-control"
+                                                value={this.state.description}
+                                                onChange={this.onChangeDescription}
+                                            />
+                                            <p />
+                                        </div>
+                                        <div className="grid grid-cols-2 gap-4 form-group">
                                             <div className="form-group">
-                                                <label className='block mb-2 text-lg font-medium text-gray-900 dark:text-white'>Description</label>
-                                                <textarea type="text"
+                                                <label className='block mb-2 text-lg font-medium text-gray-900 dark:text-white'>Style</label>
+                                                <select type="text"
                                                     required
                                                     className="form-control"
-                                                    value={this.state.description}
-                                                    onChange={this.onChangeDescription}
-                                                />
-                                                  <p/>
-                                              
+                                                    value={this.state.style1}
+                                                    onChange={this.onChangeStyle1}
+                                                >
+                                                    <option>Select From Here</option>
+                                                    <option>Theater</option>
+                                                    <option>Workshop</option>
+                                                    <option>Classroom</option>
+                                                    <option>Boardroom</option>
+                                                    <option>FreeStyle</option>
+                                                </select>
                                             </div>
-                                       
-                                            <div className="grid grid-cols-2 gap-4 form-group">
-                                        <div className="form-group">
-                                            <label className='block mb-2 text-lg font-medium text-gray-900 dark:text-white'>Style</label>
-                                            <select type="text"
-                                                required
-                                                className="form-control"
-                                                value={this.state.style1}
-                                                onChange={this.onChangeStyle1}
-                                            >
-                                                 <option>Select From Here</option>  
-                                                <option>Theater</option>
-                                                <option>Workshop</option>
-                                                <option>Classroom</option>
-                                                <option>Boardroom</option>
-                                                <option>FreeStyle</option>
-
-                                            </select>
-                                          
+                                            <div className="form-group">
+                                                <label className='block mb-2 text-lg font-medium text-gray-900 dark:text-white'>Capacity</label>
+                                                <input type="text"
+                                                    required
+                                                    className="form-control"
+                                                    value={this.state.capacity1}
+                                                    onChange={this.onChangeCapacity1}
+                                                />
+                                            </div>
                                         </div>
-                                        <div className="form-group">
-                                            <label className='block mb-2 text-lg font-medium text-gray-900 dark:text-white'>Capacity</label>
-                                            <input type="text"
-                                                required
-                                                className="form-control"
-                                                value={this.state.capacity1}
-                                                onChange={this.onChangeCapacity1}
-                                            />
-                                           
-                                        </div>
-                                       
-                                        </div>
-                                        <p/>
-                                        
+                                        <p />
                                         <div className="grid grid-cols-2 gap-4 form-group">
-                                        <div className="form-group">
-                                            <label className='block mb-2 text-lg font-medium text-gray-900 dark:text-white'>Style</label>
-                                            <select type="text"
-                                       
-                                                className="form-control"
-                                                value={this.state.style2}
-                                                onChange={this.onChangeStyle2}
-                                            >
-                                                 <option>Select From Here</option>  
-                                                <option>Theater</option>
-                                                <option>Workshop</option>
-                                                <option>Classroom</option>
-                                                <option>Boardroom</option>
-                                                <option>FreeStyle</option>
-                                            </select>
-                                         
+                                            <div className="form-group">
+                                                <label className='block mb-2 text-lg font-medium text-gray-900 dark:text-white'>Style</label>
+                                                <select type="text"
+                                                    className="form-control"
+                                                    value={this.state.style2}
+                                                    onChange={this.onChangeStyle2}
+                                                >
+                                                    <option>Select From Here</option>
+                                                    <option>Theater</option>
+                                                    <option>Workshop</option>
+                                                    <option>Classroom</option>
+                                                    <option>Boardroom</option>
+                                                    <option>FreeStyle</option>
+                                                </select>
+                                            </div>
+                                            <div className="form-group">
+                                                <label className='block mb-2 text-lg font-medium text-gray-900 dark:text-white'>Capacity</label>
+                                                <input type="text"
+                                                    className="form-control"
+                                                    value={this.state.capacity2}
+                                                    onChange={this.onChangeCapacity2}
+                                                />
+                                            </div>
                                         </div>
-                                        <div className="form-group">
-                                            <label className='block mb-2 text-lg font-medium text-gray-900 dark:text-white'>Capacity</label>
-                                            <input type="text"
-                                           
-                                                className="form-control"
-                                                value={this.state.capacity2}
-                                                onChange={this.onChangeCapacity2}
-                                            />
-                                          
-                                        </div>
-                                    
-                                        </div>
-                                        <p/>
-
+                                        <p />
                                         <div className="grid grid-cols-2 gap-4 form-group">
-                                        <div className="form-group">
-                                            <label className='block mb-2 text-lg font-medium text-gray-900 dark:text-white'>Style</label>
-                                            <select type="text"
-                                            
-                                                className="form-control"
-                                                value={this.state.style3}
-                                                onChange={this.onChangeStyle3}
-                                            >
-                                                 <option>Select From Here</option>  
-                                                <option>Theater</option>
-                                            <option>Workshop</option>
-                                            <option>Classroom</option>
-                                            <option>Boardroom</option>
-                                            <option>FreeStyle</option></select>
-                                         
+                                            <div className="form-group">
+                                                <label className='block mb-2 text-lg font-medium text-gray-900 dark:text-white'>Style</label>
+                                                <select type="text"
+                                                    className="form-control"
+                                                    value={this.state.style3}
+                                                    onChange={this.onChangeStyle3}
+                                                >
+                                                    <option>Select From Here</option>
+                                                    <option>Theater</option>
+                                                    <option>Workshop</option>
+                                                    <option>Classroom</option>
+                                                    <option>Boardroom</option>
+                                                    <option>FreeStyle</option></select>
+                                            </div>
+                                            <div className="form-group">
+                                                <label className='block mb-2 text-lg font-medium text-gray-900 dark:text-white'>Capacity</label>
+                                                <input type="text"
+                                                    className="form-control"
+                                                    value={this.state.capacity3}
+                                                    onChange={this.onChangeCapacity3}
+                                                />
+                                            </div>
                                         </div>
-                                        <div className="form-group">
-                                            <label className='block mb-2 text-lg font-medium text-gray-900 dark:text-white'>Capacity</label>
-                                            <input type="text"
-                                                
-                                                className="form-control"
-                                                value={this.state.capacity3}
-                                                onChange={this.onChangeCapacity3}
-                                            />
-                                         
-                                        </div>
-                                         
-                                        </div>
-                                        <p/>
-
+                                        <p />
                                         <div className="grid grid-cols-2 gap-4 form-group">
-                                        <div className="form-group">
-                                            <label className='block mb-2 text-lg font-medium text-gray-900 dark:text-white'>Style</label>
-                                            <select type="text"
-                                               
-                                                className="form-control"
-                                                value={this.state.style4}
-                                                onChange={this.onChangeStyle4}
-                                            >
-
-                                            <option>Select From Here</option>    
-                                            <option>Theater</option>
-                                            <option>Workshop</option>
-                                            <option>Classroom</option>
-                                            <option>Boardroom</option>
-                                            <option>FreeStyle</option></select>
-                                           
+                                            <div className="form-group">
+                                                <label className='block mb-2 text-lg font-medium text-gray-900 dark:text-white'>Style</label>
+                                                <select type="text"
+                                                    className="form-control"
+                                                    value={this.state.style4}
+                                                    onChange={this.onChangeStyle4}
+                                                >
+                                                    <option>Select From Here</option>
+                                                    <option>Theater</option>
+                                                    <option>Workshop</option>
+                                                    <option>Classroom</option>
+                                                    <option>Boardroom</option>
+                                                    <option>FreeStyle</option></select>
+                                            </div>
+                                            <div className="form-group">
+                                                <label className='block mb-2 text-lg font-medium text-gray-900 dark:text-white'>Capacity</label>
+                                                <input type="text"
+                                                    className="form-control"
+                                                    value={this.state.capacity4}
+                                                    onChange={this.onChangeCapacity4}
+                                                />
+                                            </div>
                                         </div>
-                                        <div className="form-group">
-                                            <label className='block mb-2 text-lg font-medium text-gray-900 dark:text-white'>Capacity</label>
-                                            <input type="text"
-                                                
-                                                className="form-control"
-                                                value={this.state.capacity4}
-                                                onChange={this.onChangeCapacity4}
-                                            />
-                                           
-                                        </div>
-                                        </div>
-                                        <p/>
-
+                                        <p />
                                         <div className="text-center align-middle form-group">
                                             <input className='text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800' type="submit" value="Add Event" />
                                         </div>
                                     </div>
-
                                 </form>
-
                             </div>
                         </div>
                     </div>

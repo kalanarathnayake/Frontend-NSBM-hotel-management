@@ -14,18 +14,18 @@ export class CreateWeddingHall extends Component {
         this.onChangeWidth = this.onChangeWidth.bind(this);
         this.onChangePrice = this.onChangePrice.bind(this);
 
-       
+
         this.onSubmit = this.onSubmit.bind(this);
 
         this.state = {
             hotelName: '',
             hallName: '',
-            imageURL:'',
+            imageURL: '',
             description: '',
             capacity: '',
-            length:'',
+            length: '',
             width: '',
-            price:''
+            price: ''
         }
     }
 
@@ -77,7 +77,7 @@ export class CreateWeddingHall extends Component {
         });
     }
 
-    
+
 
     onSubmit(e) {
         e.preventDefault();
@@ -91,7 +91,7 @@ export class CreateWeddingHall extends Component {
             length: this.state.length,
             width: this.state.width,
             price: this.state.price,
-          
+
 
         }
 
@@ -107,37 +107,37 @@ export class CreateWeddingHall extends Component {
         //     this.setState({ addressError: "Your address is too short." })
         // } else {
 
-            axios.post('http://localhost:5000/weddingHall/', weddinghalls)
+        axios.post('http://localhost:5000/weddingHall/', weddinghalls)
 
-                .then(res => {
+            .then(res => {
 
-                    console.log(res);
+                console.log(res);
 
-                    if (res.status === 200) {
+                if (res.status === 200) {
 
-                        Swal.fire({
-                            icon: 'success',
-                            title: 'Successful',
-                            text: 'Wedding Hall has been added!!',
-                            background: '#fff',
-                            confirmButtonColor: '#333533',
-                            iconColor: '#60e004'
-                        })
-                        this.clearData();
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Successful',
+                        text: 'Wedding Hall has been added!!',
+                        background: '#fff',
+                        confirmButtonColor: '#333533',
+                        iconColor: '#60e004'
+                    })
+                    this.clearData();
 
-                    } else {
-                        Swal.fire({
-                            icon: 'error',
-                            title: 'Error',
-                            text: 'Error in adding!',
-                            background: '#fff',
-                            confirmButtonColor: '#333533',
-                            iconColor: '#e00404'
-                        })
-                    }
-                })
-            // window.location = '/customer';
-            // }
+                } else {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Error',
+                        text: 'Error in adding!',
+                        background: '#fff',
+                        confirmButtonColor: '#333533',
+                        iconColor: '#e00404'
+                    })
+                }
+            })
+        // window.location = '/customer';
+        // }
         // }
     }
 
@@ -145,12 +145,12 @@ export class CreateWeddingHall extends Component {
         this.setState({
             hotelName: '',
             hallName: '',
-            imageURL:'',
+            imageURL: '',
             description: '',
             capacity: '',
-            length:'',
+            length: '',
             width: '',
-            price:''
+            price: ''
         })
     }
 
@@ -170,24 +170,24 @@ export class CreateWeddingHall extends Component {
                                         </p>
 
                                         <div className="grid grid-cols-2 gap-4 form-group">
-                                        <div className="form-group">
-                                            <label className='block mb-2 text-lg font-medium text-gray-900 dark:text-white'>Hotel Name</label>
-                                            <select type="text"
-                                                required
-                                                className="form-control "
-                                                value={this.state.hotelName}
-                                                onChange={this.onChangeHotelName}
-                                            >
-                                                <option>Select From Here</option>
-                                                <option>Jetwing Blue</option>
-                                                <option>Jetwing Sea</option>
-                                                <option>Jetwing Colombo Seven</option>
-                                            </select>
-                                            <p/>
-                                            {/* <p className="block text-lg font-medium text-red-900 dark:text-white">{this.state.fullNameError}</p> */}
-                                        </div>
+                                            <div className="form-group">
+                                                <label className='block mb-2 text-lg font-medium text-gray-900 dark:text-white'>Hotel Name</label>
+                                                <select type="text"
+                                                    required
+                                                    className="form-control "
+                                                    value={this.state.hotelName}
+                                                    onChange={this.onChangeHotelName}
+                                                >
+                                                    <option>Select From Here</option>
+                                                    <option>Jetwing Blue</option>
+                                                    <option>Jetwing Sea</option>
+                                                    <option>Jetwing Colombo Seven</option>
+                                                </select>
+                                                <p />
+                                                {/* <p className="block text-lg font-medium text-red-900 dark:text-white">{this.state.fullNameError}</p> */}
+                                            </div>
 
-                                      
+
                                             <div className="form-group">
                                                 <label className='block mb-2 text-lg font-medium text-gray-900 dark:text-white'>Hall Name</label>
                                                 <input type="text"
@@ -196,11 +196,11 @@ export class CreateWeddingHall extends Component {
                                                     value={this.state.hallName}
                                                     onChange={this.onChangeHallName}
                                                 />
-                                                
-                                                <p/>{/* <p className="block text-lg font-medium text-red-900 dark:text-white">{this.state.emailError}</p> */}
+
+                                                <p />{/* <p className="block text-lg font-medium text-red-900 dark:text-white">{this.state.emailError}</p> */}
                                             </div>
-                                            </div>
-                                            <div className="form-group">
+                                        </div>
+                                        <div className="form-group">
                                             <label className='block mb-2 text-lg font-medium text-gray-900 dark:text-white'>Image URL</label>
                                             <input type="text"
                                                 required
@@ -208,22 +208,22 @@ export class CreateWeddingHall extends Component {
                                                 value={this.state.imageURL}
                                                 onChange={this.onChangeimgURL}
                                             />
-                                            <p/>
+                                            <p />
                                             {/* <p className="block text-lg font-medium text-red-900 dark:text-white">{this.state.fullNameError}</p> */}
                                         </div>
-                                            <div className="form-group">
-                                                <label className='block mb-2 text-lg font-medium text-gray-900 dark:text-white'>Description</label>
-                                                <textarea type="text"
-                                                    required
-                                                    className="form-control"
-                                                    value={this.state.description}
-                                                    onChange={this.onChangeDescription}
-                                                />
-                                                  <p/>
-                                                {/* <p className="block text-lg font-medium text-red-900 dark:text-white">{this.state.contactError}</p> */}
-                                            </div>
-                                       
-                                            
+                                        <div className="form-group">
+                                            <label className='block mb-2 text-lg font-medium text-gray-900 dark:text-white'>Description</label>
+                                            <textarea type="text"
+                                                required
+                                                className="form-control"
+                                                value={this.state.description}
+                                                onChange={this.onChangeDescription}
+                                            />
+                                            <p />
+                                            {/* <p className="block text-lg font-medium text-red-900 dark:text-white">{this.state.contactError}</p> */}
+                                        </div>
+
+
                                         <div className="form-group">
                                             <label className='block mb-2 text-lg font-medium text-gray-900 dark:text-white'>Capacity</label>
                                             <input type="text"
@@ -232,57 +232,57 @@ export class CreateWeddingHall extends Component {
                                                 value={this.state.capacity}
                                                 onChange={this.onChangeCapacity}
                                             />
-                                                 
 
-                                           
+
+
                                             {/* <p className="block text-lg font-medium text-red-900 dark:text-white">{this.state.addressError}</p> */}
                                         </div>
-                                        <p/>
-                                        
-                                        
+                                        <p />
+
+
                                         <div className="grid grid-cols-2 gap-4 form-group">
-                                        <div className="form-group">
-                                            <label className='block mb-2 text-lg font-medium text-gray-900 dark:text-white'>Length</label>
-                                            <input type="text"
-                                       
-                                                className="form-control"
-                                                value={this.state.length}
-                                                onChange={this.onChangeLength}
-                                            />
-                                                 
-                                            {/* <p className="block text-lg font-medium text-red-900 dark:text-white">{this.state.addressError}</p> */}
-                                        </div>
-                                        <div className="form-group">
-                                            <label className='block mb-2 text-lg font-medium text-gray-900 dark:text-white'>Width</label>
-                                            <input type="text"
-                                           
-                                                className="form-control"
-                                                value={this.state.width}
-                                                onChange={this.onChangeWidth}
-                                            />
-                                            {/* <p className="block text-lg font-medium text-red-900 dark:text-white">{this.state.addressError}</p> */}
-                                        </div>
-                                    
-                                        </div>
-                                        <p/>
+                                            <div className="form-group">
+                                                <label className='block mb-2 text-lg font-medium text-gray-900 dark:text-white'>Length</label>
+                                                <input type="text"
 
-                                      
+                                                    className="form-control"
+                                                    value={this.state.length}
+                                                    onChange={this.onChangeLength}
+                                                />
+
+                                                {/* <p className="block text-lg font-medium text-red-900 dark:text-white">{this.state.addressError}</p> */}
+                                            </div>
+                                            <div className="form-group">
+                                                <label className='block mb-2 text-lg font-medium text-gray-900 dark:text-white'>Width</label>
+                                                <input type="text"
+
+                                                    className="form-control"
+                                                    value={this.state.width}
+                                                    onChange={this.onChangeWidth}
+                                                />
+                                                {/* <p className="block text-lg font-medium text-red-900 dark:text-white">{this.state.addressError}</p> */}
+                                            </div>
+
+                                        </div>
+                                        <p />
+
+
                                         <div className="form-group">
                                             <label className='block mb-2 text-lg font-medium text-gray-900 dark:text-white'>Price</label>
                                             <input type="text"
-                                            
+
                                                 className="form-control"
                                                 value={this.state.price}
                                                 onChange={this.onChangePrice}
                                             />
-                                                
+
                                             {/* <p className="block text-lg font-medium text-red-900 dark:text-white">{this.state.addressError}</p> */}
                                         </div>
-                                       
-                                        <p/>
 
-                                        
-                                       
+                                        <p />
+
+
+
 
                                         <div className="text-center align-middle form-group">
                                             <input className='text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800' type="submit" value="Add Wedding Hall" />

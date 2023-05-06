@@ -22,7 +22,6 @@ export class CreateRoom extends Component {
         this.onChangeFeature9 = this.onChangeFeature9.bind(this);
         this.onChangeFeature10 = this.onChangeFeature10.bind(this);
         this.onChangePrice = this.onChangePrice.bind(this);
-       
         this.onSubmit = this.onSubmit.bind(this);
 
         this.state = {
@@ -30,19 +29,19 @@ export class CreateRoom extends Component {
             roomName: '',
             description: '',
             size: '',
-            numofPeople:'',
+            numofPeople: '',
             view: '',
-            feature1:'',
+            feature1: '',
             feature2: '',
-            feature3:'',
+            feature3: '',
             feature4: '',
-            feature5:'',
-            feature6:'',
+            feature5: '',
+            feature6: '',
             feature7: '',
-            feature8:'',
+            feature8: '',
             feature9: '',
-            feature10:'',
-            price:''
+            feature10: '',
+            price: ''
         }
     }
 
@@ -147,9 +146,9 @@ export class CreateRoom extends Component {
             price: e.target.value
         });
     }
+
     onSubmit(e) {
         e.preventDefault();
-
         const rooms = {
             hotelName: this.state.hotelName,
             roomName: this.state.roomName,
@@ -167,44 +166,37 @@ export class CreateRoom extends Component {
             feature8: this.state.feature8,
             feature9: this.state.feature9,
             feature10: this.state.feature10,
-            price:this.state.price
-
+            price: this.state.price
         }
-
         console.log(rooms);
 
-       
+        axios.post('http://localhost:5000/room/', rooms)
+            .then(res => {
 
-            axios.post('http://localhost:5000/room/', rooms)
+                console.log(res);
 
-                .then(res => {
+                if (res.status === 200) {
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Successful',
+                        text: 'Room has been added!!',
+                        background: '#fff',
+                        confirmButtonColor: '#333533',
+                        iconColor: '#60e004'
+                    })
+                    this.clearData();
 
-                    console.log(res);
-
-                    if (res.status === 200) {
-
-                        Swal.fire({
-                            icon: 'success',
-                            title: 'Successful',
-                            text: 'Room has been added!!',
-                            background: '#fff',
-                            confirmButtonColor: '#333533',
-                            iconColor: '#60e004'
-                        })
-                        this.clearData();
-
-                    } else {
-                        Swal.fire({
-                            icon: 'error',
-                            title: 'Error',
-                            text: 'Error in adding!',
-                            background: '#fff',
-                            confirmButtonColor: '#333533',
-                            iconColor: '#e00404'
-                        })
-                    }
-                })
-           
+                } else {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Error',
+                        text: 'Error in adding!',
+                        background: '#fff',
+                        confirmButtonColor: '#333533',
+                        iconColor: '#e00404'
+                    })
+                }
+            })
     }
 
     clearData = () => {
@@ -213,19 +205,19 @@ export class CreateRoom extends Component {
             roomName: '',
             description: '',
             size: '',
-            numofPeople:'',
+            numofPeople: '',
             view: '',
-            feature1:'',
+            feature1: '',
             feature2: '',
-            feature3:'',
+            feature3: '',
             feature4: '',
-            feature5:'',
-            feature6:'',
+            feature5: '',
+            feature6: '',
             feature7: '',
-            feature8:'',
+            feature8: '',
             feature9: '',
-            feature10:'',
-            price:''
+            feature10: '',
+            price: ''
         })
     }
 
@@ -236,34 +228,27 @@ export class CreateRoom extends Component {
                     <div className="inline-block min-w-full py-2 sm:px-6 lg:px-8">
                         <div className='items-center overflow-hidden'>
                             <div class="grid grid-cols-1 gap-4 content-start pt-5 px-20">
-
                                 <form className='px-12 py-12 border-2 rounded-lg shadow-md bg-gray-50' onSubmit={this.onSubmit}>
-
                                     <div class="">
                                         <p className='text-4xl font-semibold text-black uppercase'>
                                             Add Room Details
                                         </p>
-
                                         <div className="grid grid-cols-2 gap-4 form-group">
-                                        <div className="form-group">
-                                            <label className='block mb-2 text-lg font-medium text-gray-900 dark:text-white'>Hotel Name</label>
-                                            <select type="text"
-                                                required
-                                                className="form-control "
-                                                value={this.state.hotelName}
-                                                onChange={this.onChangeHotelName}
-                                            >
-                                                 <option>Select From Here</option>
-                                                <option>Jetwing Sea</option>
-                                                <option>Jetwing Blue</option>
-                                                <option>Jetwing Colombo Seven</option>
-
-                                            </select>
-                                            <p/>
-                                            
-                                        </div>
-
-                                      
+                                            <div className="form-group">
+                                                <label className='block mb-2 text-lg font-medium text-gray-900 dark:text-white'>Hotel Name</label>
+                                                <select type="text"
+                                                    required
+                                                    className="form-control "
+                                                    value={this.state.hotelName}
+                                                    onChange={this.onChangeHotelName}
+                                                >
+                                                    <option>Select From Here</option>
+                                                    <option>Jetwing Sea</option>
+                                                    <option>Jetwing Blue</option>
+                                                    <option>Jetwing Colombo Seven</option>
+                                                </select>
+                                                <p />
+                                            </div>
                                             <div className="form-group">
                                                 <label className='block mb-2 text-lg font-medium text-gray-900 dark:text-white'>Room Name</label>
                                                 <input type="text"
@@ -272,24 +257,19 @@ export class CreateRoom extends Component {
                                                     value={this.state.roomName}
                                                     onChange={this.onChangeRoomName}
                                                 />
-                                                
-                                                <p/>
-                                              
+                                                <p />
                                             </div>
-                                            </div>
-                                            <div className="form-group">
-                                                <label className='block mb-2 text-lg font-medium text-gray-900 dark:text-white'>Description</label>
-                                                <textarea type="text"
-                                                    required
-                                                    className="form-control"
-                                                    value={this.state.description}
-                                                    onChange={this.onChangeDescription}
-                                                />
-                                                  <p/>
-                                               
-                                            </div>
-                                       
-                                           
+                                        </div>
+                                        <div className="form-group">
+                                            <label className='block mb-2 text-lg font-medium text-gray-900 dark:text-white'>Description</label>
+                                            <textarea type="text"
+                                                required
+                                                className="form-control"
+                                                value={this.state.description}
+                                                onChange={this.onChangeDescription}
+                                            />
+                                            <p />
+                                        </div>
                                         <div className="form-group">
                                             <label className='block mb-2 text-lg font-medium text-gray-900 dark:text-white'>Size</label>
                                             <input type="text"
@@ -298,13 +278,8 @@ export class CreateRoom extends Component {
                                                 value={this.state.size}
                                                 onChange={this.onChangeSize}
                                             />
-                                                
-
-                                           
-                                          
                                         </div>
-                                        <p/>
-
+                                        <p />
                                         <div className="form-group">
                                             <label className='block mb-2 text-lg font-medium text-gray-900 dark:text-white'>Num Of People</label>
                                             <input type="text"
@@ -313,12 +288,8 @@ export class CreateRoom extends Component {
                                                 value={this.state.numofPeople}
                                                 onChange={this.onChangeNumOfPeople}
                                             />
-                                                
-
-                                           
-                                           
                                         </div>
-                                        <p/>
+                                        <p />
                                         <div className="form-group">
                                             <label className='block mb-2 text-lg font-medium text-gray-900 dark:text-white'>View</label>
                                             <input type="text"
@@ -327,19 +298,13 @@ export class CreateRoom extends Component {
                                                 value={this.state.view}
                                                 onChange={this.onChangeView}
                                             />
-                                          
                                         </div>
-                                       
-                                       
-                                        <p/>
-                                        
-                                      
+                                        <p />
                                         <div className="form-group">
                                             <label className='block mb-2 text-lg font-medium text-gray-900 dark:text-white'>
                                                 Feature 1
                                             </label>
                                             <select type="text"
-                                       
                                                 className="form-control"
                                                 value={this.state.feature1}
                                                 onChange={this.onChangeFeature1}
@@ -355,22 +320,14 @@ export class CreateRoom extends Component {
                                                 <option>Magnifying Shaving Mirror</option>
                                                 <option>Tea/Coffee Making Facility</option>
                                                 <option>Iron and Ironing Board</option>
-
-
                                             </select>
-                                                 
-                                                 
-                                          
                                         </div>
-                                    
-                                        
-                                        <p/>
+                                        <p />
                                         <div className="form-group">
                                             <label className='block mb-2 text-lg font-medium text-gray-900 dark:text-white'>
                                                 Feature 2
                                             </label>
                                             <select type="text"
-                                       
                                                 className="form-control"
                                                 value={this.state.feature2}
                                                 onChange={this.onChangeFeature2}
@@ -386,84 +343,60 @@ export class CreateRoom extends Component {
                                                 <option>Magnifying Shaving Mirror</option>
                                                 <option>Tea/Coffee Making Facility</option>
                                                 <option>Iron and Ironing Board</option>
-
-
                                             </select>
-                                                 
-                                                 
-                                           
                                         </div>
-                                    
-                                        
-                                        <p/>
+                                        <p />
                                         <div className="form-group">
                                             <label className='block mb-2 text-lg font-medium text-gray-900 dark:text-white'>
                                                 Feature 3
                                             </label>
                                             <select type="text"
-                                       
-                                       className="form-control"
-                                       value={this.state.feature3}
-                                       onChange={this.onChangeFeature3}
-                                   >
-                                       <option>Select From Here</option>
-                                       <option>Central Air Conditioning with Individual Temperature Controls</option>
-                                       <option>Telephone with I.D.D. Facilities</option>
-                                       <option>Electric Power (220V-240V)</option>
-                                       <option>Mini Bar</option>
-                                       <option>Free Wi-Fi</option>
-                                       <option>Hot and Cold Water</option>
-                                       <option>Electronic Safe</option>
-                                       <option>Magnifying Shaving Mirror</option>
-                                       <option>Tea/Coffee Making Facility</option>
-                                       <option>Iron and Ironing Board</option>
-
-
-                                   </select>
-                                                 
-                                                 
-                                         
+                                                className="form-control"
+                                                value={this.state.feature3}
+                                                onChange={this.onChangeFeature3}
+                                            >
+                                                <option>Select From Here</option>
+                                                <option>Central Air Conditioning with Individual Temperature Controls</option>
+                                                <option>Telephone with I.D.D. Facilities</option>
+                                                <option>Electric Power (220V-240V)</option>
+                                                <option>Mini Bar</option>
+                                                <option>Free Wi-Fi</option>
+                                                <option>Hot and Cold Water</option>
+                                                <option>Electronic Safe</option>
+                                                <option>Magnifying Shaving Mirror</option>
+                                                <option>Tea/Coffee Making Facility</option>
+                                                <option>Iron and Ironing Board</option>
+                                            </select>
                                         </div>
-                                    
-                                        
-                                        <p/>
+                                        <p />
                                         <div className="form-group">
                                             <label className='block mb-2 text-lg font-medium text-gray-900 dark:text-white'>
                                                 Feature 4
                                             </label>
                                             <select type="text"
-                                       
-                                       className="form-control"
-                                       value={this.state.feature4}
-                                       onChange={this.onChangeFeature4}
-                                   >
-                                       <option>Select From Here</option>
-                                       <option>Central Air Conditioning with Individual Temperature Controls</option>
-                                       <option>Telephone with I.D.D. Facilities</option>
-                                       <option>Electric Power (220V-240V)</option>
-                                       <option>Mini Bar</option>
-                                       <option>Free Wi-Fi</option>
-                                       <option>Hot and Cold Water</option>
-                                       <option>Electronic Safe</option>
-                                       <option>Magnifying Shaving Mirror</option>
-                                       <option>Tea/Coffee Making Facility</option>
-                                       <option>Iron and Ironing Board</option>
-
-
-                                   </select>
-                                                 
-                                                 
-                                         
+                                                className="form-control"
+                                                value={this.state.feature4}
+                                                onChange={this.onChangeFeature4}
+                                            >
+                                                <option>Select From Here</option>
+                                                <option>Central Air Conditioning with Individual Temperature Controls</option>
+                                                <option>Telephone with I.D.D. Facilities</option>
+                                                <option>Electric Power (220V-240V)</option>
+                                                <option>Mini Bar</option>
+                                                <option>Free Wi-Fi</option>
+                                                <option>Hot and Cold Water</option>
+                                                <option>Electronic Safe</option>
+                                                <option>Magnifying Shaving Mirror</option>
+                                                <option>Tea/Coffee Making Facility</option>
+                                                <option>Iron and Ironing Board</option>
+                                            </select>
                                         </div>
-                                    
-                                        
-                                        <p/>
+                                        <p />
                                         <div className="form-group">
                                             <label className='block mb-2 text-lg font-medium text-gray-900 dark:text-white'>
                                                 Feature 5
                                             </label>
                                             <select type="text"
-                                       
                                                 className="form-control"
                                                 value={this.state.feature5}
                                                 onChange={this.onChangeFeature5}
@@ -479,83 +412,60 @@ export class CreateRoom extends Component {
                                                 <option>Magnifying Shaving Mirror</option>
                                                 <option>Tea/Coffee Making Facility</option>
                                                 <option>Iron and Ironing Board</option>
-
-
                                             </select>
-                                                 
-                                                 
-                                           
                                         </div>
-                                    
-                                        
-                                        <p/>
+                                        <p />
                                         <div className="form-group">
                                             <label className='block mb-2 text-lg font-medium text-gray-900 dark:text-white'>
                                                 Feature 6
                                             </label>
                                             <select type="text"
-                                       
-                                       className="form-control"
-                                       value={this.state.feature6}
-                                       onChange={this.onChangeFeature6}
-                                   >
-                                       <option>Select From Here</option>
-                                       <option>Central Air Conditioning with Individual Temperature Controls</option>
-                                       <option>Telephone with I.D.D. Facilities</option>
-                                       <option>Electric Power (220V-240V)</option>
-                                       <option>Mini Bar</option>
-                                       <option>Free Wi-Fi</option>
-                                       <option>Hot and Cold Water</option>
-                                       <option>Electronic Safe</option>
-                                       <option>Magnifying Shaving Mirror</option>
-                                       <option>Tea/Coffee Making Facility</option>
-                                       <option>Iron and Ironing Board</option>
-
-
-                                   </select>
-                                                 
-                                                 
-                                       
+                                                className="form-control"
+                                                value={this.state.feature6}
+                                                onChange={this.onChangeFeature6}
+                                            >
+                                                <option>Select From Here</option>
+                                                <option>Central Air Conditioning with Individual Temperature Controls</option>
+                                                <option>Telephone with I.D.D. Facilities</option>
+                                                <option>Electric Power (220V-240V)</option>
+                                                <option>Mini Bar</option>
+                                                <option>Free Wi-Fi</option>
+                                                <option>Hot and Cold Water</option>
+                                                <option>Electronic Safe</option>
+                                                <option>Magnifying Shaving Mirror</option>
+                                                <option>Tea/Coffee Making Facility</option>
+                                                <option>Iron and Ironing Board</option>
+                                            </select>
                                         </div>
-                                    
-                                        
-                                        <p/>
+                                        <p />
                                         <div className="form-group">
                                             <label className='block mb-2 text-lg font-medium text-gray-900 dark:text-white'>
                                                 Feature 7
                                             </label>
                                             <select type="text"
-                                       
-                                       className="form-control"
-                                       value={this.state.feature7}
-                                       onChange={this.onChangeFeature7}
-                                   >
-                                       <option>Select From Here</option>
-                                       <option>Central Air Conditioning with Individual Temperature Controls</option>
-                                       <option>Telephone with I.D.D. Facilities</option>
-                                       <option>Electric Power (220V-240V)</option>
-                                       <option>Mini Bar</option>
-                                       <option>Free Wi-Fi</option>
-                                       <option>Hot and Cold Water</option>
-                                       <option>Electronic Safe</option>
-                                       <option>Magnifying Shaving Mirror</option>
-                                       <option>Tea/Coffee Making Facility</option>
-                                       <option>Iron and Ironing Board</option>
-
-
-                                   </select>
-                                                 
-                                           
+                                                className="form-control"
+                                                value={this.state.feature7}
+                                                onChange={this.onChangeFeature7}
+                                            >
+                                                <option>Select From Here</option>
+                                                <option>Central Air Conditioning with Individual Temperature Controls</option>
+                                                <option>Telephone with I.D.D. Facilities</option>
+                                                <option>Electric Power (220V-240V)</option>
+                                                <option>Mini Bar</option>
+                                                <option>Free Wi-Fi</option>
+                                                <option>Hot and Cold Water</option>
+                                                <option>Electronic Safe</option>
+                                                <option>Magnifying Shaving Mirror</option>
+                                                <option>Tea/Coffee Making Facility</option>
+                                                <option>Iron and Ironing Board</option>
+                                            </select>
                                         </div>
-                                    
-                                        
-                                        <p/>
+                                        <p />
                                         <div className="form-group">
                                             <label className='block mb-2 text-lg font-medium text-gray-900 dark:text-white'>
                                                 Feature 8
                                             </label>
                                             <select type="text"
-                                       
                                                 className="form-control"
                                                 value={this.state.feature8}
                                                 onChange={this.onChangeFeature8}
@@ -571,22 +481,14 @@ export class CreateRoom extends Component {
                                                 <option>Magnifying Shaving Mirror</option>
                                                 <option>Tea/Coffee Making Facility</option>
                                                 <option>Iron and Ironing Board</option>
-
-
                                             </select>
-                                                 
-                                                 
-                                        
                                         </div>
-                                    
-                                        
-                                        <p/>
+                                        <p />
                                         <div className="form-group">
                                             <label className='block mb-2 text-lg font-medium text-gray-900 dark:text-white'>
                                                 Feature 9
                                             </label>
                                             <select type="text"
-                                       
                                                 className="form-control"
                                                 value={this.state.feature9}
                                                 onChange={this.onChangeFeature9}
@@ -602,22 +504,14 @@ export class CreateRoom extends Component {
                                                 <option>Magnifying Shaving Mirror</option>
                                                 <option>Tea/Coffee Making Facility</option>
                                                 <option>Iron and Ironing Board</option>
-
-
                                             </select>
-                                                 
-                                                 
-                                         
                                         </div>
-                                    
-                                        
-                                        <p/>
+                                        <p />
                                         <div className="form-group">
                                             <label className='block mb-2 text-lg font-medium text-gray-900 dark:text-white'>
                                                 Feature 10
                                             </label>
                                             <select type="text"
-                                       
                                                 className="form-control"
                                                 value={this.state.feature10}
                                                 onChange={this.onChangeFeature10}
@@ -633,47 +527,25 @@ export class CreateRoom extends Component {
                                                 <option>Magnifying Shaving Mirror</option>
                                                 <option>Tea/Coffee Making Facility</option>
                                                 <option>Iron and Ironing Board</option>
-
-
                                             </select>
-                                                 
-                                                 
-                                        
-                                        
                                         </div>
-                                    
-                                        
-                                        <p/>
-
+                                        <p />
                                         <div className="form-group">
                                             <label className='block mb-2 text-lg font-medium text-gray-900 dark:text-white'>
                                                 Price
                                             </label>
                                             <input type="text"
-                                       
                                                 className="form-control"
                                                 value={this.state.price}
                                                 onChange={this.onChangePrice}
                                             />
-                                                 
-                                                 
-                                        
-                                        
                                         </div>
-                                    
-                                        
-                                        <p/>
-
-                                        
-                                      
-
+                                        <p />
                                         <div className="text-center align-middle form-group">
                                             <input className='text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800' type="submit" value="Add Room" />
                                         </div>
                                     </div>
-
                                 </form>
-
                             </div>
                         </div>
                     </div>
