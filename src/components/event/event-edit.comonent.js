@@ -148,17 +148,6 @@ export default class EditEvent extends Component {
 
         console.log(events);
 
-
-
-        // if (this.state.fullName.length < 6) {
-        //     this.setState({ fullNameError: "Your Name is too short" })
-        // } else if (!this.state.email || regex.test(this.state.email) === false) {
-        //     this.setState({ emailError: "Please Enter a valid email." })
-        // } else if (this.state.contactNo.length != 10) {
-        //     this.setState({ contactError: "Please Enter a valid Phone Number." })
-        // } else if (this.state.address.length < 10) {
-        //     this.setState({ addressError: "Your address is too short." })
-        // }else {
         axios.put('http://localhost:5000/event/' + this.state.id, events)
             .then(res => {
                 console.log(res);
@@ -208,9 +197,6 @@ export default class EditEvent extends Component {
                                 <form onSubmit={this.onSubmit}>
 
                                     <div class="">
-                                        {/* <p className='text-4xl font-semibold text-black uppercase'>
-                                            Add Event
-                                        </p> */}
 
                                         <div className="grid grid-cols-2 gap-4 form-group">
                                             <div className="form-group">
@@ -241,7 +227,8 @@ export default class EditEvent extends Component {
                                                     onChange={this.onChangeHallName}
                                                 />
 
-                                                <p />{/* <p className="block text-lg font-medium text-red-900 dark:text-white">{this.state.emailError}</p> */}
+                                                <p />
+                                            
                                             </div>
                                         </div>
                                         <div className="form-group">
@@ -253,7 +240,7 @@ export default class EditEvent extends Component {
                                                 onChange={this.onChangeDescription}
                                             />
                                             <p />
-                                            {/* <p className="block text-lg font-medium text-red-900 dark:text-white">{this.state.contactError}</p> */}
+                                         
                                         </div>
 
                                         <div className="grid grid-cols-2 gap-4 form-group">
@@ -273,7 +260,7 @@ export default class EditEvent extends Component {
                                                     <option>FreeStyle</option>
 
                                                 </select>
-                                                {/* <p className="block text-lg font-medium text-red-900 dark:text-white">{this.state.addressError}</p> */}
+                                          
                                             </div>
                                             <div className="form-group">
                                                 <label className='block mb-2 text-lg font-medium text-gray-900 dark:text-white'>Capacity</label>
@@ -283,7 +270,7 @@ export default class EditEvent extends Component {
                                                     value={this.state.capacity1}
                                                     onChange={this.onChangeCapacity1}
                                                 />
-                                                {/* <p className="block text-lg font-medium text-red-900 dark:text-white">{this.state.addressError}</p> */}
+                                             
                                             </div>
 
                                         </div>
@@ -305,7 +292,7 @@ export default class EditEvent extends Component {
                                                     <option>Boardroom</option>
                                                     <option>FreeStyle</option>
                                                 </select>
-                                                {/* <p className="block text-lg font-medium text-red-900 dark:text-white">{this.state.addressError}</p> */}
+                                              
                                             </div>
                                             <div className="form-group">
                                                 <label className='block mb-2 text-lg font-medium text-gray-900 dark:text-white'>Capacity</label>
@@ -315,7 +302,7 @@ export default class EditEvent extends Component {
                                                     value={this.state.capacity2}
                                                     onChange={this.onChangeCapacity2}
                                                 />
-                                                {/* <p className="block text-lg font-medium text-red-900 dark:text-white">{this.state.addressError}</p> */}
+                                              
                                             </div>
 
                                         </div>
@@ -336,7 +323,7 @@ export default class EditEvent extends Component {
                                                     <option>Classroom</option>
                                                     <option>Boardroom</option>
                                                     <option>FreeStyle</option></select>
-                                                {/* <p className="block text-lg font-medium text-red-900 dark:text-white">{this.state.addressError}</p> */}
+                                               
                                             </div>
                                             <div className="form-group">
                                                 <label className='block mb-2 text-lg font-medium text-gray-900 dark:text-white'>Capacity</label>
@@ -346,7 +333,7 @@ export default class EditEvent extends Component {
                                                     value={this.state.capacity3}
                                                     onChange={this.onChangeCapacity3}
                                                 />
-                                                {/* <p className="block text-lg font-medium text-red-900 dark:text-white">{this.state.addressError}</p> */}
+                                             
                                             </div>
 
                                         </div>
@@ -368,7 +355,7 @@ export default class EditEvent extends Component {
                                                     <option>Classroom</option>
                                                     <option>Boardroom</option>
                                                     <option>FreeStyle</option></select>
-                                                {/* <p className="block text-lg font-medium text-red-900 dark:text-white">{this.state.addressError}</p> */}
+                                               
                                             </div>
                                             <div className="form-group">
                                                 <label className='block mb-2 text-lg font-medium text-gray-900 dark:text-white'>Capacity</label>
@@ -378,7 +365,7 @@ export default class EditEvent extends Component {
                                                     value={this.state.capacity4}
                                                     onChange={this.onChangeCapacity4}
                                                 />
-                                                {/* <p className="block text-lg font-medium text-red-900 dark:text-white">{this.state.addressError}</p> */}
+                                               
                                             </div>
                                         </div>
                                         <p />

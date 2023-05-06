@@ -4,7 +4,7 @@ import Swal from "sweetalert2";
 import DatePicker from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css"
 import AuthenticationService from '../user/AuthenticationService';
-import CreatePayment from './payment-add.component';
+
 import { Modal } from "react-bootstrap";
 
 
@@ -158,9 +158,6 @@ export default class CreateBooking extends Component {
         calculatePrice(numofRooms,numofdays,price){
 
 
-            // const numofdays = checkoutDate - checkinDate
-            // console.log("Number Of Stays" +numofdays);
-
             let finalAmount = numofdays * numofRooms * price
             return finalAmount;
 
@@ -168,18 +165,15 @@ export default class CreateBooking extends Component {
         }
 
         closeModalBoxForBooking = () => {
-            this.setState({ show: false })
-        
-           
+            this.setState({ show: false })   
         
           }
 
         onSubmit(e) {
 
-            const loggedUserId = AuthenticationService.loggedUserId();
             e.preventDefault();
 
-            // const priceFinal = this.calculatePrice(this.state.numofRooms,this.state.numofdays,this.state.price)
+        
     
             const booking = {
                 hotelName: this.state.hotelName,
@@ -198,15 +192,7 @@ export default class CreateBooking extends Component {
     
             console.log(booking);
     
-            // if (this.state.fullName.length < 6) {
-            //     this.setState({ fullNameError: "Your Name is too short" })
-            // } else if (!this.state.email || regex.test(this.state.email) === false) {
-            //     this.setState({ emailError: "Please Enter a valid email." })
-            // } else if (this.state.contactNo.length != 10) {
-            //     this.setState({ contactError: "Please Enter a valid Phone Number." })
-            // } else if (this.state.address.length < 10) {
-            //     this.setState({ addressError: "Your address is too short." })
-            // } else {
+            
     
                 axios.post('http://localhost:5000/booking/', booking)
     
@@ -244,9 +230,7 @@ export default class CreateBooking extends Component {
                         
                        
                     })
-                // window.location = '/customer';
-                // }
-            // }
+               
         }
     
         clearData = () => {
@@ -293,7 +277,7 @@ export default class CreateBooking extends Component {
                                                 
                                             />
                                             <p/>
-                                            {/* <p className="block text-lg font-medium text-red-900 dark:text-white">{this.state.fullNameError}</p> */}
+                                           
                                         </div>
 
                                       
@@ -308,7 +292,8 @@ export default class CreateBooking extends Component {
                                                    
                                                 />
                                                 
-                                                <p/>{/* <p className="block text-lg font-medium text-red-900 dark:text-white">{this.state.emailError}</p> */}
+                                                <p/>
+                                              
                                             </div>
                                             </div>
                                             <div className="form-group">
@@ -322,7 +307,8 @@ export default class CreateBooking extends Component {
                                                    
                                                 />
                                                 
-                                                <p/>{/* <p className="block text-lg font-medium text-red-900 dark:text-white">{this.state.emailError}</p> */}
+                                                <p/>
+                                               
                                             </div>
                                             <div className="grid grid-cols-2 gap-4 form-group">
                                             <div className="form-group">
@@ -336,7 +322,7 @@ export default class CreateBooking extends Component {
                                                    
                                                 />
                                                   <p/>
-                                                {/* <p className="block text-lg font-medium text-red-900 dark:text-white">{this.state.contactError}</p> */}
+                                               
                                             </div>
                                             
                                             <div className="form-group">
@@ -350,7 +336,7 @@ export default class CreateBooking extends Component {
                                                    
                                                 />
                                                   <p/>
-                                                {/* <p className="block text-lg font-medium text-red-900 dark:text-white">{this.state.contactError}</p> */}
+                                               
                                             </div>
                                             </div>
 
@@ -366,7 +352,7 @@ export default class CreateBooking extends Component {
                                                             onChange={this.onChangeCheckinDate}
                                                         />
                                                   <p/>
-                                                {/* <p className="block text-lg font-medium text-red-900 dark:text-white">{this.state.contactError}</p> */}
+                                               
                                             </div>
                                             
                                             <div className="form-group">
@@ -379,66 +365,11 @@ export default class CreateBooking extends Component {
                                                             onChange={this.onChangeCheckoutDate}
                                                         />
                                                   <p/>
-                                                {/* <p className="block text-lg font-medium text-red-900 dark:text-white">{this.state.contactError}</p> */}
+                                               
                                             </div>
                                             </div>
                                             <p/>
                                        
-                                            {/* <div className="grid grid-cols-2 gap-4 form-group">
-                                        <div className="form-group">
-                                            <label className='block mb-2 text-lg font-medium text-gray-900 dark:text-white'>Check In Date</label>
-                                            <DatePicker
-                                                            viewBox="0 0 20 40"
-                                                            required
-                                                            format = "y-MM-dd"
-                                                            selected={this.state.checkinDate}
-                                                            onChange={this.onChangeCheckinDate}
-                                                        />
-                                                
-
-                                           
-                                           
-                                        </div>
-                                        
-                                        <p/>
-
-                                        <div className="form-group">
-                                            <label className='block mb-2 text-lg font-medium text-gray-900 dark:text-white'>Check Out Date</label>
-                                            <DatePicker
-                                                            viewBox="0 0 20 40"
-                                                            required
-                                                            format = "y-MM-dd"
-                                                            selected={this.state.checkoutDate}
-                                                            onChange={this.onChangeCheckoutDate}
-                                                        />
-                                                
-
-                                           
-                                           
-                                        </div>
-                                        </div>
-                                        
-                                        <p/> */}
-                                        
-                                       
-                                       
-                                       
-                                    
-                                        
-                                        
-                                        
-                                        
-                                    
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                      
-
-                                        
 
                                         <div>
                                             <h3 class="pb-4">Payment Details</h3>
@@ -455,7 +386,7 @@ export default class CreateBooking extends Component {
                                                    
                                                 />
                                                   <p/>
-                                                {/* <p className="block text-lg font-medium text-red-900 dark:text-white">{this.state.contactError}</p> */}
+                                               
                                             </div>
 
                                             <div className="grid grid-cols-2 gap-4 form-group">
@@ -480,7 +411,7 @@ export default class CreateBooking extends Component {
                                                     <option>Amanaa Bank</option>
                                                 </select>
                                                   <p/>
-                                                {/* <p className="block text-lg font-medium text-red-900 dark:text-white">{this.state.contactError}</p> */}
+                                               
                                             </div>
 
                                             <div className="form-group">
@@ -495,7 +426,7 @@ export default class CreateBooking extends Component {
                                                    
                                                 />
                                                   <p/>
-                                                {/* <p className="block text-lg font-medium text-red-900 dark:text-white">{this.state.contactError}</p> */}
+                                             
                                             </div>
                                             </div>
 
@@ -512,7 +443,7 @@ export default class CreateBooking extends Component {
                                                    
                                                 />
                                                   <p/>
-                                                {/* <p className="block text-lg font-medium text-red-900 dark:text-white">{this.state.contactError}</p> */}
+                                               
                                             </div>
 
                                             <div className="form-group">
@@ -527,7 +458,7 @@ export default class CreateBooking extends Component {
                                                    
                                                 />
                                                   <p/>
-                                                {/* <p className="block text-lg font-medium text-red-900 dark:text-white">{this.state.contactError}</p> */}
+                                              
                                             </div>
                                             </div>
                                    

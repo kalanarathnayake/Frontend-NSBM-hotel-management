@@ -94,7 +94,7 @@ export default class RoomDetails extends Component {
                                                 
                                             />
                                             <p/>
-                                            {/* <p className="block text-lg font-medium text-red-900 dark:text-white">{this.state.fullNameError}</p> */}
+                                        
                                         </div>
 
                                       
@@ -108,7 +108,7 @@ export default class RoomDetails extends Component {
                                                    
                                                 />
                                                 
-                                                <p/>{/* <p className="block text-lg font-medium text-red-900 dark:text-white">{this.state.emailError}</p> */}
+                                                <p/>
                                             </div>
                                             </div>
                                             <div className="form-group">
@@ -120,7 +120,7 @@ export default class RoomDetails extends Component {
                                                    readOnly
                                                 />
                                                   <p/>
-                                                {/* <p className="block text-lg font-medium text-red-900 dark:text-white">{this.state.contactError}</p> */}
+                                               
                                             </div>
                                        
                                            
@@ -135,7 +135,7 @@ export default class RoomDetails extends Component {
                                                 
 
                                            
-                                            {/* <p className="block text-lg font-medium text-red-900 dark:text-white">{this.state.addressError}</p> */}
+                                           
                                         </div>
                                         <p/>
 
@@ -150,7 +150,6 @@ export default class RoomDetails extends Component {
                                                 
 
                                            
-                                            {/* <p className="block text-lg font-medium text-red-900 dark:text-white">{this.state.addressError}</p> */}
                                         </div>
                                         <p/>
                                         <div className="form-group">
@@ -161,7 +160,7 @@ export default class RoomDetails extends Component {
                                                 value={this.state.view}
                                               readOnly
                                             />
-                                            {/* <p className="block text-lg font-medium text-red-900 dark:text-white">{this.state.addressError}</p> */}
+                                           
                                         </div>
                                        
                                        
@@ -179,8 +178,7 @@ export default class RoomDetails extends Component {
                                                readOnly
                                             />
                                                  
-                                                 
-                                            {/* <p className="block text-lg font-medium text-red-900 dark:text-white">{this.state.addressError}</p> */}
+                                         
                                         </div>
                                     
                                         
@@ -197,7 +195,7 @@ export default class RoomDetails extends Component {
                                             />
                                                  
                                                  
-                                            {/* <p className="block text-lg font-medium text-red-900 dark:text-white">{this.state.addressError}</p> */}
+                                           
                                         </div>
                                     
                                         
@@ -213,8 +211,7 @@ export default class RoomDetails extends Component {
                                                readOnly
                                             />
                                                  
-                                                 
-                                            {/* <p className="block text-lg font-medium text-red-900 dark:text-white">{this.state.addressError}</p> */}
+                                         
                                         </div>
                                     
                                         
@@ -230,8 +227,7 @@ export default class RoomDetails extends Component {
                                                readOnly
                                             />
                                                  
-                                                 
-                                            {/* <p className="block text-lg font-medium text-red-900 dark:text-white">{this.state.addressError}</p> */}
+                                           
                                         </div>
                                     
                                         
@@ -247,8 +243,7 @@ export default class RoomDetails extends Component {
                                                 readOnly
                                             />
                                                  
-                                                 
-                                            {/* <p className="block text-lg font-medium text-red-900 dark:text-white">{this.state.addressError}</p> */}
+                                          
                                         </div>
                                     
                                         
@@ -263,9 +258,7 @@ export default class RoomDetails extends Component {
                                                 value={this.state.feature6}
                                                 readOnly
                                             />
-                                                 
-                                                 
-                                            {/* <p className="block text-lg font-medium text-red-900 dark:text-white">{this.state.addressError}</p> */}
+                                           
                                         </div>
                                     
                                         
@@ -281,8 +274,7 @@ export default class RoomDetails extends Component {
                                                 readOnly
                                             />
                                                  
-                                                 
-                                            {/* <p className="block text-lg font-medium text-red-900 dark:text-white">{this.state.addressError}</p> */}
+                                            
                                         </div>
                                     
                                         
@@ -297,9 +289,7 @@ export default class RoomDetails extends Component {
                                                 value={this.state.feature8}
                                                 readOnly
                                             />
-                                                 
-                                                 
-                                            {/* <p className="block text-lg font-medium text-red-900 dark:text-white">{this.state.addressError}</p> */}
+                                              
                                         </div>
                                     
                                         
@@ -315,8 +305,7 @@ export default class RoomDetails extends Component {
                                                readOnly
                                             />
                                                  
-                                                 
-                                            {/* <p className="block text-lg font-medium text-red-900 dark:text-white">{this.state.addressError}</p> */}
+                                             
                                         </div>
                                     
                                         
@@ -332,8 +321,7 @@ export default class RoomDetails extends Component {
                                                 readOnly
                                             />
                                                  
-                                                 
-                                            {/* <p className="block text-lg font-medium text-red-900 dark:text-white">{this.state.addressError}</p> */}
+                                           
                                         </div>
                                     
                                         
@@ -350,8 +338,7 @@ export default class RoomDetails extends Component {
                                                 readOnly
                                             />
                                                  
-                                                 
-                                            {/* <p className="block text-lg font-medium text-red-900 dark:text-white">{this.state.addressError}</p> */}
+                                        
                                         </div>
                                     
                                         

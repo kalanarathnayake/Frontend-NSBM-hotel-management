@@ -211,15 +211,6 @@ export default class EditRoom extends Component {
 
 
 
-        // if (this.state.fullName.length < 6) {
-        //     this.setState({ fullNameError: "Your Name is too short" })
-        // } else if (!this.state.email || regex.test(this.state.email) === false) {
-        //     this.setState({ emailError: "Please Enter a valid email." })
-        // } else if (this.state.contactNo.length != 10) {
-        //     this.setState({ contactError: "Please Enter a valid Phone Number." })
-        // } else if (this.state.address.length < 10) {
-        //     this.setState({ addressError: "Your address is too short." })
-        // }else {
         axios.put('http://localhost:5000/room/' + this.state.id, rooms)
             .then(res => {
                 console.log(res);
@@ -286,7 +277,7 @@ export default class EditRoom extends Component {
 
                                             </select>
                                             <p />
-                                            {/* <p className="block text-lg font-medium text-red-900 dark:text-white">{this.state.fullNameError}</p> */}
+                                           
                                         </div>
 
 
@@ -299,7 +290,7 @@ export default class EditRoom extends Component {
                                                 onChange={this.onChangeRoomName}
                                             />
 
-                                            <p />{/* <p className="block text-lg font-medium text-red-900 dark:text-white">{this.state.emailError}</p> */}
+                                            <p />
                                         </div>
                                     </div>
                                     <div className="form-group">
@@ -311,7 +302,7 @@ export default class EditRoom extends Component {
                                             onChange={this.onChangeDescription}
                                         />
                                         <p />
-                                        {/* <p className="block text-lg font-medium text-red-900 dark:text-white">{this.state.contactError}</p> */}
+                                       
                                     </div>
 
 
@@ -323,10 +314,6 @@ export default class EditRoom extends Component {
                                             value={this.state.size}
                                             onChange={this.onChangeSize}
                                         />
-
-
-
-                                        {/* <p className="block text-lg font-medium text-red-900 dark:text-white">{this.state.addressError}</p> */}
                                     </div>
                                     <p />
 
@@ -341,7 +328,7 @@ export default class EditRoom extends Component {
 
 
 
-                                        {/* <p className="block text-lg font-medium text-red-900 dark:text-white">{this.state.addressError}</p> */}
+                                      
                                     </div>
                                     <p />
                                     <div className="form-group">
@@ -352,7 +339,7 @@ export default class EditRoom extends Component {
                                             value={this.state.view}
                                             onChange={this.onChangeView}
                                         />
-                                        {/* <p className="block text-lg font-medium text-red-900 dark:text-white">{this.state.addressError}</p> */}
+                                      
                                     </div>
 
 
@@ -385,7 +372,7 @@ export default class EditRoom extends Component {
                                         </select>
 
 
-                                        {/* <p className="block text-lg font-medium text-red-900 dark:text-white">{this.state.addressError}</p> */}
+                                     
                                     </div>
 
 
@@ -416,7 +403,7 @@ export default class EditRoom extends Component {
                                         </select>
 
 
-                                        {/* <p className="block text-lg font-medium text-red-900 dark:text-white">{this.state.addressError}</p> */}
+                                       
                                     </div>
 
 
@@ -447,7 +434,7 @@ export default class EditRoom extends Component {
                                         </select>
 
 
-                                        {/* <p className="block text-lg font-medium text-red-900 dark:text-white">{this.state.addressError}</p> */}
+                                  
                                     </div>
 
 
@@ -478,7 +465,7 @@ export default class EditRoom extends Component {
                                         </select>
 
 
-                                        {/* <p className="block text-lg font-medium text-red-900 dark:text-white">{this.state.addressError}</p> */}
+                                       
                                     </div>
 
 
@@ -508,8 +495,6 @@ export default class EditRoom extends Component {
 
                                         </select>
 
-
-                                        {/* <p className="block text-lg font-medium text-red-900 dark:text-white">{this.state.addressError}</p> */}
                                     </div>
 
 
@@ -539,8 +524,6 @@ export default class EditRoom extends Component {
 
                                         </select>
 
-
-                                        {/* <p className="block text-lg font-medium text-red-900 dark:text-white">{this.state.addressError}</p> */}
                                     </div>
 
 
@@ -570,8 +553,6 @@ export default class EditRoom extends Component {
 
                                         </select>
 
-
-                                        {/* <p className="block text-lg font-medium text-red-900 dark:text-white">{this.state.addressError}</p> */}
                                     </div>
 
 
@@ -601,8 +582,6 @@ export default class EditRoom extends Component {
 
                                         </select>
 
-
-                                        {/* <p className="block text-lg font-medium text-red-900 dark:text-white">{this.state.addressError}</p> */}
                                     </div>
 
 
@@ -632,8 +611,6 @@ export default class EditRoom extends Component {
 
                                         </select>
 
-
-                                        {/* <p className="block text-lg font-medium text-red-900 dark:text-white">{this.state.addressError}</p> */}
                                     </div>
 
 
@@ -663,8 +640,6 @@ export default class EditRoom extends Component {
 
                                         </select>
 
-
-                                        {/* <p className="block text-lg font-medium text-red-900 dark:text-white">{this.state.addressError}</p> */}
                                     </div>
 
 
@@ -681,8 +656,6 @@ export default class EditRoom extends Component {
                                             onChange={this.onChangePrice}
                                         />
 
-
-                                        {/* <p className="block text-lg font-medium text-red-900 dark:text-white">{this.state.addressError}</p> */}
                                     </div>
 
 

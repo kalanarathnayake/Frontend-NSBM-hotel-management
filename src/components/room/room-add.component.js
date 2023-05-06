@@ -173,15 +173,7 @@ export class CreateRoom extends Component {
 
         console.log(rooms);
 
-        // if (this.state.fullName.length < 6) {
-        //     this.setState({ fullNameError: "Your Name is too short" })
-        // } else if (!this.state.email || regex.test(this.state.email) === false) {
-        //     this.setState({ emailError: "Please Enter a valid email." })
-        // } else if (this.state.contactNo.length != 10) {
-        //     this.setState({ contactError: "Please Enter a valid Phone Number." })
-        // } else if (this.state.address.length < 10) {
-        //     this.setState({ addressError: "Your address is too short." })
-        // } else {
+       
 
             axios.post('http://localhost:5000/room/', rooms)
 
@@ -212,9 +204,7 @@ export class CreateRoom extends Component {
                         })
                     }
                 })
-            // window.location = '/customer';
-            // }
-        // }
+           
     }
 
     clearData = () => {
@@ -270,7 +260,7 @@ export class CreateRoom extends Component {
 
                                             </select>
                                             <p/>
-                                            {/* <p className="block text-lg font-medium text-red-900 dark:text-white">{this.state.fullNameError}</p> */}
+                                            
                                         </div>
 
                                       
@@ -283,7 +273,8 @@ export class CreateRoom extends Component {
                                                     onChange={this.onChangeRoomName}
                                                 />
                                                 
-                                                <p/>{/* <p className="block text-lg font-medium text-red-900 dark:text-white">{this.state.emailError}</p> */}
+                                                <p/>
+                                              
                                             </div>
                                             </div>
                                             <div className="form-group">
@@ -295,7 +286,7 @@ export class CreateRoom extends Component {
                                                     onChange={this.onChangeDescription}
                                                 />
                                                   <p/>
-                                                {/* <p className="block text-lg font-medium text-red-900 dark:text-white">{this.state.contactError}</p> */}
+                                               
                                             </div>
                                        
                                            
@@ -310,7 +301,7 @@ export class CreateRoom extends Component {
                                                 
 
                                            
-                                            {/* <p className="block text-lg font-medium text-red-900 dark:text-white">{this.state.addressError}</p> */}
+                                          
                                         </div>
                                         <p/>
 
@@ -325,7 +316,7 @@ export class CreateRoom extends Component {
                                                 
 
                                            
-                                            {/* <p className="block text-lg font-medium text-red-900 dark:text-white">{this.state.addressError}</p> */}
+                                           
                                         </div>
                                         <p/>
                                         <div className="form-group">
@@ -336,7 +327,7 @@ export class CreateRoom extends Component {
                                                 value={this.state.view}
                                                 onChange={this.onChangeView}
                                             />
-                                            {/* <p className="block text-lg font-medium text-red-900 dark:text-white">{this.state.addressError}</p> */}
+                                          
                                         </div>
                                        
                                        
@@ -369,7 +360,7 @@ export class CreateRoom extends Component {
                                             </select>
                                                  
                                                  
-                                            {/* <p className="block text-lg font-medium text-red-900 dark:text-white">{this.state.addressError}</p> */}
+                                          
                                         </div>
                                     
                                         
@@ -400,7 +391,7 @@ export class CreateRoom extends Component {
                                             </select>
                                                  
                                                  
-                                            {/* <p className="block text-lg font-medium text-red-900 dark:text-white">{this.state.addressError}</p> */}
+                                           
                                         </div>
                                     
                                         
@@ -431,7 +422,7 @@ export class CreateRoom extends Component {
                                    </select>
                                                  
                                                  
-                                            {/* <p className="block text-lg font-medium text-red-900 dark:text-white">{this.state.addressError}</p> */}
+                                         
                                         </div>
                                     
                                         
@@ -462,7 +453,7 @@ export class CreateRoom extends Component {
                                    </select>
                                                  
                                                  
-                                            {/* <p className="block text-lg font-medium text-red-900 dark:text-white">{this.state.addressError}</p> */}
+                                         
                                         </div>
                                     
                                         
@@ -493,7 +484,7 @@ export class CreateRoom extends Component {
                                             </select>
                                                  
                                                  
-                                            {/* <p className="block text-lg font-medium text-red-900 dark:text-white">{this.state.addressError}</p> */}
+                                           
                                         </div>
                                     
                                         
@@ -524,7 +515,7 @@ export class CreateRoom extends Component {
                                    </select>
                                                  
                                                  
-                                            {/* <p className="block text-lg font-medium text-red-900 dark:text-white">{this.state.addressError}</p> */}
+                                       
                                         </div>
                                     
                                         
@@ -554,8 +545,7 @@ export class CreateRoom extends Component {
 
                                    </select>
                                                  
-                                                 
-                                            {/* <p className="block text-lg font-medium text-red-900 dark:text-white">{this.state.addressError}</p> */}
+                                           
                                         </div>
                                     
                                         
@@ -586,7 +576,7 @@ export class CreateRoom extends Component {
                                             </select>
                                                  
                                                  
-                                            {/* <p className="block text-lg font-medium text-red-900 dark:text-white">{this.state.addressError}</p> */}
+                                        
                                         </div>
                                     
                                         
@@ -617,7 +607,7 @@ export class CreateRoom extends Component {
                                             </select>
                                                  
                                                  
-                                            {/* <p className="block text-lg font-medium text-red-900 dark:text-white">{this.state.addressError}</p> */}
+                                         
                                         </div>
                                     
                                         
@@ -648,7 +638,8 @@ export class CreateRoom extends Component {
                                             </select>
                                                  
                                                  
-                                            {/* <p className="block text-lg font-medium text-red-900 dark:text-white">{this.state.addressError}</p> */}
+                                        
+                                        
                                         </div>
                                     
                                         
@@ -666,7 +657,8 @@ export class CreateRoom extends Component {
                                             />
                                                  
                                                  
-                                            {/* <p className="block text-lg font-medium text-red-900 dark:text-white">{this.state.addressError}</p> */}
+                                        
+                                        
                                         </div>
                                     
                                         
