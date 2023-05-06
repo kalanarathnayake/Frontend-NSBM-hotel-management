@@ -2,13 +2,9 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import Swal from "sweetalert2";
 
-
 export default class EditRoom extends Component {
-
-
     constructor(props) {
         super(props);
-
         this.onChangeHotelName = this.onChangeHotelName.bind(this);
         this.onChangeRoomName = this.onChangeRoomName.bind(this);
         this.onChangeDescription = this.onChangeDescription.bind(this);
@@ -27,7 +23,6 @@ export default class EditRoom extends Component {
         this.onChangeFeature10 = this.onChangeFeature10.bind(this);
         this.onChangePrice = this.onChangePrice.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
-
         this.state = {
             id: props.rmId,
             hotelName: '',
@@ -47,7 +42,6 @@ export default class EditRoom extends Component {
             feature9: '',
             feature10: '',
             price: ''
-
         }
     }
 
@@ -72,13 +66,11 @@ export default class EditRoom extends Component {
                     feature9: response.data.feature9,
                     feature10: response.data.feature10,
                     price: response.data.price,
-
                 })
             })
             .catch(function (error) {
                 console.log(error);
             })
-
     }
 
     onChangeHotelName(e) {
@@ -185,7 +177,6 @@ export default class EditRoom extends Component {
 
     onSubmit(e) {
         e.preventDefault();
-
         const rooms = {
             hotelName: this.state.hotelName,
             roomName: this.state.roomName,
@@ -204,21 +195,12 @@ export default class EditRoom extends Component {
             feature9: this.state.feature9,
             feature10: this.state.feature10,
             price: this.state.price
-
         }
-
         console.log(rooms);
-
-
-
         axios.put('http://localhost:5000/room/' + this.state.id, rooms)
             .then(res => {
                 console.log(res);
-
                 if (res.status === 200) {
-
-
-
                     Swal.fire({
                         icon: 'success',
                         title: 'Successful',
@@ -227,7 +209,6 @@ export default class EditRoom extends Component {
                         confirmButtonColor: '#333533',
                         iconColor: '#60e004'
                     })
-
                 } else {
                     Swal.fire({
                         icon: 'error',
@@ -238,7 +219,6 @@ export default class EditRoom extends Component {
                         iconColor: '#e00404'
                     })
                 }
-
             })
         // }
     }
@@ -274,13 +254,9 @@ export default class EditRoom extends Component {
                                                 <option>Jetwing Sea</option>
                                                 <option>Jetwing Blue</option>
                                                 <option>Jetwing Colombo Seven</option>
-
                                             </select>
                                             <p />
-                                           
                                         </div>
-
-
                                         <div className="form-group">
                                             <label className='block mb-2 text-lg font-medium text-gray-900 dark:text-white'>Room Name</label>
                                             <input type="text"
@@ -289,7 +265,6 @@ export default class EditRoom extends Component {
                                                 value={this.state.roomName}
                                                 onChange={this.onChangeRoomName}
                                             />
-
                                             <p />
                                         </div>
                                     </div>
@@ -302,10 +277,7 @@ export default class EditRoom extends Component {
                                             onChange={this.onChangeDescription}
                                         />
                                         <p />
-                                       
                                     </div>
-
-
                                     <div className="form-group">
                                         <label className='block mb-2 text-lg font-medium text-gray-900 dark:text-white'>Size</label>
                                         <input type="text"
@@ -316,7 +288,6 @@ export default class EditRoom extends Component {
                                         />
                                     </div>
                                     <p />
-
                                     <div className="form-group">
                                         <label className='block mb-2 text-lg font-medium text-gray-900 dark:text-white'>Num Of People</label>
                                         <input type="text"
@@ -325,10 +296,6 @@ export default class EditRoom extends Component {
                                             value={this.state.numofPeople}
                                             onChange={this.onChangeNumOfPeople}
                                         />
-
-
-
-                                      
                                     </div>
                                     <p />
                                     <div className="form-group">
@@ -339,19 +306,13 @@ export default class EditRoom extends Component {
                                             value={this.state.view}
                                             onChange={this.onChangeView}
                                         />
-                                      
                                     </div>
-
-
                                     <p />
-
-
                                     <div className="form-group">
                                         <label className='block mb-2 text-lg font-medium text-gray-900 dark:text-white'>
                                             Feature 1
                                         </label>
                                         <select type="text"
-
                                             className="form-control"
                                             value={this.state.feature1}
                                             onChange={this.onChangeFeature1}
@@ -367,22 +328,14 @@ export default class EditRoom extends Component {
                                             <option>Magnifying Shaving Mirror</option>
                                             <option>Tea/Coffee Making Facility</option>
                                             <option>Iron and Ironing Board</option>
-
-
                                         </select>
-
-
-                                     
                                     </div>
-
-
                                     <p />
                                     <div className="form-group">
                                         <label className='block mb-2 text-lg font-medium text-gray-900 dark:text-white'>
                                             Feature 2
                                         </label>
                                         <select type="text"
-
                                             className="form-control"
                                             value={this.state.feature2}
                                             onChange={this.onChangeFeature2}
@@ -398,22 +351,14 @@ export default class EditRoom extends Component {
                                             <option>Magnifying Shaving Mirror</option>
                                             <option>Tea/Coffee Making Facility</option>
                                             <option>Iron and Ironing Board</option>
-
-
                                         </select>
-
-
-                                       
                                     </div>
-
-
                                     <p />
                                     <div className="form-group">
                                         <label className='block mb-2 text-lg font-medium text-gray-900 dark:text-white'>
                                             Feature 3
                                         </label>
                                         <select type="text"
-
                                             className="form-control"
                                             value={this.state.feature3}
                                             onChange={this.onChangeFeature3}
@@ -429,22 +374,14 @@ export default class EditRoom extends Component {
                                             <option>Magnifying Shaving Mirror</option>
                                             <option>Tea/Coffee Making Facility</option>
                                             <option>Iron and Ironing Board</option>
-
-
                                         </select>
-
-
-                                  
                                     </div>
-
-
                                     <p />
                                     <div className="form-group">
                                         <label className='block mb-2 text-lg font-medium text-gray-900 dark:text-white'>
                                             Feature 4
                                         </label>
                                         <select type="text"
-
                                             className="form-control"
                                             value={this.state.feature4}
                                             onChange={this.onChangeFeature4}
@@ -460,15 +397,8 @@ export default class EditRoom extends Component {
                                             <option>Magnifying Shaving Mirror</option>
                                             <option>Tea/Coffee Making Facility</option>
                                             <option>Iron and Ironing Board</option>
-
-
                                         </select>
-
-
-                                       
                                     </div>
-
-
                                     <p />
                                     <div className="form-group">
                                         <label className='block mb-2 text-lg font-medium text-gray-900 dark:text-white'>

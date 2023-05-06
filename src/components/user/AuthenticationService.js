@@ -1,33 +1,30 @@
 class AuthenticationService {
-    
-    successfulLogin(NIC, userRole){
+
+    successfulLogin(NIC, userRole) {
         sessionStorage.setItem('authenticatedUserId', NIC);
         sessionStorage.setItem('authenticatedUserRole', userRole);
-       
     }
 
-    logout(){
-        console.log("User Id Removed"+'authenticatedUserId');
-        console.log("User Id Role"+'authenticatedUserRole');
+    logout() {
+        console.log("User Id Removed" + 'authenticatedUserId');
+        console.log("User Id Role" + 'authenticatedUserRole');
         sessionStorage.removeItem('authenticatedUserId');
-        
-       
         sessionStorage.removeItem('authenticatedUserRole');
     }
 
-    isUserLoggedIn(){
+    isUserLoggedIn() {
         let user = sessionStorage.getItem('authenticatedUserId');
         if (user === null) return false;
         return true;
     }
 
-    loggedUserId(){
+    loggedUserId() {
         let id = sessionStorage.getItem('authenticatedUserId');
         if (id === null) return '';
         return id;
     }
 
-    loggedUserName(){
+    loggedUserName() {
         let name = sessionStorage.getItem('authenticatedUserName');
         if (name === null) return '';
         return name;
@@ -35,10 +32,10 @@ class AuthenticationService {
 
     loggedUserRole() {
         let role = sessionStorage.getItem('authenticatedUserRole');
-        if(role != null) return role;
+        if (role != null) return role;
         return null;
     }
 
 }
- 
+
 export default new AuthenticationService()

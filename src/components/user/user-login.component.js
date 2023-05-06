@@ -62,18 +62,15 @@ export class UserLogin extends Component {
 
     onSubmit(e) {
         e.preventDefault();
-     
         if (this.state.NIC.length < 10 || this.state.NIC.length > 12) {
             this.setState({ nicError: "Please enter a valid NIC" })
         } else {
-          
             this.state.user.map((currentuser) => {
-                if (this.state.NIC === currentuser.NIC && this.state.password == currentuser.password) {
+                if (this.state.NIC === currentuser.NIC && this.state.password === currentuser.password) {
                     const userRole = currentuser.userRole;
                     console.log(userRole)
                     AuthenticationService.successfulLogin(currentuser.NIC, currentuser.userRole)
                     console.log(currentuser.NIC, currentuser.userRole)
-                   
                     Swal.fire({
                         icon: 'successful',
                         title: 'Successful',
@@ -83,25 +80,19 @@ export class UserLogin extends Component {
                         iconColor: '#60e004'
                     })
                     const isUserLoggedIn = AuthenticationService.isUserLoggedIn();
-                  
-                    if (isUserLoggedIn === true && currentuser.userRole == "Customer") {
-
+                    if (isUserLoggedIn === true && currentuser.userRole === "Customer") {
                         window.location = "/nav"
                         window.location = "/"
                     }
-                    if(isUserLoggedIn === false){
-
-                        window.location = "/nav"
-                        window.location = "/"
-
-                    }
-                    if(isUserLoggedIn === true && currentuser.userRole == "Admin"){
+                    if (isUserLoggedIn === false) {
                         window.location = "/nav"
                         window.location = "/"
                     }
-                
+                    if (isUserLoggedIn === true && currentuser.userRole === "Admin") {
+                        window.location = "/nav"
+                        window.location = "/"
+                    }
                 }
-               
             });
         }
     }
@@ -116,9 +107,6 @@ export class UserLogin extends Component {
     render() {
         return (
             <div class="">
-               
-
-{/* Latest UI */}
 
                 <div class="container my-44 px-6 mx-auto">
                     <section class="mb-32 text-gray-800 background-radial-gradient">
@@ -131,17 +119,15 @@ export class UserLogin extends Component {
                                             style={{ color: "hsl(218, 81%, 95%)" }}
                                         >
                                             Ayuobowan <br /></h1>
-                                            
-                                            <h2><span style={{ color: "hsl(218, 81%, 75%)" }}>Welcome To Jetwing</span>
+                                        <h2><span style={{ color: "hsl(218, 81%, 75%)" }}>Welcome To Jetwing</span>
                                         </h2>
                                         <p class="mb-4 opacity-90 lead text-stone-50 font-bold" >
-                                        SUSTAINABLE TOURISM IS AT OUR CORE
+                                            SUSTAINABLE TOURISM IS AT OUR CORE
                                         </p>
                                     </div>
                                     <div class="mb-12 lg:mb-0">
                                         <div class="block rounded-lg shadow-lg bg-white px-6 py-12 md:px-12">
                                             <h2 class="text-3xl font-bold mb-12">Sign In with <span class="text-indigo-900">Jetwing</span></h2>
-
                                             <form className='' onSubmit={this.onSubmit}>
                                                 <div class="">
                                                     <div className="form-group">
@@ -162,14 +148,12 @@ export class UserLogin extends Component {
                                                             onChange={this.onChangepassword}
                                                         /><p />
                                                     </div>
-
                                                     <div className="text-center align-middle form-group">
                                                         <input
                                                             class="w-full px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
                                                             type="submit" value="Sign In" />
                                                     </div>
                                                 </div>
-
                                             </form>
                                         </div>
                                     </div>
