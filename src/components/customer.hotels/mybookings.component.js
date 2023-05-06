@@ -71,22 +71,7 @@ export class MyBookingDetails extends Component {
 
     render() {
         return (
-            // <div>
-            //     <table>
-            //         <thead>
-            //             <tr><th>Hotel Name</th>
-            //             <th>Room Name</th>
-            //             <th>Number of Rooms</th>
-            //             <th>Checkin Date</th>
-            //             <th>CheckoutDate</th>
-            //             <th>Price</th>
-
-            //             </tr>
-
-            //         </thead>
-            //         <tbody>{this.searchMyBookingList()}</tbody>
-            //         </table>
-            //         </div>
+           
             <div>
                 <div class="w-100">
           <img src="https://www.jetwinghotels.com/jetwingyala/wp-content/uploads/sites/32/2018/03/yala-location-desktop.jpg" alt="Shoes" />

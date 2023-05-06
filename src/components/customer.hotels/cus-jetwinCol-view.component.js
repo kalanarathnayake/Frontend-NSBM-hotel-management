@@ -28,6 +28,21 @@ class CusJetwingColView extends Component {
         this.roomList();
     }
 
+    closeModalBoxForBooking = () => {
+        this.setState({ show: false })
+
+        this.eventList();
+
+    }
+    gotoBooking = (id) => {
+        this.setState({
+            id: id,
+            show: true
+
+        })
+        console.log("List id is :" + id);
+    }
+
 
 
     eventList() {
