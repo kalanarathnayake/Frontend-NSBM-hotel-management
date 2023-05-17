@@ -53,7 +53,7 @@ export class UserRegistration extends Component {
         else {
             const user = {
                 NIC: this.state.NIC,
-                userRole: this.state.userRole,
+                userRole: 'Customer',
                 password: this.state.password
             }
             console.log(user);
@@ -129,7 +129,7 @@ export class UserRegistration extends Component {
                                                                 onChange={this.onChangeNIC}
                                                             /><p className="block text-lg font-medium text-red-900 dark:text-white">{this.state.nicError}</p>
                                                         </div>
-                                                        <div className="form-group">
+                                                        {/* <div className="form-group">
                                                             <label className='block mb-2 text-lg font-medium text-gray-900 dark:text-white'>User Role </label>
                                                             <select type="text"
                                                                 required
@@ -142,7 +142,7 @@ export class UserRegistration extends Component {
                                                                 <option>Admin</option>
                                                             </select>
                                                             <p />
-                                                        </div>
+                                                        </div> */}
                                                         <div className="grid grid-cols-2 gap-4 form-group">
                                                             <div className="form-group">
                                                                 <label className='block mb-2 text-lg font-medium text-gray-900 dark:text-white'>Password </label>

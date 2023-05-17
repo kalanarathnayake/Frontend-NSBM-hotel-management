@@ -155,7 +155,7 @@ export default class CreateBooking extends Component {
             numofRooms: this.state.numofRooms,
             checkinDate: this.state.checkinDate,
             checkoutDate: this.state.checkoutDate,
-            price: this.state.price,
+            price: this.calculatePrice(this.state.numofRooms, this.state.numofdays, this.state.price),
             paymentStatus: "Paid",
             bankName: this.state.bankName,
             accName: this.state.accName

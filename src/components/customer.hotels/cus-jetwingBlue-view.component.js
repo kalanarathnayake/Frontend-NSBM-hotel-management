@@ -8,6 +8,8 @@ class CusJetwingBlueView extends Component {
 
   constructor(props) {
     super(props);
+    this.gotoBooking = this.gotoBooking.bind(this);
+    this.closeModalBoxForBooking = this.closeModalBoxForBooking.bind(this);
     this.state = {
       event: [],
       wedding: [],
@@ -52,6 +54,20 @@ class CusJetwingBlueView extends Component {
         console.log(error);
       })
   }
+
+  gotoBooking = (id) => {
+    this.setState({
+        id: id,
+        show: true
+    })
+    console.log("List id is :" + id);
+}
+
+
+closeModalBoxForBooking = () => {
+    this.setState({ show: false })
+    this.eventList();
+}
 
   searchEventList() {
     return this.state.event.map((currentevent) => {
